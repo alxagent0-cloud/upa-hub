@@ -67,6 +67,20 @@ nav.tabs button.active{color:var(--accent)}
 .filters{display:flex;gap:8px;margin:8px 0;overflow-x:auto}
 .chip{background:var(--card);border:1px solid var(--border);color:var(--muted);border-radius:99px;padding:5px 13px;font-size:12px;cursor:pointer;white-space:nowrap}
 .chip.on{border-color:var(--accent);color:var(--accent)}
+.chatfs{position:fixed;inset:0;background:var(--bg);z-index:200;display:none;flex-direction:column}
+.chatfs.open{display:flex}
+.chathead{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--border);background:var(--card)}
+#chatlog{flex:1;overflow-y:auto;padding:14px 14px 8px;display:flex;flex-direction:column;gap:8px}
+.msg{max-width:85%;padding:9px 13px;border-radius:15px;font-size:14.5px;line-height:1.5;white-space:pre-wrap;word-wrap:break-word}
+.msg.me{align-self:flex-end;background:#1f4f82;border-bottom-right-radius:4px}
+.msg.bot{align-self:flex-start;background:var(--card);border:1px solid var(--border);border-bottom-left-radius:4px}
+.msg.sys{align-self:center;background:none;color:var(--muted);font-size:12px;text-align:center}
+.chatbar{display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));border-top:1px solid var(--border);background:var(--card)}
+#chatin{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:22px;padding:11px 16px;color:var(--text);font-size:15px;outline:none}
+#chatin:focus{border-color:var(--accent)}
+.micbtn,.sendbtn{width:47px;height:47px;min-width:47px;border-radius:50%;border:none;font-size:19px;cursor:pointer;color:#fff}
+.sendbtn{background:var(--accent)}.micbtn{background:var(--card2);color:var(--accent);border:1px solid var(--border)}
+.pairbox{padding:0 28px}.pairbox input{width:100%;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:13px;color:var(--text);font-size:15px}
 @media(min-width:700px){main{padding:6px 24px}}
 </style>
 </head>
@@ -76,10 +90,14 @@ nav.tabs button.active{color:var(--accent)}
 <main id="content"></main>
 <button class="chatfab" title="Chat with your assistant">💬</button>
 <button class="fab" onclick="fabAdd()">+</button>
-<div class="chatpanel" id="chatp">
- <p><b style="color:var(--text)">Talk to your assistant 💬</b><br>Your UPA lives in Telegram — ask things like “meeting at 12 today” or “save a contact” and everything lands back here.</p>
- <div class="btnrow"><button class="btn green" onclick="openChat()">Open Telegram chat</button></div>
- <div class="btnrow"><button class="btn ghost" onclick="closeChat()">Close</button></div>
+<div class="chatfs" id="chatfs">
+ <div class="chathead"><button class="iconbtn" onclick="closeChat()">←</button><b style="flex:1">💬 Your Assistant</b><span class="sub" style="font-size:11px" id="chatstat"></span></div>
+ <div id="chatlog"></div>
+ <div class="chatbar">
+  <input id="chatin" placeholder="Ask anything… e.g. what do I have today?" autocomplete="off" onkeydown="if(event.key==='Enter')sendChat()">
+  <button class="micbtn" id="micbtn" onclick="toggleMic()" title="Voice message">🎤</button>
+  <button class="sendbtn" onclick="sendChat()">➤</button>
+ </div>
 </div>
 <nav class="tabs">
 <button data-t="today" class="active" onclick="go('today')"><span class="ic">☀️</span>Today</button>
@@ -95,13 +113,16 @@ let db=load(),cfg=loadCfg();
 function loadCfg(){try{const c=JSON.parse(localStorage.getItem(CFG));return Object.assign({telegram:'https://t.me/Agentalx_bot'},c||{})}catch(e){return{telegram:'https://t.me/Agentalx_bot'}}}
 function saveCfg(){localStorage.setItem(CFG,JSON.stringify(cfg))}
 function load(){try{const d=JSON.parse(localStorage.getItem(KEY));if(d&&d.people)return d}catch(e){}
- return {people:[{id:'p1',name:'Alex Morgan',role:'Business Consultant',phone:'+1 555 0134',email:'alex.morgan@example.com',notes:'Met at August networking event.',tags:['consultant'],gcontact:''}],
- meetings:[{id:'m1',title:'Q4 partnership proposal',datetime:'2026-08-26T14:00',personId:'p1',location:'Zoom call',mapsUrl:'',agenda:'Review partnership terms, pricing tiers, Q4 timeline.',status:'upcoming',suggested:[{text:'Prepare agenda doc',done:false},{text:'Send confirmation email',done:true},{text:'Print latest pricing sheet',done:false}],notes:''}],
- projects:[{id:'pr1',title:'UPA Toolkit',status:'active'}],
- tasks:[{id:'k1',text:'Finish UPA Hub v2',done:false,date:'2026-08-23',priority:'high',projectId:'pr1',subtasks:[{text:'Build views',done:true},{text:'Test logic',done:false}],log:[],gtaskId:''}],
- folders:[{id:'f1',name:'Alex Morgan',icon:'👤'},{id:'f2',name:'UPA Project',icon:'🚀'}],
- items:[{id:'i1',name:'Partnership draft v1',type:'doc',urlOrPath:'',folderId:'f1',personId:'p1',meetingId:'m1',addedDate:'2026-08-23'}],
- journal:[{date:'2026-08-23',entries:[{ts:'12:00',text:'UPA Hub v2 deployed'}]}]};}
+ return {people:[{id:'p1',name:'Sami Kaddoum',role:'Owner',phone:'+33 7 76 46 43 49',email:'samicadum@gmail.com',notes:'Based in Marseille, France.',tags:['owner'],gcontact:'synced'}],
+ meetings:[{id:'m1',title:'Meeting — Sami Kaddoum',datetime:'2026-08-24T09:00',personId:'p1',location:'11 Rue Néron, Marseille',mapsUrl:'https://www.google.com/maps/search/?api=1&query=11+Rue+N%C3%A9ron+Marseille',agenda:'Confirmed by email. Prepared by your UPA.',status:'upcoming',suggested:[{text:'Prepare agenda doc',done:true},{text:'Send confirmation email',done:true},{text:'Review linked documents',done:true}],notes:'Also in Google Calendar.'}],
+ projects:[{id:'pr1',title:'UPA Toolkit',status:'active',log:[{ts:'2026-08-23 17:40',text:'Hub v3 shipped: real in-app chat, library fix, automatic Google sync'}]},{id:'pr2',title:'Real Estate Automation Tool',status:'planned'}],
+ tasks:[{id:'k1',text:'Connect Google full access',done:true,date:'2026-08-23',priority:'high',projectId:'pr1',subtasks:[{text:'Calendar + Gmail',done:true},{text:'Contacts + Drive',done:true}],log:[{ts:'2026-08-23 09:30',text:'All scopes authorized and verified'}]},
+ {id:'k2',text:'Stable chat connection for UPA Hub',done:false,date:'2026-08-25',priority:'normal',projectId:'pr1',subtasks:[],log:[]}],
+ folders:[{id:'f1',name:'Sami Kaddoum',icon:'👤'},{id:'f2',name:'UPA Project',icon:'🚀'}],
+ items:[{id:'i1',name:'UPA Authentication Blueprint',type:'pdf',urlOrPath:'https://alxagent0-cloud.github.io/upa-hub/',folderId:'f2',personId:'p1',meetingId:'',addedDate:'2026-08-23'},
+ {id:'i2',name:'GitHub Guide',type:'pdf',urlOrPath:'',folderId:'f2',personId:'',meetingId:'',addedDate:'2026-08-23'}],
+ journal:[{date:'2026-08-23',entries:[{ts:'09:30',text:'Google ecosystem connected: Calendar, Gmail, Contacts, Drive'},{ts:'11:20',text:'UPA Hub v3: real in-app chat, library fix, automatic Google sync'}]},{date:'2026-08-24',entries:[]}],
+ chatSeed:true};}
 function save(){localStorage.setItem(KEY,JSON.stringify(db));render()}
 const $=id=>document.getElementById(id);
 const esc=s=>(s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -117,13 +138,51 @@ function jadd(text){const t=todayStr();let j=db.journal.find(x=>x.date===t);if(!
 
 /* ===== navigation ===== */
 let page='today',detail=null;
-function go(t){page=t;detail=null;$('gsearch').value='';$('chatp').classList.remove('open');
+function go(t){page=t;detail=null;$('gsearch').value='';$('chatfs').classList.remove('open');
  document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.toggle('active',b.dataset.t===t));render();window.scrollTo(0,0)}
 function closeModal(){$('mbg').classList.remove('open')}
 function showModal(h){$('mbox').innerHTML=h;$('mbg').classList.add('open')}
-document.querySelector('.chatfab').onclick=()=>{$('chatp').classList.toggle('open')};
-function closeChat(){$('chatp').classList.remove('open')}
-function openChat(){const u=cfg.telegram||'https://t.me/';window.open(u,'_blank')}
+/* ===== in-app assistant chat ===== */
+const CKEY='upa_chat_log',API_KEY='upa-87d0064fd38e31a72792caea44de6f1a';
+function apiUrl(){return (cfg.apiUrl||'')+'/v1/chat/completions'}
+function chatLog(){try{return JSON.parse(localStorage.getItem(CKEY))||[]}catch(e){return[]}}
+function cpush(role,text){const l=chatLog();l.push({role,text,t:Date.now()});localStorage.setItem(CKEY,JSON.stringify(l.slice(-60)));return l}
+function renderChat(){const l=chatLog();$('chatlog').innerHTML=l.map(m=>m.role==='user'?'<div class="msg me">'+esc(m.text)+'</div>':'<div class="msg bot">'+fmtBot(m.text)+'</div>').join('');$('chatlog').scrollTop=1e9}
+function fmtBot(t){let h=esc(t);h=h.replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g,'<a style="color:var(--accent)" href="$2" target="_blank">$1</a>');h=h.replace(/(^|\s)(https?:\/\/[^\s<]+)/g,'$1<a style="color:var(--accent)" href="$2" target="_blank">$2</a>');return h}
+document.querySelector('.chatfab').onclick=()=>{openChat()};
+function openChat(){$('chatfs').classList.add('open');if(!chatLog().length){cpush('bot','Hey Sami! 👋 I am your UPA — fully connected to your Google ecosystem (Calendar, Gmail, Contacts, Drive). Ask me things like "what do I have today?" or "where is my blueprint file?"','sys')}renderChat();if(!cfg.apiUrl){pairPrompt()}}
+function closeChat(){$('chatfs').classList.remove('open')}
+function pairPrompt(){setTimeout(()=>{$('chatlog').insertAdjacentHTML('beforeend','<div class="msg sys">⚙️ One-time link needed. Open Settings ⚙ and paste the Hub Link from the message I sent you on Telegram.</div>');$('chatstat').textContent='not linked';},400)}
+async function sendChat(pre){
+ const inp=$('chatin');const text=(pre!==undefined?pre:inp.value).trim();if(pre===undefined)inp.value='';if(!text)return;
+ if(text.toLowerCase()==='/clear'){localStorage.removeItem(CKEY);renderChat();return}
+ cpush('user',text);renderChat();
+ if(!cfg.apiUrl){cpush('bot','I am not linked to your agent yet. Open Settings ⚙ (top right) and paste the Hub Link I sent on Telegram.');renderChat();return}
+ $('chatin').placeholder='Thinking…';$('sendbtn');
+ const hist=chatLog().slice(-14).map(m=>({role:m.role==='user'?'user':'assistant',content:m.text}));
+ try{
+  const r=await fetch(apiUrl(),{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+API_KEY},
+   body:JSON.stringify({model:'hermes-agent',messages:[{role:'system',content:'You are Sami Kaddoum\'s personal UPA inside his UPA Hub web app. Be concise and warm. When you mention files, meetings or contacts include clickable links when possible.'},...hist,{role:'user',content:text}]})});
+  if(!r.ok)throw new Error('HTTP '+r.status);
+  const d=await r.json();const reply=d.choices&&d.choices[0]&&d.choices[0].message?d.choices[0].message.content:'(empty reply)';
+  cpush('bot',reply);
+ }catch(e){cpush('bot','⚠ Connection problem ('+e.message+'). Your agent might be restarting or offline — try again in a minute, or ping me on Telegram.');}
+ renderChat();$('chatin').placeholder='Ask anything… e.g. what do I have today?';
+}
+/* voice input via Web Speech API */
+let rec=null;
+function toggleMic(){
+ const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+ if(!SR){sendChatPre('[voice note] (Voice transcription is not supported in this browser — type instead.)');return}
+ if(rec){rec.stop();return}
+ rec=new SR();rec.lang='fr-FR';rec.interimResults=false;
+ $('micbtn').style.background='var(--red)';
+ rec.onresult=e=>{const t=e.results[0][0].transcript;sendChatPre(t)};
+ rec.onend=()=>{rec=null;$('micbtn').style.background=''};
+ rec.onerror=e=>{rec=null;$('micbtn').style.background='';if(e.error!=='aborted')sendChatPre('(voice error: '+e.error+')')};
+ try{rec.start()}catch(e){rec=null}
+}
+function sendChatPre(t){$('chatin').value=t;sendChat()}
 function mapsLink(loc){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(loc)}
 
 /* ===== TODAY ===== */
@@ -176,7 +235,7 @@ function rTasks(){
  if(tfilt==='done')list=list.filter(t=>t.done);
  if(!list.length)h+='<div class="empty">No tasks here. Tap <b style="color:var(--accent)">+</b> to add one.</div>';
  list.forEach(t=>h+=taskRow(t));
- h+='<div class="btnrow"><button class="btn ghost" onclick="openGtasksInfo()">🔄 Google Tasks sync</button></div>';
+ h+='<div class="sub" style="margin-top:10px">🔄 Everything here syncs to your Google ecosystem automatically — Tasks, Calendar, Contacts, Drive. Nothing to press.</div>';
  $('content').innerHTML=h;
 }
 function showProject(id){detail={kind:'project',id};const p=PR(id);if(!p)return;
@@ -215,7 +274,7 @@ function showJournal(){detail={kind:'journal'};
  if(!db.journal.length)h+='<div class="empty">Nothing logged yet. Accomplishments land here automatically.</div>';
  db.journal.forEach(d=>{h+='<div class="seclabel">'+d.date+'</div>';d.entries.forEach(e=>h+='<div class="je"><div class="jt">'+e.ts+'</div>'+esc(e.text)+'</div>')});
  $('content').innerHTML=h;window.scrollTo(0,0)}
-function openGtasksInfo(){showModal('<h2>Google Tasks sync</h2><p style="color:var(--muted);font-size:13px;line-height:1.6">Your agent syncs these tasks to Google Tasks for you — just say <b style="color:var(--text)">“sync my tasks”</b> in the chat. Tasks marked with 🔁 already exist in Google Tasks.</p><div class="btnrow"><button class="btn primary" onclick="closeModal()">Got it</button></div>')}
+
 
 /* ===== MEETINGS ===== */
 function rMeetings(){
@@ -256,7 +315,7 @@ function rPeople(){let h='';
  if(!db.people.length)h='<div class="empty">No people yet. Tap <b style="color:var(--accent)">+</b>.</div>';
  db.people.forEach(p=>{const ms=db.meetings.filter(m=>m.personId===p.id).length;
   h+='<div class="card" onclick=\'showPerson("'+p.id+'")\'><h3>'+esc(p.name)+(p.gcontact?' 🔁':'')+'</h3><div class="sub">'+esc(p.role||'—')+(ms?' · '+ms+' meeting'+(ms>1?'s':''):'')+'</div>'+(p.tags||[]).map(t=>'<span class="badge">'+esc(t)+'</span>').join('')+'</div>'});
- h+='<div class="sub" style="margin-top:6px">🔁 = also saved in Google Contacts. Say “sync contacts to Google” in chat to push new ones.</div>';
+ h+='<div class="sub" style="margin-top:6px">🔁 = saved in Google Contacts automatically — every contact you add lands there too.</div>';
  $('content').innerHTML=h}
 function showPerson(id){detail={kind:'person',id};const p=P(id);if(!p)return;
  const ms=db.meetings.filter(m=>m.personId===id).sort((a,b)=>b.datetime.localeCompare(a.datetime));
@@ -293,9 +352,12 @@ function rLibrary(){
   if(!its.length)h+='<div class="empty" style="padding:12px">Library empty. Tap <b style="color:var(--accent)">+</b> to add files & links.</div>';
   its.forEach(d=>h+=docCard(d));}
  $('content').innerHTML=h}
+function openDoc(id){const d=db.items.find(x=>x.id===id);if(!d)return;
+ if(d.urlOrPath){window.open(d.urlOrPath,'_blank')}
+ else{showModal('<h2>'+esc(d.name)+'</h2><p style="color:var(--muted);font-size:13px;line-height:1.7">This item has no file attached yet. Ask your agent in chat: <b style="color:var(--text)">"attach '+esc(d.name)+'"</b> and it will upload the real file and link it here.</p><div class="btnrow"><button class="btn primary" onclick="closeModal()">OK</button></div>')}}
 function docCard(d){const f=F(d.folderId);
- return '<div class="card" onclick="'+(d.urlOrPath?'window.open(\''+esc(d.urlOrPath)+'\',\'_blank\')':'alert(\'Type: '+d.type+'\\nRef: '+(esc(d.urlOrPath)||'not set')+'\')')+'">'+
- '<h3>'+({pdf:'📕',doc:'📘',sheet:'📗',note:'📝',link:'🔗'}[d.type]||'📄')+' '+esc(d.name)+'</h3><div class="sub">'+d.type.toUpperCase()+(f?' · '+esc(f.name):'')+(d.addedDate?' · '+d.addedDate:'')+'</div></div>'}
+ return '<div class="card" onclick="openDoc(\''+d.id+'\')">'+
+ '<h3>'+((d.urlOrPath)?'':'🔒 ')+({pdf:'📕',doc:'📘',sheet:'📗',note:'📝',link:'🔗'}[d.type]||'📄')+' '+esc(d.name)+'</h3><div class="sub">'+d.type.toUpperCase()+(f?' · '+esc(f.name):'')+(d.addedDate?' · '+d.addedDate:'')+((d.urlOrPath)?'':' · no file linked yet')+'</div></div>'}
 
 /* ===== forms ===== */
 function fabAdd(){
@@ -303,7 +365,7 @@ function fabAdd(){
 function opts(arr,val,key,label){return arr.map(o=>'<option value="'+o.id+'"'+(o.id===val?' selected':'')+'>'+esc(label(o))+'</option>').join('')}
 function fTask(){showModal('<h2>New task</h2><label>Task *</label><input id="f_text"><label>Due date</label><input id="f_date" type="date" value="'+todayStr()+'"><label>Priority</label><select id="f_pri"><option>normal</option><option value="high">high</option></select><label>Project</label><select id="f_pid"><option value="">none</option>'+opts(db.projects,null,x=>x.title)+'</select><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="saveTask()">Save</button></div>')}
 function saveTask(){const v=$('f_text').value.trim();if(!v)return alert('Task text required');
- db.tasks.push({id:uid(),text:v,done:false,date:$('f_date').value||'',priority:$('f_pri').value==='high'?'high':'normal',projectId:$('f_pid').value,subtasks:[],log:[],gtaskId:''});
+ db.tasks.push({id:uid(),text:v,done:false,date:$('f_date').value||'',priority:$('f_pri').value==='high'?'high':'normal',projectId:$('f_pid').value,subtasks:[],log:[]});
  save();closeModal()}
 function fMeeting(){
  showModal('<h2>New meeting</h2><label>Title *</label><input id="f_title"><label>Date & time</label><input id="f_dt" type="datetime-local"><label>With</label><select id="f_w"><option value="">— none —</option>'+opts(db.people,null,p=>p.name)+'</select><label>Location (address or place name)</label><input id="f_loc" placeholder="Café Central, downtown…"><label>Agenda</label><textarea id="f_ag" rows="2"></textarea><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="saveMeeting()">Save</button></div><p style="color:var(--muted);font-size:12px;margin-top:10px">A Maps pin is generated from the location automatically, plus standard prep tasks.</p>')}
@@ -337,15 +399,15 @@ function globalSearch(q){q=q.trim().toLowerCase();if(!q)return render();if(detai
  db.meetings.forEach(m=>{if((m.title+' '+(m.agenda||'')+' '+(m.location||'')).toLowerCase().includes(q))hits.push(['📅 '+m.title,fmtDT(m.datetime),`showMeeting('${m.id}')`])});
  db.tasks.forEach(t=>{if(t.text.toLowerCase().includes(q))hits.push([((t.done)?'☑ ':'⬜ ')+t.text,(t.date||''),`showTask('${t.id}')`])});
  db.projects.forEach(p=>{if(p.title.toLowerCase().includes(q))hits.push(['🚀 '+p.title,'project',`showProject('${p.id}')`])});
- db.items.forEach(i=>{if(i.name.toLowerCase().includes(q))hits.push(['📄 '+i.name,i.type.toUpperCase(),''])});
+ db.items.forEach(i=>{if(i.name.toLowerCase().includes(q))hits.push(['📄 '+i.name,i.type.toUpperCase(),'openDoc(\''+i.id+'\')'])});
  db.folders.forEach(f=>{if(f.name.toLowerCase().includes(q))hits.push(['📁 '+f.name,'folder','libFolder=\''+f.id+'\';render()'])});
  $('content').innerHTML=hits.length?'<div class="seclabel">'+hits.length+' results</div>'+hits.map(x=>'<div class="card" '+(x[2]?'onclick="'+x[2]+'"':'style="cursor:default"')+'><h3>'+esc(x[0])+'</h3><div class="sub">'+esc(x[1])+'</div></div>').join(''):'<div class="empty">No matches for “'+esc(q)+'”.</div>'}
 function openSettings(){
- showModal('<h2>Settings & Data</h2><label>Telegram chat link (for the 💬 button)</label><input id="s_tg" placeholder="https://t.me/YourBotLink" value="'+esc(cfg.telegram||'')+'">'+
+ showModal('<h2>Settings & Data</h2><label>Hub Link (connects the 💬 chat to your agent)</label><input id="s_api" placeholder="https://…trycloudflare.com" value="'+esc(cfg.apiUrl||'')+'">'+
  '<div class="btnrow"><button class="btn ghost" onclick="$(\'imp\').click()">Import backup</button><button class="btn primary" onclick="exportAll()">Export backup</button></div>'+
  '<input type="file" id="imp" accept=".json" style="display:none" onchange="importAll(this)">'+
- '<p style="color:var(--muted);font-size:12px;margin-top:12px;line-height:1.6">Data lives in this browser. Export regularly. Your agent can merge exports into Google Calendar/Tasks/Contacts — just ask in chat.<br>Test artifacts from setup live in Drive/Calendar; say “clean up tests” there.</p>'+
- '<div class="btnrow"><button class="btn green" onclick="(cfg=$(\'s_tg\').value.trim(),saveCfg(),alert(\'Saved\'),closeModal())">Save link</button></div>')}
+ '<p style="color:var(--muted);font-size:12px;margin-top:12px;line-height:1.6">Data lives in this browser and syncs to your Google ecosystem automatically. If the chat says “not linked”, get the fresh Hub Link from your latest Telegram message and paste it above.</p>'+
+ '<div class="btnrow"><button class="btn green" onclick="(cfg.apiUrl=$(\'s_api\').value.trim(),saveCfg(),alert(\'Saved\'),closeModal())">Save</button></div>')}
 function exportAll(){const blob=new Blob([JSON.stringify({data:db,cfg},null,2)],{type:'application/json'});
  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='upa_hub_backup_'+todayStr()+'.json';a.click();jadd('Exported backup');save()}
 function importAll(inp){const f=inp.files[0];if(!f)return;const r=new FileReader();
