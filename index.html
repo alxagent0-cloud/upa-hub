@@ -171,14 +171,21 @@ function cpush(role,text){const l=chatLog();l.push({role,text,t:Date.now()});loc
 function renderChat(){const l=chatLog();$('chatlog').innerHTML=l.map(m=>m.role==='user'?'<div class="msg me">'+esc(m.text)+'</div>':'<div class="msg bot">'+fmtBot(m.text)+'</div>').join('');$('chatlog').scrollTop=1e9}
 function fmtBot(t){let h=esc(t);h=h.replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g,'<a style="color:var(--accent)" href="$2" target="_blank">$1</a>');h=h.replace(/(^|\s)(https?:\/\/[^\s<]+)/g,'$1<a style="color:var(--accent)" href="$2" target="_blank">$2</a>');return h}
 document.querySelector('.chatfab').onclick=()=>{openChat()};
-function openChat(){$('chatfs').classList.add('open');if(!chatLog().length){cpush('bot','Hey Sami! 👋 I am your UPA — fully connected to your Google ecosystem (Calendar, Gmail, Contacts, Drive). Ask me things like "what do I have today?" or "where is my blueprint file?"','sys')}renderChat();if(!cfg.apiUrl){pairPrompt()}}
+async function autoLink(){ // fetch current Hub Link from the live config file
+ try{const r=await fetch('hub-link.json?ts='+Date.now());const d=await r.json();
+  if(d.apiUrl&&d.apiUrl!==cfg.apiUrl){cfg.apiUrl=d.apiUrl;saveCfg();return true}}catch(e){}
+ return false}
+async function ensureLinked(){if(cfg.apiUrl)return true;
+ await autoLink();return !!cfg.apiUrl}
+async function openChat(){$('chatfs').classList.add('open');if(!chatLog().length){cpush('bot','Hey Sami! 👋 I am your UPA — fully connected to your Google ecosystem (Calendar, Gmail, Contacts, Drive). Ask me things like "what do I have today?" or "where is my blueprint file?"')}renderChat();
+ if(!(await ensureLinked())){pairPrompt()}else{const st=$('chatstat');st.textContent='connected';}}
 function closeChat(){$('chatfs').classList.remove('open')}
 function pairPrompt(){setTimeout(()=>{$('chatlog').insertAdjacentHTML('beforeend','<div class="msg sys">⚙️ One-time link needed. Open Settings ⚙ and paste the Hub Link from the message I sent you on Telegram.</div>');$('chatstat').textContent='not linked';},400)}
 async function sendChat(pre){
  const inp=$('chatin');const text=(pre!==undefined?pre:inp.value).trim();if(pre===undefined)inp.value='';if(!text)return;
  if(text.toLowerCase()==='/clear'){localStorage.removeItem(CKEY);renderChat();return}
  cpush('user',text);renderChat();
- if(!cfg.apiUrl){cpush('bot','I am not linked to your agent yet. Open Settings ⚙ (top right) and paste the Hub Link I sent on Telegram.');renderChat();return}
+ if(!cfg.apiUrl){const ok=await ensureLinked();if(!ok){cpush('bot','I am not linked to your agent yet. Open Settings ⚙ (top right) and paste the Hub Link I sent on Telegram.');renderChat();return}}
  $('chatin').placeholder='Thinking…';$('sendbtn');
  const hist=chatLog().slice(-14).map(m=>({role:m.role==='user'?'user':'assistant',content:m.text}));
  try{
@@ -187,7 +194,15 @@ async function sendChat(pre){
   if(!r.ok)throw new Error('HTTP '+r.status);
   const d=await r.json();const reply=d.choices&&d.choices[0]&&d.choices[0].message?d.choices[0].message.content:'(empty reply)';
   cpush('bot',reply);
- }catch(e){cpush('bot','⚠ Connection problem ('+e.message+'). Your agent might be restarting or offline — try again in a minute, or ping me on Telegram.');}
+ }catch(e){
+  const refreshed=await autoLink();
+  if(refreshed){try{
+   const r2=await fetch(apiUrl(),{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+API_KEY},
+    body:JSON.stringify({model:'hermes-agent',messages:[{role:'system',content:'You are Sami Kaddoum\'s personal UPA inside his UPA Hub web app. Be concise and warm.'},...hist,{role:'user',content:text}]}});
+   if(r2.ok){const d2=await r2.json();cpush('bot',d2.choices&&d2.choices[0]?d2.choices[0].message.content:'(empty reply)');renderChat();$('chatin').placeholder='Ask anything… e.g. what do I have today?';return}
+  }catch(e2){}}
+  cpush('bot','⚠ Connection problem ('+e.message+'). I could not refresh the link automatically this time — your agent may be asleep. Try again in a minute, or ping me on Telegram.');
+ }
  renderChat();$('chatin').placeholder='Ask anything… e.g. what do I have today?';
 }
 /* voice input via Web Speech API */
