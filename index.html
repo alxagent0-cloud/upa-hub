@@ -198,7 +198,7 @@ async function sendChat(pre){
   const refreshed=await autoLink();
   if(refreshed){try{
    const r2=await fetch(apiUrl(),{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+API_KEY},
-    body:JSON.stringify({model:'hermes-agent',messages:[{role:'system',content:'You are Sami Kaddoum\'s personal UPA inside his UPA Hub web app. Be concise and warm.'},...hist,{role:'user',content:text}]}});
+    body:JSON.stringify({model:'hermes-agent',messages:[{role:'system',content:'You are Sami Kaddoum\'s personal UPA inside his UPA Hub web app. Be concise and warm.'},...hist,{role:'user',content:text}]})});
    if(r2.ok){const d2=await r2.json();cpush('bot',d2.choices&&d2.choices[0]?d2.choices[0].message.content:'(empty reply)');renderChat();$('chatin').placeholder='Ask anything… e.g. what do I have today?';return}
   }catch(e2){}}
   cpush('bot','⚠ Connection problem ('+e.message+'). I could not refresh the link automatically this time — your agent may be asleep. Try again in a minute, or ping me on Telegram.');
