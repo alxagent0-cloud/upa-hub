@@ -1,21 +1,7 @@
 {
  "tasks": [],
- "events": [
-  {
-   "title": "Meeting — Sami Kaddoum",
-   "datetime": "2026-08-24T07:00:00Z",
-   "location": "11 Rue Neyron, 42000 Saint-Étienne, France",
-   "link": "https://www.google.com/calendar/event?eid=dW5ncW9pbWhtZmF2c2Q0NGVxdjJnNXFzOGcgYWx4LmFnZW50LjBAbQ",
-   "source": "google"
-  },
-  {
-   "title": "Call Tasheel (Saudi bank) — follow up on pending refund",
-   "datetime": "2026-08-24T09:00:00Z",
-   "location": "",
-   "link": "https://www.google.com/calendar/event?eid=Mm9wbGRwdTZ2cHJzc3VyMGQzdHRoYTQ0ZmcgYWx4LmFnZW50LjBAbQ",
-   "source": "google"
-  }
- ],
- "updated": "2026-08-23T23:44:37",
- "tasks_error": "<HttpError 403 when requesting https://tasks.googleapis.com/tasks/v1/lists/%40default/tasks?showComp"
+ "events": [],
+ "updated": "2026-08-24T00:06:59",
+ "tasks_error": "No module named 'google'",
+ "events_error": "No module named 'google'"
 }
