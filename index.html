@@ -171,6 +171,15 @@ async function googleSync(){
      suggested:[],notes:'From Google Calendar',gcalLink:ev.link||''});
     changed=true}
   });
+  // projects: add agent-created projects
+  (g.projects||[]).forEach(pr=>{
+   if(!pr.title)return;
+   const exists=db.projects.some(x=>x.title===pr.title);
+   if(!exists){
+    db.projects.push({id:uid(),title:pr.title,status:pr.status||'active',
+     desc:pr.description||'',nextSteps:pr.next_steps||[],log:[{ts:new Date().toISOString().slice(0,16),text:'Project created by agent'}]});
+    changed=true}
+  });
   // tasks: add agent/google tasks not present
   (g.tasks||[]).forEach(t=>{
    if(!t.text)return;
