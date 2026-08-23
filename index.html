@@ -153,6 +153,12 @@ let syncMerged=false;
 async function googleSync(){
  if(syncMerged)return;syncMerged=true;
  try{
+  // self-update: watchdog stamps current app version into hub-link.json
+  try{const lr=await fetch('hub-link.json?ts='+Date.now());const lf=await lr.json();
+   if(lf.ver && lf.ver!==APP_VER && !sessionStorage.getItem('upgraded_'+lf.ver)){
+    sessionStorage.setItem('upgraded_'+lf.ver,'1');
+    location.replace(location.pathname+'?fresh='+Date.now());return}
+  }catch(e){}
   const r=await fetch('hub-sync.json?ts='+Date.now());const g=await r.json();
   let changed=false;
   // events: add any Google event not already present (match by title+date)
@@ -484,7 +490,7 @@ function importAll(inp){const f=inp.files[0];if(!f)return;const r=new FileReader
 /* ===== router ===== */
 function render(){if($('gsearch').value.trim()&&!detail){return globalSearch($('gsearch').value)}
  ({today:rToday,tasks:rTasks,meetings:rMeetings,people:rPeople,library:rLibrary}[page])()}
-const APP_VER='v3.3';$('verbadge').textContent=APP_VER;render();googleSync();
+const APP_VER='v3.3.1';$('verbadge').textContent=APP_VER;render();googleSync();
 </script>
 </body>
 </html>
