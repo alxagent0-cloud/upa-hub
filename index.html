@@ -113,14 +113,14 @@ let db=load(),cfg=loadCfg();
 function loadCfg(){try{const c=JSON.parse(localStorage.getItem(CFG));return Object.assign({telegram:'https://t.me/Agentalx_bot'},c||{})}catch(e){return{telegram:'https://t.me/Agentalx_bot'}}}
 function saveCfg(){localStorage.setItem(CFG,JSON.stringify(cfg))}
 function load(){try{const d=JSON.parse(localStorage.getItem(KEY));if(d&&d.people)return d}catch(e){}
- return {people:[{id:'p1',name:'Sami Kaddoum',role:'Owner',phone:'+33 7 76 46 43 49',email:'samikaddoum@gmail.com',notes:'Based in Marseille, France.',tags:['owner'],gcontact:'synced'}],
- meetings:[{id:'m1',title:'Meeting — Sami Kaddoum',datetime:'2026-08-24T09:00',personId:'p1',location:'11 Rue Néron, Marseille',mapsUrl:'https://www.google.com/maps/search/?api=1&query=11+Rue+N%C3%A9ron+Marseille',agenda:'Confirmed by email. Prepared by your UPA.',status:'upcoming',suggested:[{text:'Prepare agenda doc',done:true},{text:'Send confirmation email',done:true},{text:'Review linked documents',done:true}],notes:'Also in Google Calendar.'}],
+ return {people:[{id:'p1',name:'Sami Kaddoum',role:'Owner',phone:'+33 7 76 46 43 49',email:'samikaddoum@gmail.com',notes:'Based in Saint-Étienne, France.',tags:['owner'],gcontact:'synced'}],
+ meetings:[{id:'m1',title:'Meeting — Sami Kaddoum',datetime:'2026-08-24T09:00',personId:'p1',location:'11 Rue Neyron, Saint-Étienne',mapsUrl:'https://www.google.com/maps/search/?api=1&query=11+Rue+Neyron+42000+Saint-%C3%89tienne',agenda:'Confirmed by email. Prepared by your UPA.',status:'upcoming',suggested:[{text:'Prepare agenda doc',done:true},{text:'Send confirmation email',done:true},{text:'Review linked documents',done:true}],notes:'Also in Google Calendar.'}],
  projects:[{id:'pr1',title:'UPA Toolkit',status:'active',log:[{ts:'2026-08-23 17:40',text:'Hub v3 shipped: real in-app chat, library fix, automatic Google sync'}]},{id:'pr2',title:'Real Estate Automation Tool',status:'planned'}],
  tasks:[{id:'k1',text:'Connect Google full access',done:true,date:'2026-08-23',priority:'high',projectId:'pr1',subtasks:[{text:'Calendar + Gmail',done:true},{text:'Contacts + Drive',done:true}],log:[{ts:'2026-08-23 09:30',text:'All scopes authorized and verified'}]},
  {id:'k2',text:'Stable chat connection for UPA Hub',done:false,date:'2026-08-25',priority:'normal',projectId:'pr1',subtasks:[],log:[]}],
  folders:[{id:'f1',name:'Sami Kaddoum',icon:'👤'},{id:'f2',name:'UPA Project',icon:'🚀'}],
- items:[{id:'i1',name:'UPA Authentication Blueprint',type:'pdf',urlOrPath:'https://alxagent0-cloud.github.io/upa-hub/',folderId:'f2',personId:'p1',meetingId:'',addedDate:'2026-08-23'},
- {id:'i2',name:'GitHub Guide',type:'pdf',urlOrPath:'',folderId:'f2',personId:'',meetingId:'',addedDate:'2026-08-23'}],
+ items:[{id:'i1',name:'UPA Authentication Blueprint',type:'pdf',urlOrPath:'https://drive.google.com/file/d/1HlJrK5hbSrtGBELwFLVRt-sy2yPtL9PY/view',folderId:'f2',personId:'p1',meetingId:'',addedDate:'2026-08-23'},
+ {id:'i2',name:'GitHub Guide',type:'pdf',urlOrPath:'https://drive.google.com/file/d/1Kg2cvgmCK4Ysx2NRCvbDlyIh_4f__xn0/view',folderId:'f2',personId:'',meetingId:'',addedDate:'2026-08-23'},{id:'i3',name:'Daily Report 2026-08-23',type:'pdf',urlOrPath:'https://drive.google.com/file/d/1xzoZQPD0WbKxSUf4vE5tIXs7lknPgvNm/view',folderId:'f2',personId:'',meetingId:'',addedDate:'2026-08-23'}],
  journal:[{date:'2026-08-23',entries:[{ts:'09:30',text:'Google ecosystem connected: Calendar, Gmail, Contacts, Drive'},{ts:'11:20',text:'UPA Hub v3: real in-app chat, library fix, automatic Google sync'}]},{date:'2026-08-24',entries:[]}],
  chatSeed:true};}
 function save(){localStorage.setItem(KEY,JSON.stringify(db));render()}
