@@ -1,5 +1,13 @@
 {
- "tasks": [],
+ "tasks": [
+  {
+   "text": "Call Tasheel (Saudi bank) — follow up on refund",
+   "date": "2026-08-24",
+   "done": false,
+   "gtaskId": "U0dDRXdUbG9CelRFNmJsQg",
+   "source": "google"
+  }
+ ],
  "events": [
   {
    "title": "Meeting — Sami Kaddoum",
@@ -16,5 +24,5 @@
    "source": "google"
   }
  ],
- "updated": "2026-08-24T00:15:27"
+ "updated": "2026-08-24T00:22:47"
 }
