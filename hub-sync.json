@@ -29,15 +29,14 @@
   {
    "title": "AI Adaptation Agency",
    "status": "active",
-   "progress": 5,
-   "description": "Agency helping businesses adapt to AI. Products: 1) UPA (Universal Personal Assistant), 2) ImmobilIA (real estate automation). Based in Saint-Étienne, France.",
+   "progress": 15,
+   "description": "Agency helping businesses adapt to AI. Products: UPA + ImmobilIA. Research complete; awaiting Sam's 4 decisions to launch website.",
    "next_steps": [
-    "Market research: French AI consulting landscape",
-    "Define service packages & pricing",
-    "Build portfolio: 10+ AI use cases across industries",
-    "Business plan + legal structure",
-    "Website design & copy",
-    "Social media presence (LinkedIn first)"
+    "Sam: decide legal path (recommend micro → SASU)",
+    "Sam: pick agency name direction",
+    "Agent: build portfolio demos 1-3 this week",
+    "Agent: build website with finalized copy",
+    "Joint: register legal structure + buy domain"
    ]
   }
  ]
