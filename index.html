@@ -118,12 +118,17 @@ nav.tabs button.active{color:var(--apple-link-blue)}
 </style>
 </head>
 <body>
-<header style="display:flex;align-items:center;gap:10px"><h1 style="flex:1">⌘ UPA Hub <span id="verbadge" style="font-size:11px;color:var(--apple-text-tertiary);font-weight:500"></span></h1><button class="iconbtn" onclick="openSettings()" style="margin-left:auto">⚙</button>
-<div class="scopebar" style="margin:0;max-width:none;flex:2;justify-content:flex-end;gap:6px">
-<button class="scopepill on" id="scope_all" onclick="setScope('')" style="padding:6px 0;max-width:74px;font-size:13px">All</button>
-<button class="scopepill" id="scope_personal" onclick="setScope('personal')" style="padding:6px 0;max-width:96px;font-size:13px">Personal</button>
-<button class="scopepill" id="scope_professional" onclick="setScope('work')" style="padding:6px 0;max-width:80px;font-size:13px">Work</button>
-</div></header>
+<header style="padding:10px 16px 8px">
+<div style="display:flex;align-items:center">
+<h1 style="flex:1">⌘ UPA Hub <span id="verbadge" style="font-size:11px;color:var(--apple-text-tertiary);font-weight:500"></span></h1>
+<button class="iconbtn" onclick="openSettings()" style="margin-left:auto">⚙</button>
+</div>
+<div class="scopebar" style="margin:6px 0 0;max-width:none">
+<button class="scopepill on" id="scope_all" onclick="setScope('')">All</button>
+<button class="scopepill" id="scope_personal" onclick="setScope('personal')">Personal</button>
+<button class="scopepill" id="scope_professional" onclick="setScope('work')">Work</button>
+</div>
+</header>
 <input id="gsearch" placeholder="Search everything…" oninput="globalSearch(this.value)">
 
 <main id="content"></main>
