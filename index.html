@@ -53,7 +53,7 @@ nav.tabs{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.85)
 nav.tabs button{position:relative;flex:1;background:none;border:none;color:var(--apple-text-tertiary);font-size:10px;padding:8px 0 9px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;transition:color .2s ease}
 nav.tabs button .ic{font-size:20px}
 nav.tabs button.active{color:var(--apple-link-blue)}
-.nbadge{position:absolute;top:2px;right:calc(50% - 26px);background:var(--red);color:#fff;font-size:10px;font-weight:700;border-radius:980px;padding:1px 5px}
+.nbadge{position:absolute;top:0;left:calc(50% + 4px);background:var(--red);color:#fff;font-size:10px;font-weight:700;border-radius:980px;padding:1px 5px;min-width:16px;text-align:center;z-index:5}
 .modal-bg{position:fixed;inset:0;background:rgba(29,29,31,.4);backdrop-filter:blur(4px);z-index:100;display:none;align-items:flex-end;justify-content:center}
 .modal-bg.open{display:flex}
 .modal{background:var(--apple-bg-white);width:100%;max-width:540px;border-radius:20px 20px 0 0;max-height:88vh;overflow-y:auto;padding:22px 22px calc(30px + env(safe-area-inset-bottom));box-shadow:var(--apple-shadow-modal)}
@@ -469,9 +469,12 @@ function showMeeting(id){detail={kind:'meeting',id};const m=M(id);if(!m)return;c
  h+='<div class="seclabel">Prep / suggested tasks</div>';
  (m.suggested||[]).forEach((s,i)=>h+='<div class="taskrow" style="padding:8px"><div class="chk'+(s.done?' on':'')+'" onclick="togPrep(\''+id+'\','+i+')">✔</div><div class="t '+(s.done?'done':'')+'">'+esc(s.text)+'</div></div>');
  h+='<div class="btnrow"><button class="btn ghost" onclick="addPrep(\''+id+'\')">+ Prep item</button></div>';
- h+='<div class="seclabel">Documents ('+docs.length+')</div>';
- (docs.length?docs:[]).forEach(d=>h+='<div class="card" style="cursor:default"><h3>'+esc(d.name)+'</h3><div class="sub">'+d.type.toUpperCase()+(d.urlOrPath?' · <a style="color:var(--accent)" href="'+esc(d.urlOrPath)+'" target="_blank">open</a>':'')+'</div></div>');
- if(!docs.length)h+='<div class="empty" style="padding:8px">No files linked. Add them via Library → +.</div>';
+ let rel=docs;
+ if(!rel.length){rel=db.items.filter(i=>matchesScope(i)).slice(0,3)}
+ h+='<div class="seclabel">Documents ('+rel.length+')</div>';
+ (rel.length?rel:[]).forEach(d=>h+='<div class="card" style="cursor:default" onclick=\'openDoc("'+d.id+'")\'><h3>'+((d.urlOrPath)?'':'🔒 ')+({pdf:'📕',doc:'📘',sheet:'📗',note:'📝',link:'🔗'}[d.type]||'📄')+' '+esc(d.name)+'</h3><div class="sub">'+d.type.toUpperCase()+(d.urlOrPath?' · tap to open':'')+'</div></div>');
+ if(docs.length&&docs.length!==rel.length)h+='<div class="sub" style="margin-top:4px">Showing suggested files — link them permanently via Library.</div>';
+ if(!rel.length)h+='<div class="empty" style="padding:8px">No files linked. Add them via Library → +.</div>';
  h+='</div><button class="del" style="float:none;margin-top:8px" onclick="delItem(\'meetings\',\''+m.id+'\')">Delete meeting</button>';
  $('content').innerHTML=h;window.scrollTo(0,0)}
 function togPrep(mid,i){const m=M(mid);m.suggested[i].done=!m.suggested[i].done;if(m.suggested[i].done)jadd('Prep done: '+m.suggested[i].text+' ('+m.title+')');save()}
@@ -497,9 +500,12 @@ function showPerson(id){detail={kind:'person',id};const p=P(id);if(!p)return;
  h+='<div class="seclabel">Meetings ('+ms.length+')</div>';
  (ms.length?ms:[]).forEach(m=>h+='<div class="card" onclick=\'showMeeting("'+m.id+'")\'><h3>'+esc(m.title)+'</h3><div class="sub">'+fmtDT(m.datetime)+'</div></div>');
  if(!ms.length)h+='<div class="empty" style="padding:8px">No meetings linked.</div>';
- h+='<div class="seclabel">Documents ('+docs.length+')</div>';
- (docs.length?docs:[]).forEach(d=>h+='<div class="card" style="cursor:default"><h3>'+esc(d.name)+'</h3><div class="sub">'+d.type.toUpperCase()+'</div></div>');
- if(!docs.length)h+='<div class="empty" style="padding:8px">No documents linked.</div>';
+ let prel=docs;
+ if(!prel.length){prel=db.items.filter(i=>matchesScope(i)).slice(0,3)}
+ h+='<div class="seclabel">Documents ('+prel.length+')</div>';
+ (prel.length?prel:[]).forEach(d=>h+='<div class="card" style="cursor:default" onclick=\'openDoc("'+d.id+'")\'><h3>'+((d.urlOrPath)?'':'🔒 ')+({pdf:'📕',doc:'📘',sheet:'📗',note:'📝',link:'🔗'}[d.type]||'📄')+' '+esc(d.name)+'</h3><div class="sub">'+d.type.toUpperCase()+(d.urlOrPath?' · tap to open':'')+'</div></div>');
+ if(docs.length&&docs.length!==prel.length)h+='<div class="sub" style="margin-top:4px">Showing suggested files — link them permanently via Library.</div>';
+ if(!prel.length)h+='<div class="empty" style="padding:8px">No documents linked.</div>';
  h+='</div><button class="del" style="float:none;margin-top:8px" onclick="delItem(\'people\',\''+p.id+'\')">Delete contact</button>';
  $('content').innerHTML=h;window.scrollTo(0,0)}
 
