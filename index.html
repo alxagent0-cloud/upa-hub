@@ -31,7 +31,7 @@ body{background:var(--apple-bg-light-gray);color:var(--apple-text-primary);
  font-family:'SF Pro Display','SF Pro Text','Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
  -webkit-font-smoothing:antialiased;font-size:17px;line-height:1.47;padding-bottom:84px}
 header{position:sticky;top:0;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);z-index:50;padding:10px 16px;border-bottom:1px solid var(--border)}
-header h1{font-size:21px;font-weight:700;letter-spacing:-.02em;color:var(--apple-text-primary);flex:1}
+header h1{font-size:21px;font-weight:700;letter-spacing:-.02em;color:var(--apple-text-primary);flex:1;display:flex;align-items:center;gap:6px}
 .iconbtn{background:none;border:none;color:var(--apple-text-secondary);font-size:19px;cursor:pointer;padding:6px}
 #gsearch{width:calc(100% - 40px);max-width:680px;display:block;margin:14px auto 4px;background:var(--apple-bg-white);border:1px solid var(--border);border-radius:12px;padding:11px 16px;color:var(--apple-text-primary);font-size:16px;outline:none;box-shadow:var(--apple-shadow-card)}
 #gsearch:focus{border-color:var(--apple-link-blue);box-shadow:0 0 0 4px rgba(0,102,204,.12)}
@@ -47,7 +47,7 @@ main{padding:8px 20px;max-width:720px;margin:0 auto}
 .seclabel{color:var(--apple-text-tertiary);font-size:13px;text-transform:none;letter-spacing:-.01em;margin:26px 4px 10px;font-weight:600}
 .fab{position:fixed;right:20px;bottom:150px;width:54px;height:54px;border-radius:var(--apple-radius-pill);background:var(--apple-link-blue);color:#fff;font-size:26px;border:none;cursor:pointer;box-shadow:var(--apple-shadow-hover);z-index:40;transition:transform .2s ease}
 .fab:active{transform:scale(.92)}
-.chatfab{position:fixed;right:20px;bottom:94px;width:54px;height:54px;border-radius:var(--apple-radius-pill);background:var(--green);color:#fff;font-size:22px;border:none;cursor:pointer;box-shadow:var(--apple-shadow-hover);z-index:40;transition:transform .2s ease}
+.chatfab{position:fixed;right:20px;bottom:120px;width:54px;height:54px;border-radius:var(--apple-radius-pill);background:var(--green);color:#fff;font-size:22px;border:none;cursor:pointer;box-shadow:var(--apple-shadow-hover);z-index:40;transition:transform .2s ease}
 .chatfab:active{transform:scale(.92)}
 nav.tabs{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-top:1px solid var(--border);display:flex;z-index:60;padding-bottom:env(safe-area-inset-bottom)}
 nav.tabs button{position:relative;flex:1;background:none;border:none;color:var(--apple-text-tertiary);font-size:10px;padding:8px 0 9px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;transition:color .2s ease}
@@ -118,16 +118,16 @@ nav.tabs button.active{color:var(--apple-link-blue)}
 </style>
 </head>
 <body>
-<header><h1>⌘ UPA Hub <span id="verbadge" style="font-size:11px;color:var(--apple-text-tertiary);font-weight:500"></span></h1><button class="iconbtn" onclick="openSettings()">⚙</button></header>
+<header style="display:flex;align-items:center;gap:10px"><h1 style="flex:1">⌘ UPA Hub <span id="verbadge" style="font-size:11px;color:var(--apple-text-tertiary);font-weight:500"></span></h1><button class="iconbtn" onclick="openSettings()" style="margin-left:auto">⚙</button>
+<div class="scopebar" style="margin:0;max-width:none;flex:2;justify-content:flex-end;gap:6px">
+<button class="scopepill on" id="scope_all" onclick="setScope('')" style="padding:6px 0;max-width:74px;font-size:13px">All</button>
+<button class="scopepill" id="scope_personal" onclick="setScope('personal')" style="padding:6px 0;max-width:96px;font-size:13px">Personal</button>
+<button class="scopepill" id="scope_professional" onclick="setScope('work')" style="padding:6px 0;max-width:80px;font-size:13px">Work</button>
+</div></header>
 <input id="gsearch" placeholder="Search everything…" oninput="globalSearch(this.value)">
-<div class="scopebar">
-<button class="scopepill on" id="scope_all" onclick="setScope('')">All</button>
-<button class="scopepill" id="scope_personal" onclick="setScope('personal')">Personal</button>
-<button class="scopepill" id="scope_professional" onclick="setScope('work')">Work</button>
-</div>
+
 <main id="content"></main>
 <button class="chatfab" title="Chat with your assistant">💬</button>
-<button class="fab" onclick="fabAdd()">+</button>
 <div class="chatfs" id="chatfs">
  <div class="chathead"><button class="iconbtn" onclick="closeChat()">←</button><b style="flex:1">💬 Your Assistant</b><span class="sub" style="font-size:11px" id="chatstat"></span></div>
  <div id="chatlog"></div>
@@ -368,11 +368,11 @@ function rToday(){
  const doneToday=db.tasks.filter(t=>t.done&&t.date===todayStr()&&matchesScope(t)).length;
  let h='<div class="statgrid">'+
  '<div class="stat"><div class="n">'+due.length+'</div><div class="l">Tasks due</div></div>'+
- '<div class="stat"><div class="n">'+todaysM.length+'</div><div class="l">Meetings today</div></div>'+
+ '<div class="stat"><div class="n">'+todaysM.length+'</div><div class="l">Events</div></div>'+
  '<div class="stat"><div class="n">'+doneToday+'</div><div class="l">Done today</div></div></div>';
  if(next.length){const m=next[0],p=P(m.personId);
-  h+='<div class="seclabel">Next meeting</div><div class="nextmeet" onclick=\'showMeeting("'+m.id+'")\'><h3>'+esc(m.title)+'</h3><div class="sub">'+fmtDT(m.datetime)+(p?' · with '+esc(p.name):'')+'</div>'+(m.mapsUrl?'<a class="maplink" href="'+esc(m.mapsUrl)+'" target="_blank" onclick="event.stopPropagation()">📍 Open in Maps</a>':'')+'</div>';}
- else h+='<div class="seclabel">Next meeting</div><div class="empty" style="padding:18px">Nothing scheduled 🎉</div>';
+  h+='<div class="seclabel">Schedule</div><div class="nextmeet" onclick=\'showMeeting("'+m.id+'")\'><h3>'+esc(m.title)+'</h3><div class="sub">'+fmtDT(m.datetime)+(p?' · with '+esc(p.name):'')+'</div>'+(m.mapsUrl?'<a class="maplink" href="'+esc(m.mapsUrl)+'" target="_blank" onclick="event.stopPropagation()">📍 Open in Maps</a>':'')+'</div>';}
+ else h+='<div class="seclabel">Schedule</div><div class="empty" style="padding:18px">Nothing scheduled 🎉</div>';
  h+='<div class="seclabel">Due / overdue tasks</div>';
  if(!due.length)h+='<div class="empty" style="padding:14px">Inbox zero on tasks ✅</div>';
  due.slice(0,6).forEach(t=>h+=taskRow(t));
