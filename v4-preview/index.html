@@ -7,48 +7,48 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>UPA Hub v4</title>
+<title>UPA Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
- --apple-bg-white:#FFFFFF;--apple-bg-light-gray:#F5F5F7;--apple-bg-elevated:#FBFBFD;--apple-bg-dark:#1D1D1F;
- --apple-text-primary:#1D1D1F;--apple-text-secondary:#6E6E73;--apple-text-tertiary:#86868B;
- --apple-link-blue:#0066CC;--apple-link-blue-hover:#0077ED;
- --green:#2D8C3C;--red:#E30000;--yellow:#B25000;--personal-blue:#007AFF;--professional-purple:#5E5CE6;
- --apple-radius-card:18px;--apple-radius-card-sm:12px;--apple-radius-pill:980px;
- --apple-shadow-card:0 2px 8px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.06);
- --apple-shadow-hover:0 4px 12px rgba(0,0,0,.06),0 12px 32px rgba(0,0,0,.10);
- --apple-shadow-modal:0 8px 20px rgba(0,0,0,.08),0 20px 60px rgba(0,0,0,.16);
- --bg:var(--apple-bg-light-gray);--card:var(--apple-bg-white);--card2:var(--apple-bg-elevated);
- --border:rgba(0,0,0,.08);--text:var(--apple-text-primary);--muted:var(--apple-text-secondary);
- --accent:var(--apple-link-blue);
+  --apple-bg-white:#FFFFFF;--apple-bg-light-gray:#F5F5F7;--apple-bg-elevated:#FBFBFD;--apple-bg-dark:#1D1D1F;
+  --apple-text-primary:#1D1D1F;--apple-text-secondary:#6E6E73;--apple-text-tertiary:#86868B;
+  --apple-link-blue:#0066CC;--apple-link-blue-hover:#0077ED;
+  --green:#2D8C3C;--red:#E30000;--yellow:#B25000;
+  --apple-radius-card:18px;--apple-radius-card-sm:12px;--apple-radius-pill:980px;
+  --apple-shadow-card:0 2px 8px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.06);
+  --apple-shadow-hover:0 4px 12px rgba(0,0,0,.06),0 12px 32px rgba(0,0,0,.10);
+  --apple-shadow-modal:0 8px 20px rgba(0,0,0,.08),0 20px 60px rgba(0,0,0,.16);
+  /* legacy aliases used by app logic */
+  --bg:var(--apple-bg-light-gray);--card:var(--apple-bg-white);--card2:var(--apple-bg-elevated);
+  --border:rgba(0,0,0,.08);--text:var(--apple-text-primary);--muted:var(--apple-text-secondary);
+  --accent:var(--apple-link-blue);
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{background:var(--apple-bg-light-gray)}
 body{background:var(--apple-bg-light-gray);color:var(--apple-text-primary);
- font-family:'SF Pro Display','SF Pro Text','Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
- -webkit-font-smoothing:antialiased;font-size:17px;line-height:1.47;padding-bottom:84px}
+  font-family:'SF Pro Display','SF Pro Text','Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;font-size:17px;line-height:1.47;padding-bottom:84px}
 header{position:sticky;top:0;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);z-index:50;padding:14px 20px;border-bottom:1px solid var(--border)}
 header h1{font-size:21px;font-weight:700;letter-spacing:-.02em;color:var(--apple-text-primary);flex:1}
 .iconbtn{background:none;border:none;color:var(--apple-text-secondary);font-size:19px;cursor:pointer;padding:6px}
-#gsearch{width:calc(100% - 40px);max-width:680px;display:block;margin:14px auto 4px;background:var(--apple-bg-white);border:1px solid var(--border);border-radius:12px;padding:11px 16px;color:var(--apple-text-primary);font-size:16px;outline:none;box-shadow:var(--apple-shadow-card);transition:border-color .25s ease,box-shadow .25s ease}
+#gsearch{width:calc(100% - 40px);max-width:680px;display:block;margin:14px auto 4px;background:var(--apple-bg-white);border:1px solid var(--border);border-radius:12px;padding:11px 16px;color:var(--apple-text-primary);font-size:16px;outline:none;box-shadow:var(--apple-shadow-card)}
 #gsearch:focus{border-color:var(--apple-link-blue);box-shadow:0 0 0 4px rgba(0,102,204,.12)}
-.scope-pills{display:flex;gap:8px;justify-content:center;margin:10px auto 4px;max-width:680px;padding:0 20px}
-.scope-pill{background:var(--apple-bg-white);border:1.5px solid var(--border);color:var(--muted);border-radius:var(--apple-radius-pill);padding:8px 20px;font-size:14px;cursor:pointer;white-space:nowrap;font-weight:500;transition:all .25s ease;flex:1;text-align:center;max-width:160px}
-.scope-pill.on{border-color:var(--apple-link-blue);color:var(--apple-link-blue);background:rgba(0,102,204,.06);transform:scale(1.02)}
-main{padding:8px 20px 20px;max-width:720px;margin:0 auto}
+main{padding:8px 20px;max-width:720px;margin:0 auto}
 .page{display:none}.page.active{display:block}
 .card{background:var(--apple-bg-white);border:none;border-radius:var(--apple-radius-card);padding:18px;margin-bottom:12px;cursor:pointer;box-shadow:var(--apple-shadow-card);transition:transform .25s ease,box-shadow .25s ease}
 .card:hover{transform:translateY(-2px);box-shadow:var(--apple-shadow-hover)}
-.card:active{transform:scale(.97)}
+.card:active{transform:scale(.98)}
 .card h3{font-size:17px;font-weight:600;letter-spacing:-.01em;margin-bottom:3px}
 .sub{color:var(--muted);font-size:14px;line-height:1.5}
 .badge{display:inline-block;background:var(--apple-bg-elevated);border:1px solid var(--border);color:var(--apple-link-blue);font-size:12px;border-radius:var(--apple-radius-pill);padding:3px 11px;margin:6px 5px 0 0;font-weight:500}
 .badge.up{color:var(--green)}.badge.past{color:var(--apple-text-tertiary)}.badge.warn{color:var(--yellow)}.badge.red{color:var(--red)}
-.badge.personal{background:rgba(0,122,255,.1);border-color:var(--personal-blue);color:var(--personal-blue)}
-.badge.professional{background:rgba(94,92,230,.1);border-color:var(--professional-purple);color:var(--professional-purple)}
+.badge.personal{background:rgba(0,102,204,.12);color:var(--apple-link-blue)} /* Blue for personal */
+.badge.professional{background:rgba(75,0,130,.12);color:#9400D3} /* Purple for professional */
 .seclabel{color:var(--apple-text-tertiary);font-size:13px;text-transform:none;letter-spacing:-.01em;margin:26px 4px 10px;font-weight:600}
+.drive-card{background:var(--apple-bg-elevated);border:1px solid var(--border);border-radius:var(--apple-radius-card-sm);padding:12px;margin:8px 0;display:flex;align-items:center;gap:8px}
+.drive-card a{text-decoration:none;font-weight:500}
 .fab{position:fixed;right:20px;bottom:150px;width:54px;height:54px;border-radius:var(--apple-radius-pill);background:var(--apple-link-blue);color:#fff;font-size:26px;border:none;cursor:pointer;box-shadow:var(--apple-shadow-hover);z-index:40;transition:transform .2s ease}
 .fab:active{transform:scale(.92)}
 .chatfab{position:fixed;right:20px;bottom:94px;width:54px;height:54px;border-radius:var(--apple-radius-pill);background:var(--green);color:#fff;font-size:22px;border:none;cursor:pointer;box-shadow:var(--apple-shadow-hover);z-index:40;transition:transform .2s ease}
@@ -61,27 +61,25 @@ nav.tabs button.active{color:var(--apple-link-blue)}
 .modal-bg.open{display:flex}
 .modal{background:var(--apple-bg-white);width:100%;max-width:540px;border-radius:20px 20px 0 0;max-height:88vh;overflow-y:auto;padding:22px 22px calc(30px + env(safe-area-inset-bottom));box-shadow:var(--apple-shadow-modal)}
 .modal h2{font-size:20px;margin-bottom:14px;letter-spacing:-.02em;font-weight:700}
-.modal label{display:block;font-size:13px;color:var(--muted);margin:12px 0 5px;font-weight:500}
+.modal label{display:block;font-size:13px:color:var(--muted);margin:12px 0 5px;font-weight:500}
 .modal input,.modal textarea,.modal select{width:100%;background:var(--apple-bg-light-gray);border:1px solid transparent;border-radius:12px;padding:12px;color:var(--apple-text-primary);font-size:16px;outline:none;font-family:inherit;transition:border-color .2s ease}
-.modal input:focus,.modal textarea:focus,.modal select:focus{border-color:var(--apple-link-blue);background:var(--apple-bg-white)}
+.modal input:focus,.modal textarea:focus{border-color:var(--apple-link-blue);background:var(--apple-bg-white)}
 .btnrow{display:flex;gap:10px;margin-top:18px}
 .btn{flex:1;padding:13px;border-radius:var(--apple-radius-pill);border:none;font-size:16px;font-weight:600;cursor:pointer;transition:transform .15s ease,opacity .15s ease}
 .btn:active{transform:scale(.97);opacity:.85}
-.btn.primary{background:var(--apple-link-blue);color:#fff}.btn.green{background:var(--green);color:#fff}
+.btn.primary{background:var(--apple-link-blue);color:#fff}
+.btn.green{background:var(--green);color:#fff}
 .btn.ghost{background:transparent;color:var(--apple-link-blue);border:1.5px solid rgba(0,102,204,.35)}
 .backbtn{background:none;border:none;color:var(--apple-link-blue);font-size:16px;cursor:pointer;padding:6px 0;margin-bottom:8px;font-weight:500}
 .detail h2{font-size:24px;margin-bottom:6px;letter-spacing:-.02em;font-weight:700}
 .kv{display:flex;gap:8px;margin:6px 0;font-size:15px}.kv b{color:var(--muted);font-weight:500;min-width:76px}
-.maplink{display:inline-block;background:var(--apple-bg-elevated);border:1px solid rgba(0,102,204,.35);color:var(--apple-link-blue);border-radius:var(--apple-radius-pill);padding:10px 16px;font-size:14px;text-decoration:none;margin-top:8px;font-weight:500;transition:all .25s ease}
-.maplink:hover{transform:translateY(-1px);box-shadow:var(--apple-shadow-card)}
+.maplink{display:inline-block;background:var(--apple-bg-elevated);border:1px solid rgba(0,102,204,.35);color:var(--apple-link-blue);border-radius:var(--apple-radius-pill);padding:10px 16px;font-size:14px;text-decoration:none;margin-top:8px;font-weight:500}
 .statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}
 .stat{background:var(--apple-bg-white);border:none;border-radius:var(--apple-radius-card);padding:16px 10px;text-align:center;box-shadow:var(--apple-shadow-card)}
 .stat .n{font-size:28px;font-weight:700;letter-spacing:-.03em;color:var(--apple-link-blue)}.stat .l{font-size:12px;color:var(--muted);margin-top:2px}
-.nextmeet{background:linear-gradient(135deg,var(--apple-bg-elevated),#EAF2FC);border:none;border-radius:var(--apple-radius-card);padding:18px;margin-bottom:12px;cursor:pointer;box-shadow:var(--apple-shadow-card);transition:transform .25s ease,box-shadow .25s ease}
-.nextmeet:hover{transform:translateY(-2px);box-shadow:var(--apple-shadow-hover)}
+.nextmeet{background:linear-gradient(135deg,var(--apple-bg-elevated),#EAF2FC);border:none;border-radius:var(--apple-radius-card);padding:18px;margin-bottom:12px;cursor:pointer;box-shadow:var(--apple-shadow-card)}
 .empty{text-align:center;color:var(--apple-text-tertiary);padding:36px 18px;font-size:15px;line-height:1.6}
-.taskrow{display:flex;align-items:flex-start;gap:12px;background:var(--apple-bg-white);border:none;border-radius:var(--apple-radius-card-sm);padding:13px;margin-bottom:9px;box-shadow:var(--apple-shadow-card);transition:transform .25s ease}
-.taskrow:hover{transform:translateY(-1px)}
+.taskrow{display:flex;align-items:flex-start;gap:12px;background:var(--apple-bg-white);border:none;border-radius:var(--apple-radius-card-sm);padding:13px;margin-bottom:9px;box-shadow:var(--apple-shadow-card)}
 .chk{width:22px;height:22px;min-width:22px;border:1.5px solid #C7C7CC;border-radius:50%;cursor:pointer;margin-top:1px;text-align:center;line-height:20px;font-size:12px;color:transparent;transition:all .2s ease}
 .chk.on{background:var(--green);border-color:var(--green);color:#fff}
 .taskrow .t{flex:1}.taskrow .t.done{text-decoration:line-through;color:var(--apple-text-tertiary)}
@@ -90,175 +88,218 @@ nav.tabs button.active{color:var(--apple-link-blue)}
 .foldergrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:12px}
 .fold{background:var(--apple-bg-white);border:none;border-radius:var(--apple-radius-card);padding:16px 8px;text-align:center;cursor:pointer;box-shadow:var(--apple-shadow-card);transition:transform .25s ease,box-shadow .25s ease}
 .fold:hover{transform:translateY(-2px);box-shadow:var(--apple-shadow-hover)}
-.fold:active{transform:scale(.97)}
 .fold .fi{font-size:28px}.fold .fn{font-size:13px;margin-top:6px;color:var(--apple-text-primary);font-weight:500}
-.folder-slider{overflow-x:auto;white-space:nowrap;padding:4px 0 8px;margin-bottom:16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.folder-slider::-webkit-scrollbar{display:none}
-.folder-slider .fold{display:inline-block;vertical-align:top;width:120px;margin-right:12px;white-space:normal}
-.folder-slider .fold:last-child{margin-right:0}
 .je{border-left:3px solid var(--apple-link-blue);padding:8px 14px;margin-bottom:10px;background:var(--apple-bg-white);border-radius:0 14px 14px 0;box-shadow:var(--apple-shadow-card)}
 .je .jt{color:var(--apple-text-tertiary);font-size:12px}
-.del{float:right;background:none;border:none;color:var(--red);font-size:14px;cursor:pointer}
+.del{float:right;background:none;border:none:color:var(--red);font-size:14px;cursor:pointer}
 .chatfs{position:fixed;inset:0;background:var(--apple-bg-light-gray);z-index:200;display:none;flex-direction:column}
 .chatfs.open{display:flex}
-.chathead{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px)}
+.chathead{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px)}
 #chatlog{flex:1;overflow-y:auto;padding:16px 16px 8px;display:flex;flex-direction:column;gap:9px}
 .msg{max-width:86%;padding:11px 15px;border-radius:20px;font-size:16px;line-height:1.45;white-space:pre-wrap;word-wrap:break-word}
 .msg.me{align-self:flex-end;background:var(--apple-link-blue);color:#fff;border-bottom-right-radius:6px}
 .msg.bot{align-self:flex-start;background:var(--apple-bg-white);border:none;border-bottom-left-radius:6px;box-shadow:var(--apple-shadow-card)}
 .msg.sys{align-self:center;background:none;color:var(--apple-text-tertiary);font-size:13px;text-align:center}
-.drive-card{background:var(--apple-bg-elevated);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin:8px 0;display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none;color:var(--text);transition:all .25s ease}
-.drive-card:hover{transform:translateY(-1px);box-shadow:var(--apple-shadow-card)}
-.drive-card .icon{font-size:24px}
-.drive-card .info{flex:1;min-width:0}
-.drive-card .name{font-weight:500;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.drive-card .type{font-size:12px;color:var(--muted)}
-.chatbar{display:flex;gap:9px;padding:12px 14px calc(12px + env(safe-area-inset-bottom));border-top:1px solid var(--border);background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px)}
-#chatin{flex:1;background:var(--apple-bg-white);border:1px solid var(--border);border-radius:var(--apple-radius-pill);padding:12px 18px 12px 42px;color:var(--apple-text-primary);font-size:16px;outline:none}
+.chatbar{display:flex;gap:9px;padding:12px 14px calc(12px + env(safe-area-inset-bottom));border-top:1px solid var(--border);background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(20px)}
+#chatin{flex:1;background:var(--apple-bg-white);border:1px solid var(--border);border-radius:var(--apple-radius-pill);padding:12px 18px;color:var(--apple-text-primary);font-size:16px;outline:none}
 #chatin:focus{border-color:var(--apple-link-blue);box-shadow:0 0 0 4px rgba(0,102,204,.10)}
-.addbtn,.micbtn,.sendbtn{width:48px;height:48px;min-width:48px;border-radius:50%;border:none;font-size:19px;cursor:pointer;color:#fff;transition:transform .15s ease}
-.sendbtn{background:var(--apple-link-blue)}.micbtn{background:var(--apple-bg-white);color:var(--apple-link-blue);border:1.5px solid var(--border)}
-.addbtn{background:var(--apple-bg-white);color:var(--apple-link-blue);border:1.5px solid var(--border);position:absolute;left:20px;bottom:18px;width:32px;height:32px;font-size:16px;z-index:2}
-.micbtn:active,.sendbtn:active,.addbtn:active{transform:scale(.9)}
-.action-sheet{position:fixed;bottom:0;left:0;right:0;background:var(--apple-bg-white);border-radius:20px 20px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom));box-shadow:var(--apple-shadow-modal);z-index:210;transform:translateY(100%);transition:transform .3s ease;display:none}
-.action-sheet.open{transform:translateY(0);display:block}
-.action-sheet-item{background:var(--apple-bg-light-gray);border:none;border-radius:12px;padding:16px;margin-bottom:10px;text-align:left;font-size:16px;font-weight:500;cursor:pointer;width:100%;color:var(--text);transition:all .25s ease}
-.action-sheet-item:active{transform:scale(.97);opacity:.8}
+.micbtn,.sendbtn{width:48px;height:48px;min-width:48px;border-radius:50%;border:none;font-size:19px;cursor:pointer;color:#fff;transition:transform .15s ease}
+.sendbtn{background:var(--apple-link-blue)}
+.micbtn{background:var(--apple-bg-white);color:var(--apple-link-blue);border:1.5px solid var(--border)}
+.micbtn:active,.sendbtn:active{transform:scale(.9)}
+.pairbox{padding:0 28px}
+.pairbox input{width:100%;background:var(--apple-bg-white);border:1px solid var(--border);border-radius:12px;padding:14px;color:var(--apple-text-primary);font-size:16px}
 .filters{display:flex;gap:8px;margin:10px 0;overflow-x:auto}
 .chip{background:var(--apple-bg-white);border:1px solid var(--border);color:var(--muted);border-radius:var(--apple-radius-pill);padding:6px 15px;font-size:13px;cursor:pointer;white-space:nowrap;font-weight:500;transition:all .2s ease}
 .chip.on{border-color:var(--apple-link-blue);color:var(--apple-link-blue);background:rgba(0,102,204,.06)}
-@media(min-width:700px){main{padding:8px 24px 20px}}
+.action-sheet{position:fixed;bottom:0;left:0;right:0;background:var(--apple-bg-white);border-top-left-radius:20px;border-top-right-radius:20px;box-shadow:var(--apple-shadow-modal);z-index:210;display:none;padding:16px 20px}
+.action-sheet.open{display:block}
+.action-sheet button{width:100%;padding:12px;border:none;border-radius:12px;font-size:16px;font-weight:600;margin-bottom:10px;cursor:pointer}
+.action-sheet button.primary{background:var(--apple-link-blue);color:#fff}
+.action-sheet button.ghost{background:transparent;color:var(--apple-link-blue);border:1.5px solid rgba(0,102,204,.35)}
+.doc-card{background:var(--apple-bg-white);border:none;border-radius:var(--apple-radius-card);padding:16px;margin-bottom:12px;cursor:pointer;box-shadow:var(--apple-shadow-card);transition:transform .25s ease,box-shadow .25s ease;display:flex;flex-direction:column;gap:8px}
+.doc-card:hover{transform:translateY(-2px);box-shadow:var(--apple-shadow-hover)}
+.doc-card:active{transform:scale(.98)}
+.doc-card h3{font-size:17px;font-weight:600;letter-spacing:-.01em;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.doc-card .sub{color:var(--muted);font-size:14px;line-height:1.4}
+.folder-slider{display:flex;overflow-x:auto;padding:16px 0;gap:12px;scrollbar-width:none}
+.folder-slider::-webkit-scrollbar{display:none}
+.folder-card{flex:0 0 auto;width:140px;height:100px;background:var(--apple-bg-white);border:none;border-radius:var(--apple-radius-card);padding:16px;cursor:pointer;box-shadow:var(--apple-shadow-card);transition:transform .25s ease,box-shadow .25s ease;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.folder-card:hover{transform:translateY(-2px);box-shadow:var(--apple-shadow-hover)}
+.folder-card:active{transform:scale(.97)}
+.folder-card .fi{font-size:32px;margin-bottom:8px}
+.folder-card .fn{font-size:14px;font-weight:600;color:var(--apple-text-primary);text-align:center}
+.folder-card .count{font-size:12px;color:var(--apple-text-tertiary);margin-top:4px}
+@media(min-width:700px){main{padding:8px 24px}}
 </style>
 </head>
 <body>
-<header>
- <h1>⌘ UPA Hub <span id="verbadge" style="font-size:11px;color:var(--apple-text-tertiary);font-weight:500"></span></h1>
- <button class="iconbtn" onclick="openSettings()">⚙</button>
-</header>
+<header><h1>⌘ UPA Hub <span id="verbadge" style="font-size:11px;color:var(--apple-text-tertiary);font-weight:500"></span></h1><button class="iconbtn" onclick="openSettings()">⚙</button></header>
 <input id="gsearch" placeholder="Search everything…" oninput="globalSearch(this.value)">
-<div class="scope-pills">
- <button class="scope-pill on" data-scope="all" onclick="setScope('all')">All</button>
- <button class="scope-pill" data-scope="personal" onclick="setScope('personal')">Personal</button>
- <button class="scope-pill" data-scope="professional" onclick="setScope('professional')">Professional</button>
-</div>
 <main id="content"></main>
 <button class="chatfab" title="Chat with your assistant">💬</button>
 <button class="fab" onclick="fabAdd()">+</button>
+
+<!-- Chat Fullscreen -->
 <div class="chatfs" id="chatfs">
- <div class="chathead">
-  <button class="iconbtn" onclick="closeChat()">←</button>
-  <b style="flex:1">💬 Your Assistant</b>
-  <span class="sub" style="font-size:11px" id="chatstat"></span>
- </div>
- <div id="chatlog"></div>
- <div class="chatbar" style="position:relative">
-  <button class="addbtn" onclick="openChatActions()">+</button>
-  <input id="chatin" placeholder="Ask anything…" autocomplete="off" onkeydown="if(event.key==='Enter')sendChat()">
-  <button class="micbtn" id="micbtn" onclick="toggleMic()" title="Voice message">🎤</button>
-  <button class="sendbtn" onclick="sendChat()">➤</button>
- </div>
+  <div class="chathead"><button class="iconbtn" onclick="closeChat()">←</button><b style="flex:1">💬 Your Assistant</b><span class="sub" style="font-size:11px" id="chatstat"></span></div>
+  <div id="chatlog"></div>
+  <div class="chatbar">
+    <input id="chatin" placeholder="Ask anything… e.g. what do I have today?" autocomplete="off" onkeydown="if(event.key==='Enter')sendChat()">
+    <button class="micbtn" id="micbtn" onclick="toggleMic()" title="Voice message">🎤</button>
+    <button class="sendbtn" onclick="sendChat()">➤</button>
+  </div>
 </div>
-<div class="action-sheet" id="chatactions" onclick="if(event.target===this)closeChatActions()">
- <h2 style="margin-bottom:14px;font-size:18px">Quick Add</h2>
- <button class="action-sheet-item" onclick="closeChatActions();quickAddTask()">✅ Add Task</button>
- <button class="action-sheet-item" onclick="closeChatActions();quickAddEvent()">📅 Add Event</button>
- <button class="action-sheet-item" onclick="closeChatActions();quickAddFile()">📎 Add File Link</button>
- <button class="action-sheet-item" onclick="closeChatActions()" style="color:var(--red);margin-top:8px">Cancel</button>
+
+<!-- Action Sheet for Chat + Button -->
+<div class="action-sheet" id="actionsheet">
+  <button class="btn primary" onclick="showAddTaskForm()">[Add Task]</button>
+  <button class="btn primary" onclick="showAddEventForm()">[Add Event]</button>
+  <button class="btn primary" onclick="showAddFileLinkForm()">[Add File link]</button>
+  <button class="btn ghost" onclick="closeActionSheet()">Cancel</button>
 </div>
+
+<!-- Tabs Navigation -->
 <nav class="tabs">
-<button data-t="today" class="active" onclick="go('today')"><span class="ic">☀️</span>Today</button>
-<button data-t="events" onclick="go('events')"><span class="ic">📅</span>Events</button>
-<button data-t="tasks" onclick="go('tasks')"><span class="ic">✅</span>Tasks</button>
-<button data-t="people" onclick="go('people')"><span class="ic">👤</span>People</button>
-<button data-t="library" onclick="go('library')"><span class="ic">📚</span>Library</button>
+  <button data-t="today" class="active" onclick="go('today')"><span class="ic">☀️</span>Today</button>
+  <button data-t="tasks" onclick="go('tasks')"><span class="ic">✅</span>Tasks</button>
+  <button data-t="events" onclick="go('events')"><span class="ic">📅</span>Events</button>
+  <button data-t="people" onclick="go('people')"><span class="ic">👤</span>People</button>
+  <button data-t="library" onclick="go('library')"><span class="ic">📚</span>Library</button>
 </nav>
+
+<!-- Scope Filter Pills -->
+<div id="scopefilter" style="position:sticky;top:56px;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);z-index:55;padding:8px 20px;border-bottom:1px solid var(--border);display:flex;gap:8px;justify-content:center;">
+  <span class="chip" onclick="setScope('all')" id="scope-all">[All]</span>
+  <span class="chip" onclick="setScope('personal')" id="scope-personal">[Personal]</span>
+  <span class="chip" onclick="setScope('professional')" id="scope-professional">[Professional]</span>
+</div>
+
+<!-- Modal Background and Container -->
 <div class="modal-bg" id="mbg" onclick="if(event.target===this)closeModal()"><div class="modal" id="mbox"></div></div>
+
 <script>
 const KEY='upa_data_v2',CFG='upa_cfg';
 let db=load(),cfg=loadCfg();
-let currentScope=localStorage.getItem('upa_scope')||'all';
+let currentScope = loadScope() || 'all'; // personal/professional/all
 
 function loadCfg(){try{const c=JSON.parse(localStorage.getItem(CFG));return Object.assign({telegram:'https://t.me/Agentalx_bot'},c||{})}catch(e){return{telegram:'https://t.me/Agentalx_bot'}}}
 function saveCfg(){localStorage.setItem(CFG,JSON.stringify(cfg))}
 function load(){try{const d=JSON.parse(localStorage.getItem(KEY));if(d&&d.people)return d}catch(e){}
- return {people:[{id:'p1',name:'Sami Kaddoum',role:'Owner',phone:'+33 7 76 46 43 49',email:'samikaddoum@gmail.com',notes:'Based in Saint-Étienne, France.',tags:['owner'],gcontact:'synced',scope:''}],
- meetings:[{id:'m1',title:'Meeting — Sami Kaddoum',datetime:'2026-08-24T09:00',personId:'p1',location:'11 Rue Neyron, Saint-Étienne',mapsUrl:'https://www.google.com/maps/search/?api=1&query=11+Rue+Neyron+42000+Saint-%C3%89tienne',agenda:'Confirmed by email. Prepared by your UPA.',status:'upcoming',suggested:[{text:'Prepare agenda doc',done:true},{text:'Send confirmation email',done:true},{text:'Review linked documents',done:true}],notes:'Also in Google Calendar.',scope:''},
- {id:'m2',title:'Tasheel Call — Strategy Review',datetime:'2026-08-25T14:00',personId:'',location:'',mapsUrl:'',agenda:'Discuss Q4 strategy',status:'upcoming',suggested:[],notes:'Professional call',scope:'professional'}],
- projects:[{id:'pr1',title:'UPA Toolkit',status:'active',log:[{ts:'2026-08-23 17:40',text:'Hub v3 shipped: real in-app chat, library fix, automatic Google sync'}],scope:'professional'},{id:'pr2',title:'Real Estate Automation Tool',status:'planned',scope:'professional'},{id:'pr3',title:'Personal Finance Dashboard',status:'active',log:[],scope:'personal'}],
- tasks:[{id:'k1',text:'Connect Google full access',done:true,date:'2026-08-23',priority:'high',projectId:'pr1',subtasks:[{text:'Calendar + Gmail',done:true},{text:'Contacts + Drive',done:true}],log:[{ts:'2026-08-23 09:30',text:'All scopes authorized and verified'}],scope:'professional'},
- {id:'k2',text:'Stable chat connection for UPA Hub',done:false,date:'2026-08-25',priority:'normal',projectId:'pr1',subtasks:[],log:[],scope:'professional'},
- {id:'k3',text:'Buy groceries for weekend',done:false,date:'2026-08-24',priority:'normal',projectId:'',subtasks:[],log:[],scope:'personal'},
- {id:'k4',text:'Prepare AI Adaptation Agency pitch deck',done:false,date:'2026-08-26',priority:'high',projectId:'',subtasks:[],log:[],scope:'professional'}],
- folders:[{id:'f1',name:'All Files',icon:'🗂️',scope:''},{id:'f2',name:'Sami Kaddoum',icon:'👤',scope:''},{id:'f3',name:'UPA Project',icon:'🚀',scope:'professional'},{id:'f4',name:'AI Adaptation Agency',icon:'🤖',scope:'professional'},{id:'f5',name:'Real Estate Tool',icon:'🏠',scope:'professional'}],
- items:[{id:'i1',name:'UPA Authentication Blueprint',type:'pdf',urlOrPath:'https://drive.google.com/file/d/1HlJrK5hbSrtGBELwFLVRt-sy2yPtL9PY/view',folderId:'f3',personId:'p1',meetingId:'',addedDate:'2026-08-23',scope:'professional'},
- {id:'i2',name:'GitHub Guide',type:'pdf',urlOrPath:'https://drive.google.com/file/d/1Kg2cvgmCK4Ysx2NRCvbDlyIh_4f__xn0/view',folderId:'f3',personId:'',meetingId:'',addedDate:'2026-08-23',scope:'professional'},
- {id:'i3',name:'Daily Report 2026-08-23',type:'pdf',urlOrPath:'https://drive.google.com/file/d/1xzoZQPD0WbKxSUf4vE5tIXs7lknPgvNm/view',folderId:'f3',personId:'',meetingId:'',addedDate:'2026-08-23',scope:'professional'},
- {id:'i4',name:'Agency Proposal Template',type:'doc',urlOrPath:'https://drive.google.com/file/d/1abc/view',folderId:'f4',personId:'',meetingId:'',addedDate:'2026-08-23',scope:'professional'},
- {id:'i5',name:'Vacation Photos',type:'link',urlOrPath:'',folderId:'f2',personId:'',meetingId:'',addedDate:'2026-08-20',scope:'personal'}],
- journal:[{date:'2026-08-23',entries:[{ts:'09:30',text:'Google ecosystem connected: Calendar, Gmail, Contacts, Drive'},{ts:'11:20',text:'UPA Hub v3: real in-app chat, library fix, automatic Google sync'}]},{date:'2026-08-24',entries:[]}],
- chatSeed:true};}
+  return {people:[{id:'p1',name:'Sami Kaddoum',role:'Owner',phone:'+33 7 76 46 43 49',email:'samikaddoum@gmail.com',notes:'Based in Saint-Étienne, France.',tags:['owner'],gcontact:'synced',scope:'both'}],
+  meetings:[{id:'m1',title:'Meeting — Sami Kaddoum',datetime:'2026-08-24T09:00',personId:'p1',location:'11 Rue Neyron, Saint-Étienne',mapsUrl:'https://www.google.com/maps/search/?api=1&query=11+Rue+Neyron+42000+Saint-%C3%89tienne',agenda:'Confirmed by email. Prepared by your UPA.',status:'upcoming',suggested:[{text:'Prepare agenda doc',done:true},{text:'Send confirmation email',done:true},{text:'Review linked documents',done:true}],notes:'Also in Google Calendar.',scope:'professional'}],
+  projects:[
+    {id:'pr1',title:'UPA Toolkit',status:'active',progress:70,
+     desc:'Universal Personal Assistant running on Hermes Agent. Manages calendar, email, contacts, files, and delivers daily briefs via Telegram. Live at alxagent0-cloud.github.io/upa-hub',
+     nextSteps:['Stabilize chat connection','File attachments from Drive in chat','Daily Morning Brief automation','Voice message transcription'],
+     log:[
+       {ts:'2026-08-20 09:15',text:'Google ecosystem connected: Calendar, Gmail, Contacts, Drive'},
+       {ts:'2026-08-21 14:30',text:'Hub v3 shipped: real in-app chat'},
+       {ts:'2026-08-22 11:20',text:'Library fixed: files open real Drive links'},
+       {ts:'2026-08-22 16:45',text:'Apple design system applied'},
+       {ts:'2026-08-23 18:00',text:'Auto-sync Google→Hub pipeline live'}
+     ],scope:'professional'},
+    {id:'pr2',title:'AI Adaptation Agency',status:'active',progress:15,
+     desc:'Agency helping businesses adapt to AI. Products: UPA + ImmobilIA. Based in Saint-Étienne, France. Market research complete; website copy written.',
+     nextSteps:['Sam decides legal path (micro → SASU)','Pick agency name direction','Confirm target segment priority','List 10 warm-intro businesses','Agent builds portfolio demos 1-3','Website build with finalized copy'],
+     log:[
+       {ts:'2026-08-20 08:00',text:'Market research completed: 47% SME AI adoption vs 11% deployed'},
+       {ts:'2026-08-20 10:30',text:'4 fixed-price packages defined (EUR 1,490 audit to EUR 25K program)'},
+       {ts:'2026-08-21 09:15',text:'Legal path chosen: micro-entrepreneur now, SASU at EUR 60-70K'},
+       {ts:'2026-08-21 15:45',text:'20 AI use cases catalogued for portfolio'},
+       {ts:'2026-08-22 11:00',text:'Complete French website copy drafted'},
+       {ts:'2026-08-22 16:30',text:'LinkedIn playbook + first 3 posts drafted'}
+     ],scope:'professional',
+     folderId:'f3'}, // Will be created below
+    {id:'pr3',title:'Real Estate Automation Tool (ImmobilIA)',status:'planned',progress:5,
+     desc:'AI product for real estate agencies: listing generation, lead-to-viewing pipeline, tenant communication automation, market reports. Kick-off after UPA Toolkit hits 90%.',
+     nextSteps:['Define first workflow: listing intake then Drive then client email','Interview 2 real estate agencies for requirements','Prototype listing generator'],
+     log:[{ts:'2026-08-23 18:00',text:'Project scoped; awaiting UPA Toolkit 90% milestone'}],
+     scope:'professional',
+     folderId:'f4'} // Will be created below
+  ],
+  tasks:[
+    {id:'k1',text:'Connect Google full access',done:true,date:'2026-08-23',priority:'high',projectId:'pr1',subtasks:[{text:'Calendar + Gmail',done:true},{text:'Contacts + Drive',done:true}],log:[{ts:'2026-08-23 09:30',text:'All scopes authorized and verified'}],scope:'professional'},
+    {id:'k2',text:'Review AI Agency Master Plan and mark priorities',done:false,date:'2026-08-25',priority:'high',projectId:'pr2',subtasks:[],log:[],scope:'professional'},
+    {id:'k3',text:'Choose legal structure (micro vs SASU)',done:false,date:'2026-08-26',priority:'normal',projectId:'pr2',subtasks:[],log:[],scope:'professional'},
+    {id:'k4',text:'Validate service packages and pricing',done:false,date:'2026-08-27',priority:'normal',projectId:'pr2',subtasks:[],log:[],scope:'professional'},
+    {id:'k5',text:'Pick agency name + check domains',done:false,date:'2026-08-27',priority:'normal',projectId:'pr2',subtasks:[],log:[],scope:'professional'},
+    {id:'k6',text:'Call Tasheel (Saudi bank) — refund follow-up',done:true,date:'2026-08-20',priority:'normal',projectId:'',subtasks:[],log:[],scope:'professional'},
+
+  ],
+  folders:[
+    {id:'f1',name:'Sami Kaddoum',icon:'👤',scope:'personal'},
+    {id:'f2',name:'UPA Project',icon:'🚀',scope:'professional'},
+    {id:'f3',name:'AI Adaptation Agency',icon:'💼',scope:'professional'},
+    {id:'f4',name:'Real Estate Tool',icon:'🏠',scope:'professional'}
+  ],
+  items:[
+    {id:'i1',name:'UPA Authentication Blueprint',type:'pdf',urlOrPath:'https://drive.google.com/file/d/1HlJrK5hbSrtGBELwFLVRt-sy2yPtL9PY/view',folderId:'f2',personId:'p1',meetingId:'',addedDate:'2026-08-23',scope:'professional'},
+    {id:'i2',name:'GitHub Guide',type:'pdf',urlOrPath:'https://drive.google.com/file/d/1Kg2cvgmCK4Ysx2NRCvbDlyIh_4f__xn0/view',folderId:'f2',personId:'',meetingId:'',addedDate:'2026-08-23',scope:'professional'},
+    {id:'i3',name:'Daily Report 2026-08-23',type:'pdf',urlOrPath:'https://drive.google.com/file/d/1xzoZQPD0WbKxSUf4vE5tIXs7lknPgvNm/view',folderId:'f2',personId:'',meetingId:'',addedDate:'2026-08-23',scope:'professional'},
+    {id:'i4',name:'AI Agency — Morning Brief & Master Plan',type:'pdf',urlOrPath:'https://drive.google.com/file/d/1lvY24EoizD5KtpPsu1c-8NEvnIGO1vVg/view',folderId:'f3',personId:'',meetingId:'',addedDate:'2026-08-24',scope:'professional'},
+    {id:'i5',name:'AI Agency — Full Research Dossier',type:'doc',urlOrPath:'https://docs.google.com/document/d/1mxLH1q3edUizQdafgWtyzXvGNnJRVH_27SfXZ2eA0tM/edit',folderId:'f3',personId:'',meetingId:'',addedDate:'2026-08-24',scope:'professional'},
+    {id:'i6',name:'AI Agency — Website Copy FR',type:'note',urlOrPath:'https://drive.google.com/file/d/1BPi4fN0IxCt93WQx_jKhV-pbZ5loAJti/view',folderId:'f3',personId:'',meetingId:'',addedDate:'2026-08-24',scope:'professional'}
+  ],
+  journal:[
+    {date:'2026-08-23',entries:[
+      {ts:'09:30',text:'Google ecosystem connected: Calendar, Gmail, Contacts, Drive'},
+      {ts:'11:20',text:'UPA Hub v3: real in-app chat, library fix, automatic Google sync'}
+    ]},
+    {date:'2026-08-24',entries:[
+      {ts:'08:00',text:'AI Adaptation Agency created — full research dossier delivered'},
+      {ts:'09:15',text:'Morning Brief PDF + Google Doc sent to client email'},
+      {ts:'14:30',text:'OpenCode cloud build of Hub v4 attempted via GitHub Actions'}
+    ]}
+  ],
+  chatSeed:true};}
 function save(){localStorage.setItem(KEY,JSON.stringify(db));render()}
-
-/* ===== Scope filter ===== */
-function setScope(s){currentScope=s;localStorage.setItem('upa_scope',s);
- document.querySelectorAll('.scope-pill').forEach(p=>p.classList.toggle('on',p.dataset.scope===s));render()}
-function filterByScope(items){if(currentScope==='all')return items;
- return items.filter(i=>!i.scope||i.scope===currentScope)}
-function scopeBadge(item){if(currentScope!=='all'||!item.scope)return '';
- if(item.scope==='personal')return '<span class="badge personal">P</span>';
- if(item.scope==='professional')return '<span class="badge professional">W</span>';return ''}
-
 /* ===== Google sync: merge hub-sync.json (agent-maintained) into local db ===== */
 let syncMerged=false;
 async function googleSync(){
- if(syncMerged)return;syncMerged=true;
- try{
-  // self-update: watchdog stamps current app version into hub-link.json
-  try{const lr=await fetch('hub-sync.json?ts='+Date.now());const lf=await lr.json();
-   if(lf.apiUrl&&lf.apiUrl!==cfg.apiUrl){cfg.apiUrl=lf.apiUrl;saveCfg()}
+  if(syncMerged)return;syncMerged=true;
+  try{
+    // self-update: watchdog stamps current app version into hub-link.json
+    try{const lr=await fetch('hub-link.json?ts='+Date.now());const lf=await lr.json();
+      if(lf.ver && lf.ver!==APP_VER && !sessionStorage.getItem('upgraded_'+lf.ver)){
+        sessionStorage.setItem('upgraded_'+lf.ver,'1');
+        location.replace(location.pathname+'?fresh='+Date.now());return}
+    }catch(e){}
+    const r=await fetch('hub-sync.json?ts='+Date.now());const g=await r.json();
+    let changed=false;
+    // events: add any Google event not already present (match by title+date)
+    (g.events||[]).forEach(ev=>{
+      const d=(ev.datetime||'').slice(0,16).replace('T','T');
+      const exists=db.meetings.some(m=>m.title===ev.title&&m.datetime.slice(0,10)===(ev.datetime||'').slice(0,10));
+      if(!exists&&ev.title){
+        db.meetings.push({id:uid(),title:ev.title,datetime:(ev.datetime||'').slice(0,16),personId:'',
+          location:ev.location||'',mapsUrl:ev.location?mapsLink(ev.location):'',agenda:'',status:'upcoming',
+          suggested:[],notes:'From Google Calendar',gcalLink:ev.link||''});
+        changed=true}
+    });
+    // projects: add agent-created projects
+    (g.projects||[]).forEach(pr=>{
+      if(!pr.title)return;
+      const exists=db.projects.some(x=>x.title===pr.title);
+      if(!exists){
+        db.projects.push({id:uid(),title:pr.title,status:pr.status||'active',
+          desc:pr.description||'',nextSteps:pr.next_steps||[],log:[{ts:new Date().toISOString().slice(0,16),text:'Project created by agent'}],scope:'both'});
+        changed=true}
+    });
+    // tasks: add agent/google tasks not present
+    (g.tasks||[]).forEach(t=>{
+      if(!t.text)return;
+      const exists=db.tasks.some(x=>x.text===t.text||(t.gtaskId&&x.gtaskId===t.gtaskId));
+      if(!exists){
+        db.tasks.push({id:uid(),text:t.text,done:!!t.done,date:t.date||'',priority:'normal',projectId:'',
+          subtasks:[],log:[],gtaskId:t.gtaskId||'',source:t.source||'google',scope:'both'});
+        changed=true}
+    });
+    if(changed){localStorage.setItem(KEY,JSON.stringify(db));jadd('Synced from Google ecosystem');render()}
   }catch(e){}
-  try{const lr=await fetch('hub-link.json?ts='+Date.now());const lf=await lr.json();
-   if(lf.ver && lf.ver!==APP_VER && !sessionStorage.getItem('upgraded_'+lf.ver)){
-    sessionStorage.setItem('upgraded_'+lf.ver,'1');
-    location.replace(location.pathname+'?fresh='+Date.now());return}
-   if(lf.apiUrl&&lf.apiUrl!==cfg.apiUrl){cfg.apiUrl=lf.apiUrl;saveCfg()}
-  }catch(e){}
-  const r=await fetch('hub-sync.json?ts='+Date.now());const g=await r.json();
-  let changed=false;
-  // events: add any Google event not already present (match by title+date)
-  (g.events||[]).forEach(ev=>{
-   const d=(ev.datetime||'').slice(0,16).replace('T','T');
-   const exists=db.meetings.some(m=>m.title===ev.title&&m.datetime.slice(0,10)===(ev.datetime||'').slice(0,10));
-   if(!exists&&ev.title){
-    db.meetings.push({id:uid(),title:ev.title,datetime:(ev.datetime||'').slice(0,16),personId:'',
-     location:ev.location||'',mapsUrl:ev.location?mapsLink(ev.location):'',agenda:'',status:'upcoming',
-     suggested:[],notes:'From Google Calendar',gcalLink:ev.link||'',scope:''});
-    changed=true}
-  });
-  // projects: add agent-created projects
-  (g.projects||[]).forEach(pr=>{
-   if(!pr.title)return;
-   const exists=db.projects.some(x=>x.title===pr.title);
-   if(!exists){
-    db.projects.push({id:uid(),title:pr.title,status:pr.status||'active',
-     desc:pr.description||'',nextSteps:pr.next_steps||[],log:[{ts:new Date().toISOString().slice(0,16),text:'Project created by agent'}],scope:''});
-    changed=true}
-  });
-  // tasks: add agent/google tasks not present
-  (g.tasks||[]).forEach(t=>{
-   if(!t.text)return;
-   const exists=db.tasks.some(x=>x.text===t.text||(t.gtaskId&&x.gtaskId===t.gtaskId));
-   if(!exists){
-    db.tasks.push({id:uid(),text:t.text,done:!!t.done,date:t.date||'',priority:'normal',projectId:'',
-     subtasks:[],log:[],gtaskId:t.gtaskId||'',source:t.source||'google',scope:''});
-    changed=true}
-  });
-  if(changed){localStorage.setItem(KEY,JSON.stringify(db));jadd('Synced from Google ecosystem');render()}
- }catch(e){}
 }
-
 const $=id=>document.getElementById(id);
-const esc=s=>(s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const esc=s=>(s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&','<':'<','>':'>','"':'"'}[c]));
 const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
 const P=id=>db.people.find(p=>p.id===id)||null;
 const M=id=>db.meetings.find(m=>m.id===id)||null;
@@ -268,11 +309,14 @@ const todayStr=()=>new Date().toISOString().slice(0,10);
 const nowT=()=>new Date().toTimeString().slice(0,5);
 function fmtDT(s){try{return new Date(s).toLocaleString(undefined,{weekday:'short',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'})}catch(e){return s||''}}
 function jadd(text){const t=todayStr();let j=db.journal.find(x=>x.date===t);if(!j){j={date:t,entries:[]};db.journal.unshift(j)}j.entries.push({ts:nowT(),text});}
-
+function loadScope(){try{return localStorage.getItem('upa_scope')||'all'}catch(e){return'all'}}
+function saveScope(s){localStorage.setItem('upa_scope',s);currentScope=s;updateScopeUI();render()}
+function updateScopeUI(){$('#scope-all').classList.toggle('on',currentScope==='all');$('#scope-personal').classList.toggle('on',currentScope==='personal');$('#scope-professional').classList.toggle('on',currentScope==='professional')}
+function matchesScope(item){if(!item.scope||item.scope==='both'||item.scope==='')return true;if(currentScope==='all')return true;return item.scope===currentScope||item.scope==='both'}
 /* ===== navigation ===== */
 let page='today',detail=null;
-function go(t){page=t;detail=null;$('gsearch').value='';$('chatfs').classList.remove('open');
- document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.toggle('active',b.dataset.t===t));render();window.scrollTo(0,0)}
+function go(t){page=t;detail=null;$('gsearch').value='';$('chatfs').classList.remove('open');closeActionSheet();
+  document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.toggle('active',b.dataset.t===t));render();window.scrollTo(0,0)}
 function closeModal(){$('mbg').classList.remove('open')}
 function showModal(h){$('mbox').innerHTML=h;$('mbg').classList.add('open')}
 
@@ -281,392 +325,306 @@ const CKEY='upa_chat_log',API_KEY='upa-87d0064fd38e31a72792caea44de6f1a';
 function apiUrl(){return (cfg.apiUrl||'')+'/v1/chat/completions'}
 function chatLog(){try{return JSON.parse(localStorage.getItem(CKEY))||[]}catch(e){return[]}}
 function cpush(role,text){const l=chatLog();l.push({role,text,t:Date.now()});localStorage.setItem(CKEY,JSON.stringify(l.slice(-60)));return l}
-function renderChat(){
- const l=chatLog();
- $('chatlog').innerHTML=l.map(m=>{
-  if(m.role==='user')return '<div class="msg me">'+esc(m.text)+'</div>';
-  else return '<div class="msg bot">'+fmtBot(m.text)+'</div>';
- }).join('');
- $('chatlog').scrollTop=1e9;
-}
-function fmtBot(t){
- let h=esc(t);
- // Extract Drive URLs and render as cards
- const driveRegex=/https:\/\/drive\.google\.com\/[^\s<)]+/g;
- const drives=[];let match;
- while((match=driveRegex.exec(t))!==null){drives.push(match[0])}
- // Replace markdown links first
- h=h.replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g,'<a style="color:var(--accent)" href="$2" target="_blank">$1</a>');
- // Replace plain URLs (but not Drive URLs as we'll card them)
- h=h.replace(/(^|\s)(https?:\/\/(?!drive\.google\.com)[^\s<]+)/g,'$1<a style="color:var(--accent)" href="$2" target="_blank">$2</a>');
- // Append Drive cards
- if(drives.length){
-  drives.forEach(url=>{
-   const name=extractDriveName(url);
-   h+='<a href="'+esc(url)+'" target="_blank" class="drive-card"><div class="icon">📎</div><div class="info"><div class="name">'+esc(name)+'</div><div class="type">Google Drive</div></div></a>';
-  });
- }
- return h;
-}
-function extractDriveName(url){
- // Try to extract a readable name from Drive URL - simplified
- if(url.includes('/d/')){
-  const parts=url.split('/d/')[1].split('/');
-  return 'Document';
- }
- return 'Google Drive Document';
-}
+function renderChat(){const l=chatLog();$('chatlog').innerHTML=l.map(m=>m.role==='user'?'<div class="msg me">'+esc(m.text)+'</div>':'<div class="msg bot">'+fmtBot(m.text)+'</div>').join('');$('chatlog').scrollTop=1e9}
+function fmtBot(t){let h=esc(t);
+  // Handle Drive URLs as special cards
+  h=h.replace(/(https:\/\/drive\.google\.com\/file\/d\/[^\s<]+)/g,'<div class="drive-card"><a style="color:var(--accent)" href="$1" target="_blank">📎 Drive Document</a></div>');
+  h=h.replace(/(https:\/\/docs\.google\.com\/document\/d\/[^\s<]+)/g,'<div class="drive-card"><a style="color:var(--accent)" href="$1" target="_blank">📄 Google Doc</a></div>');
+  // Handle regular links
+  h=h.replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g,'<a style="color:var(--accent)" href="$2" target="_blank">$1</a>');
+  h=h.replace(/(^|\s)(https?:\/\/[^\s<]+)/g,'$1<a style="color:var(--accent)" href="$2" target="_blank">$2</a>');
+  return h}
 document.querySelector('.chatfab').onclick=()=>{openChat()};
 async function autoLink(){ // fetch current Hub Link from the live config file
- try{const r=await fetch('hub-link.json?ts='+Date.now());const d=await r.json();
-  if(d.apiUrl&&d.apiUrl!==cfg.apiUrl){cfg.apiUrl=d.apiUrl;saveCfg();return true}}catch(e){}
- return false}
+  try{const r=await fetch('hub-link.json?ts='+Date.now());const d=await r.json();
+    if(d.apiUrl&&d.apiUrl!==cfg.apiUrl){cfg.apiUrl=d.apiUrl;saveCfg();return true}}catch(e){}
+  return false}
 async function ensureLinked(){if(cfg.apiUrl)return true;
- await autoLink();return !!cfg.apiUrl}
-async function openChat(){
- $('chatfs').classList.add('open');
- if(!chatLog().length){
-  cpush('bot','Hey Sami! 👋 I am your UPA — fully connected to your Google ecosystem (Calendar, Gmail, Contacts, Drive). Ask me things like "what do I have today?" or "where is my blueprint file?"')
- }
- renderChat();
- if(!(await ensureLinked())){pairPrompt()}
- else{const st=$('chatstat');st.textContent='connected';}
-}
+  await autoLink();return !!cfg.apiUrl}
+async function openChat(){$('chatfs').classList.add('open');if(!chatLog().length){cpush('bot','Hey Sami! 👋 I am your UPA — fully connected to your Google ecosystem (Calendar, Gmail, Contacts, Drive). Ask me things like "what do I have today?" or "where is my blueprint file?"')}renderChat();
+  if(!(await ensureLinked())){pairPrompt()}else{const st=$('chatstat');st.textContent='connected';}}
 function closeChat(){$('chatfs').classList.remove('open')}
 function pairPrompt(){setTimeout(()=>{$('chatlog').insertAdjacentHTML('beforeend','<div class="msg sys">⚙️ One-time link needed. Open Settings ⚙ and paste the Hub Link from the message I sent you on Telegram.</div>');$('chatstat').textContent='not linked';},400)}
 async function sendChat(pre){
- const inp=$('chatin');const text=(pre!==undefined?pre:inp.value).trim();if(pre===undefined)inp.value='';if(!text)return;
- if(text.toLowerCase()==='/clear'){localStorage.removeItem(CKEY);renderChat();return}
- cpush('user',text);renderChat();
- if(!cfg.apiUrl){const ok=await ensureLinked();if(!ok){cpush('bot','I am not linked to your agent yet. Open Settings ⚙ (top right) and paste the Hub Link I sent on Telegram.');renderChat();return}}
- $('chatin').placeholder='Thinking…';
- const hist=chatLog().slice(-14).map(m=>({role:m.role==='user'?'user':'assistant',content:m.text}));
- try{
-  const r=await fetch(apiUrl(),{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+API_KEY},
-   body:JSON.stringify({model:'hermes-agent',messages:[{role:'system',content:'You are Sami Kaddoum\'s personal UPA inside his UPA Hub web app. Be concise and warm. When you mention files, meetings or contacts include clickable links when possible. For Google Drive links, provide the full URL.'},...hist,{role:'user',content:text}]})});
-  if(!r.ok)throw new Error('HTTP '+r.status);
-  const d=await r.json();const reply=d.choices&&d.choices[0]&&d.choices[0].message?d.choices[0].message.content:'(empty reply)';
-  cpush('bot',reply);
- }catch(e){
-  const refreshed=await autoLink();
-  if(refreshed){try{
-   const r2=await fetch(apiUrl(),{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+API_KEY},
-    body:JSON.stringify({model:'hermes-agent',messages:[{role:'system',content:'You are Sami Kaddoum\'s personal UPA inside his UPA Hub web app. Be concise and warm.'},...hist,{role:'user',content:text}]})});
-   if(r2.ok){const d2=await r2.json();cpush('bot',d2.choices&&d2.choices[0]?d2.choices[0].message.content:'(empty reply)');renderChat();$('chatin').placeholder='Ask anything…';return}
-  }catch(e2){}}
-  cpush('bot','⚠ Connection problem ('+e.message+'). I could not refresh the link automatically this time — your agent may be asleep. Try again in a minute, or ping me on Telegram.');
- }
- renderChat();$('chatin').placeholder='Ask anything…';
+  const inp=$('chatin');const text=(pre!==undefined?pre:inp.value).trim();if(pre===undefined)inp.value='';if(!text)return;
+  if(text.toLowerCase()==='/clear'){localStorage.removeItem(CKEY);renderChat();return}
+  cpush('user',text);renderChat();
+  if(!cfg.apiUrl){const ok=await ensureLinked();if(!ok){cpush('bot','I am not linked to your agent yet. Open Settings ⚙ (top right) and paste the Hub Link I sent on Telegram.');renderChat();return}}
+  $('chatin').placeholder='Thinking…';$('sendbtn');
+  const hist=chatLog().slice(-14).map(m=>({role:m.role==='user'?'user':'assistant',content:m.text}));
+  try{
+    const r=await fetch(apiUrl(),{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+API_KEY},
+      body:JSON.stringify({model:'hermes-agent',messages:[{role:'system',content:'You are Sami Kaddoum\'s personal UPA inside his UPA Hub web app. Be concise and warm. When you mention files, meetings or contacts include clickable links when possible.'},...hist,{role:'user',content:text}]})});
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    const d=await r.json();const reply=d.choices&&d.choices[0]&&d.choices[0].message?d.choices[0].message.content:'(empty reply)';
+    cpush('bot',reply);
+  }catch(e){
+    const refreshed=await autoLink();
+    if(refreshed){try{
+      const r2=await fetch(apiUrl(),{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+API_KEY},
+        body:JSON.stringify({model:'hermes-agent',messages:[{role:'system',content:'You are Sami Kaddoum\'s personal UPA inside his UPA Hub web app. Be concise and warm.'},...hist,{role:'user',content:text}]})});
+      if(r2.ok){const d2=await r2.json();cpush('bot',d2.choices&&d2.choices[0]?d2.choices[0].message.content:'(empty reply)');renderChat();$('chatin').placeholder='Ask anything… e.g. what do I have today?';return}
+    }catch(e2){}}
+    cpush('bot','⚠ Connection problem ('+e.message+'). I could not refresh the link automatically this time — your agent may be asleep. Try again in a minute, or ping me on Telegram.');
+  }
+  renderChat();$('chatin').placeholder='Ask anything… e.g. what do I have today?';
 }
-
 /* voice input via Web Speech API */
 let rec=null;
 function toggleMic(){
- const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
- if(!SR){cpush('sys','Voice transcription is not supported in this browser.');renderChat();return}
- if(rec){rec.stop();return}
- rec=new SR();rec.lang='fr-FR';rec.interimResults=false;
- $('micbtn').style.background='var(--red)';
- rec.onresult=e=>{const t=e.results[0][0].transcript;$('chatin').value=t;sendChat()};
- rec.onend=()=>{rec=null;$('micbtn').style.background=''};
- rec.onerror=e=>{rec=null;$('micbtn').style.background='';if(e.error!=='aborted')cpush('sys','voice error: '+e.error);renderChat()};
- try{rec.start()}catch(e){rec=null}
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){sendChatPre('[voice note] (Voice transcription is not supported in this browser — type instead.)');return}
+  if(rec){rec.stop();return}
+  rec=new SR();rec.lang='fr-FR';rec.interimResults=false;
+  $('micbtn').style.background='var(--red)';
+  rec.onresult=e=>{const t=e.results[0][0].transcript;sendChatPre(t)};
+  rec.onend=()=>{rec=null;$('micbtn').style.background=''};
+  rec.onerror=e=>{rec=null;$('micbtn').style.background='';if(e.error!=='aborted')sendChatPre('(voice error: '+e.error+')')};
+  try{rec.start()}catch(e){rec=null}
 }
+function sendChatPre(t){$('chatin').value=t;sendChat()}
 function mapsLink(loc){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(loc)}
-
-/* ===== Chat action sheet ===== */
-function openChatActions(){$('chatactions').classList.add('open')}
-function closeChatActions(){$('chatactions').classList.remove('open')}
-function quickAddTask(){
- showModal('<h2>Quick Add Task</h2><label>Task *</label><input id="qa_text"><label>Due date</label><input id="qa_date" type="date" value="'+todayStr()+'"><label>Scope</label><select id="qa_scope"><option value="">All</option><option value="personal">Personal</option><option value="professional">Professional</option></select><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="saveQuickTask()">Add</button></div>');
-}
-function saveQuickTask(){
- const v=$('qa_text').value.trim();if(!v)return alert('Task text required');
- db.tasks.push({id:uid(),text:v,done:false,date:$('qa_date').value||'',priority:'normal',projectId:'',subtasks:[],log:[],scope:$('qa_scope').value});
- jadd('Task added: '+v);save();closeModal();
- cpush('bot','✅ Task added: '+v);renderChat();
-}
-function quickAddEvent(){
- showModal('<h2>Quick Add Event</h2><label>Title *</label><input id="qe_title"><label>Date & time</label><input id="qe_dt" type="datetime-local"><label>Location</label><input id="qe_loc"><label>Scope</label><select id="qe_scope"><option value="">All</option><option value="personal">Personal</option><option value="professional">Professional</option></select><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="saveQuickEvent()">Add</button></div>');
-}
-function saveQuickEvent(){
- const v=$('qe_title').value.trim();if(!v)return alert('Title required');
- const loc=$('qe_loc').value.trim();
- db.meetings.push({id:uid(),title:v,datetime:$('qe_dt').value||new Date().toISOString().slice(0,16),personId:'',location:loc,mapsUrl:loc?mapsLink(loc):'',agenda:'',status:'upcoming',suggested:[],notes:'',scope:$('qe_scope').value});
- jadd('Event added: '+v);save();closeModal();
- cpush('bot','📅 Event added: '+v);renderChat();
-}
-function quickAddFile(){
- showModal('<h2>Quick Add File Link</h2><label>Name *</label><input id="qf_name"><label>Link or path</label><input id="qf_url" placeholder="https://…"><label>Folder</label><select id="qf_folder"><option value="">— none —</option>'+db.folders.map(f=>'<option value="'+f.id+'">'+esc(f.name)+'</option>').join('')+'</select><label>Scope</label><select id="qf_scope"><option value="">All</option><option value="personal">Personal</option><option value="professional">Professional</option></select><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="saveQuickFile()">Add</button></div>');
-}
-function saveQuickFile(){
- const n=$('qf_name').value.trim();if(!n)return alert('Name required');
- db.items.push({id:uid(),name:n,type:'link',urlOrPath:$('qf_url').value.trim(),folderId:$('qf_folder').value,personId:'',meetingId:'',addedDate:todayStr(),scope:$('qf_scope').value});
- jadd('File link added: '+n);save();closeModal();
- cpush('bot','📎 File link added: '+n);renderChat();
-}
 
 /* ===== TODAY ===== */
 function rToday(){
- const now=new Date().toISOString();
- let due=db.tasks.filter(t=>!t.done&&t.date&&t.date<=todayStr());
- due=filterByScope(due);
- let next=db.meetings.filter(m=>m.datetime>=now&&m.status!=='completed').sort((a,b)=>a.datetime.localeCompare(b.datetime));
- next=filterByScope(next);
- let todaysM=db.meetings.filter(m=>m.datetime.slice(0,10)===todayStr());
- todaysM=filterByScope(todaysM);
- let doneToday=db.tasks.filter(t=>t.done&&t.date===todayStr());
- doneToday=filterByScope(doneToday);
- let h='<div class="statgrid">'+
- '<div class="stat"><div class="n">'+due.length+'</div><div class="l">Tasks due</div></div>'+
- '<div class="stat"><div class="n">'+todaysM.length+'</div><div class="l">Events today</div></div>'+
- '<div class="stat"><div class="n">'+doneToday.length+'</div><div class="l">Done today</div></div></div>';
- if(next.length){const m=next[0],p=P(m.personId);
-  h+='<div class="seclabel">Next event</div><div class="nextmeet" onclick=\'showMeeting("'+m.id+'")\'><h3>'+esc(m.title)+'</h3><div class="sub">'+fmtDT(m.datetime)+(p?' · with '+esc(p.name):'')+'</div>'+(m.mapsUrl?'<a class="maplink" href="'+esc(m.mapsUrl)+'" target="_blank" onclick="event.stopPropagation()">📍 Open in Maps</a>':'')+'</div>';}
- else h+='<div class="seclabel">Next event</div><div class="empty" style="padding:18px">Nothing scheduled 🎉</div>';
- h+='<div class="seclabel">Due / overdue tasks</div>';
- if(!due.length)h+='<div class="empty" style="padding:14px">Inbox zero on tasks ✅</div>';
- due.slice(0,6).forEach(t=>h+=taskRow(t));
- const jr=db.journal[0];
- h+='<div class="seclabel">Journal — latest day</div>';
- if(jr){h+='<div class="card" style="cursor:default" onclick="showJournal()"><h3>'+jr.date+'</h3>'+jr.entries.slice(-4).map(e=>'<div class="sub">· '+esc(e.text)+'</div>').join('')+((jr.entries.length>4)?'<div class="sub" style="margin-top:4px">+'+(jr.entries.length-4)+' more — tap to see all</div>':'')+'</div>';}
- else h+='<div class="empty" style="padding:14px">No journal entries yet.</div>';
- $('content').innerHTML=h;
+  const now=new Date().toISOString();
+  const due=db.tasks.filter(t=>!t.done&&t.date&&t.date<=todayStr()&&matchesScope(t));
+  const next=db.meetings.filter(m=>m.datetime>=now&&m.status!=='completed'&&matchesScope(m)).sort((a,b)=>a.datetime.localeCompare(b.datetime));
+  const todaysM=db.meetings.filter(m=>m.datetime.slice(0,10)===todayStr()&&matchesScope(m));
+  const doneToday=db.tasks.filter(t=>t.done&&t.date===todayStr()&&matchesScope(t)).length;
+  let h='<div class="statgrid">'+
+  '<div class="stat"><div class="n">'+due.length+'</div><div class="l">Tasks due</div></div>'+
+  '<div class="stat"><div class="n">'+todaysM.length+'</div><div class="l">Meetings today</div></div>'+
+  '<div class="stat"><div class="n">'+doneToday+'</div><div class="l">Done today</div></div></div>';
+  if(next.length){const m=next[0],p=P(m.personId);
+    h+='<div class="seclabel">Next meeting</div><div class="nextmeet" onclick=\'showMeeting("'+m.id+'")\'><h3>'+esc(m.title)+'</h3><div class="sub">'+fmtDT(m.datetime)+(p?' · with '+esc(p.name):'')+'</div>'+(m.mapsUrl?'<a class="maplink" href="'+esc(m.mapsUrl)+'" target="_blank" onclick="event.stopPropagation()">📍 Open in Maps</a>':'')+'</div>';}
+  else h+='<div class="seclabel">Next meeting</div><div class="empty" style="padding:18px">Nothing scheduled 🎉</div>';
+  h+='<div class="seclabel">Due / overdue tasks</div>';
+  if(!due.length)h+='<div class="empty" style="padding:14px">Inbox zero on tasks ✅</div>';
+  due.slice(0,6).forEach(t=>h+=taskRow(t));
+  const jr=db.journal[0];
+  h+='<div class="seclabel">Journal — latest day</div>';
+  if(jr){h+='<div class="card" style="cursor:default" onclick="showJournal()"><h3>'+jr.date+'</h3>'+jr.entries.slice(-4).map(e=>'<div class="sub">· '+esc(e.text)+'</div>').join('')+((jr.entries.length>4)?'<div class="sub" style="margin-top:4px">+'+(jr.entries.length-4)+' more — tap to see all</div>':'')+'</div>';}
+  else h+='<div class="empty" style="padding:14px">No journal entries yet.</div>';
+  $('content').innerHTML=h;
 }
 function taskRow(t){
- const pr=PR(t.projectId);
- return '<div class="taskrow"><div class="chk'+(t.done?' on':'')+'" onclick="togTask(\''+t.id+'\')">✔</div>'+
- '<div class="t '+(t.done?'done':'')+'" onclick=\'showTask("'+t.id+'")\'><b>'+esc(t.text)+'</b>'+
- (t.priority==='high'?' <span class="badge red">HIGH</span>':'')+
- (pr?' <span class="badge">'+esc(pr.title)+'</span>':'')+scopeBadge(t)+
- (t.date?'<div class="sub">'+t.date+'</div>':'')+'</div></div>';
+  const pr=PR(t.projectId);
+  return '<div class="taskrow"><div class="chk'+(t.done?' on':'')+'" onclick="togTask(\''+t.id+'\')">✔</div>'+
+  '<div class="t '+(t.done?'done':'')+'" onclick=\'showTask("'+t.id+'")\'><b>'+esc(t.text)+'</b>'+
+  (t.priority==='high'?' <span class="badge red">HIGH</span>':'')+
+  (pr?' <span class="badge">'+esc(pr.title)+'</span>':'')+
+  (t.date?'<div class="sub">'+t.date+'</div>':'')+'</div></div>';
 }
 function togTask(id){const t=db.tasks.find(x=>x.id===id);if(!t)return;t.done=!t.done;if(t.done){jadd('Completed task: '+t.text);}save()}
 
 /* ===== TASKS & PROJECTS ===== */
 let tfilt='all';
-function progOf(pid){const ts=db.tasks.filter(t=>t.projectId===pid);if(!ts.length)return null;return Math.round(100*ts.filter(t=>t.done).length/ts.length)}
+function progOf(pid){const ts=db.tasks.filter(t=>t.projectId===pid&&matchesScope(t));if(!ts.length)return null;return Math.round(100*ts.filter(t=>t.done).length/ts.length)}
 function rTasks(){
- let projects=db.projects.slice();
- projects=filterByScope(projects);
- let h='<div class="seclabel">Projects</div><div class="foldergrid">';
- if(!projects.length)h+='<div class="empty" style="padding:10px">No projects yet</div>';
- projects.forEach(p=>{const pc=progOf(p.id);
-  h+='<div class="fold" onclick=\'showProject("'+p.id+'")\'><div class="fi">🚀</div><div class="fn">'+esc(p.title)+'</div>'+(pc!=null?'<div class="prog"><i style="width:'+pc+'%"></i></div><div class="sub">'+pc+'%</div>':'')+'</div>';});
- h+='</div>';
- const chips=['all','today','open','done'];
- h+='<div class="filters">'+chips.map(c=>'<span class="chip'+(tfilt===c?' on':'')+'" onclick="tfilt=\''+c+'\';render()">'+c.toUpperCase()+'</span>').join('')+'</div><div class="seclabel">Tasks</div>';
- let list=db.tasks.slice();
- list=filterByScope(list);
- list=list.sort((a,b)=>(a.done-b.done)||(a.date||'zz').localeCompare(b.date||'zz'));
- if(tfilt==='today')list=list.filter(t=>t.date===todayStr());
- if(tfilt==='open')list=list.filter(t=>!t.done);
- if(tfilt==='done')list=list.filter(t=>t.done);
- if(!list.length)h+='<div class="empty">No tasks here. Tap <b style="color:var(--accent)">+</b> to add one.</div>';
- list.forEach(t=>h+=taskRow(t));
- h+='<div class="sub" style="margin-top:10px">🔄 Everything here syncs to your Google ecosystem automatically — Tasks, Calendar, Contacts, Drive. Nothing to press.</div>';
- $('content').innerHTML=h;
+  let h='<div class="seclabel">Projects</div><div class="foldergrid">';
+  const projects=db.projects.filter(p=>matchesScope(p));
+  if(!projects.length)h+='<div class="empty" style="padding:10px">No projects yet</div>';
+  projects.forEach(p=>{const pc=progOf(p.id);
+    h+='<div class="fold" onclick=\'showProject("'+p.id+'")\'><div class="fi">🚀</div><div class="fn">'+esc(p.title)+'</div>'+(pc!=null?'<div class="prog"><i style="width:'+pc+'%"></i></div><div class="sub">'+pc+'%</div>':'')+'</div>';});
+  h+='</div>';
+  const chips=['all','today','open','done'];
+  h+='<div class="filters">'+chips.map(c=>'<span class="chip'+(tfilt===c?' on':'')+'" onclick="tfilt=\''+c+'\';render()">'+c.toUpperCase()+'</span>').join('')+'</div><div class="seclabel">Tasks</div>';
+  let list=db.tasks.filter(t=>matchesScope(t)).slice().sort((a,b)=>(a.done-b.done)||(a.date||'zz').localeCompare(b.date||'zz'));
+  if(tfilt==='today')list=list.filter(t=>t.date===todayStr());
+  if(tfilt==='open')list=list.filter(t=>!t.done);
+  if(tfilt==='done')list=list.filter(t=>t.done);
+  if(!list.length)h+='<div class="empty">No tasks here. Tap <b style="color:var(--accent)">+</b> to add one.</div>';
+  list.forEach(t=>h+=taskRow(t));
+  h+='<div class="sub" style="margin-top:10px">🔄 Everything here syncs to your Google ecosystem automatically — Tasks, Calendar, Contacts, Drive. Nothing to press.</div>';
+  $('content').innerHTML=h;
 }
 function showProject(id){detail={kind:'project',id};const p=PR(id);if(!p)return;
- const ts=db.tasks.filter(t=>t.projectId===id),pc=progOf(id);
- let h='<button class="backbtn" onclick="back()">← Back</button><div class="detail"><h2>🚀 '+esc(p.title)+'</h2>';
- if(pc!=null)h+='<div class="prog" style="margin:8px 0"><i style="width:'+pc+'%"></i></div><div class="sub">'+pc+'% complete · '+ts.filter(t=>t.done).length+'/'+ts.length+' tasks done</div>';
- h+='<div class="seclabel">Tasks in this project</div>';
- if(ts.length)ts.forEach(t=>h+=taskRow(t));
- else h+='<div class="empty" style="padding:10px">No tasks yet.</div>';
- if(p.log&&p.log.length){h+='<div class="seclabel">Accomplishment log</div>';p.log.forEach(l=>h+='<div class="je"><div class="jt">'+l.ts+'</div>'+esc(l.text)+'</div>');}
- h+='</div><button class="del" style="float:none;margin-top:8px" onclick="delItem(\'projects\',\''+p.id+'\')">Delete project</button>';
- $('content').innerHTML=h;window.scrollTo(0,0)}
+  const ts=db.tasks.filter(t=>t.projectId===id&&matchesScope(t)),pc=progOf(id);
+  let h='<button class="backbtn" onclick="back()">← Back</button><div class="detail"><h2>🚀 '+esc(p.title)+'</h2>';
+  if(pc!=null)h+='<div class="prog" style="margin:8px 0"><i style="width:'+pc+'%"></i></div><div class="sub">'+pc+'% complete · '+ts.filter(t=>t.done).length+'/'+ts.length+' tasks done</div>';
+  h+='<div class="seclabel">Tasks in this project</div>';
+  (ts.length?ts:t=>''&&[]).length; ts.forEach(t=>h+=taskRow(t)); if(!ts.length)h+='<div class="empty" style="padding:10px">No tasks yet.</div>';
+  if(p.log&&p.log.length){h+='<div class="seclabel">Accomplishment log</div>';p.log.forEach(l=>h+='<div class="je"><div class="jt">'+l.ts+'</div>'+esc(l.text)+'</div>');}
+  h+='</div><button class="del" style="float:none;margin-top:8px" onclick="delItem(\'projects\',\''+p.id+'\')">Delete project</button>';
+  $('content').innerHTML=h;window.scrollTo(0,0)}
 function showTask(id){detail={kind:'task',id};const t=db.tasks.find(x=>x.id===id);if(!t)return;const pr=PR(t.projectId);
- let h='<button class="backbtn" onclick="back()">← Back</button><div class="detail"><h2>'+(t.done?'✅ ':'⬜ ')+esc(t.text)+'</h2>';
- h+='<div class="kv"><b>Status</b>'+(t.done?'Done':'Open')+(t.priority==='high'?' · <span style="color:var(--red)">HIGH priority</span>':'')+'</div>';
- if(t.date)h+='<div class="kv"><b>Due</b>'+t.date+'</div>';
- if(pr)h+='<div class="kv"><b>Project</b>'+esc(pr.title)+'</div>';
- h+='<div class="seclabel">Subtasks</div>';
- (t.subtasks||[]).forEach((s,i)=>h+='<div class="taskrow" style="padding:8px"><div class="chk'+(s.done?' on':'')+'" onclick="togSub(\''+id+'\','+i+')">✔</div><div class="t '+(s.done?'done':'')+'">'+esc(s.text)+'</div></div>');
- h+=(t.subtasks&&t.subtasks.length)?'':'<div class="empty" style="padding:8px">None yet.</div>';
- h+='<div class="btnrow"><button class="btn ghost" onclick="addSub(\''+id+'\')">+ Subtask</button><button class="btn ghost" onclick="addAccomplish(\''+id+'\')">📝 Log progress</button></div>';
- if(t.log&&t.log.length){h+='<div class="seclabel">Progress log</div>';t.log.forEach(l=>h+='<div class="je"><div class="jt">'+l.ts+'</div>'+esc(l.text)+'</div>');}
- h+='</div><button class="del" style="float:none;margin-top:8px" onclick="delItem(\'tasks\',\''+t.id+'\')">Delete task</button>';
- $('content').innerHTML=h;window.scrollTo(0,0)}
+  let h='<button class="backbtn" onclick="back()">← Back</button><div class="detail"><h2>'+(t.done?'✅ ':'⬜ ')+esc(t.text)+'</h2>';
+  h+='<div class="kv"><b>Status</b>'+(t.done?'Done':'Open')+(t.priority==='high'?' · <span style="color:var(--red)">HIGH priority</span>':'')+'</div>';
+  if(t.date)h+='<div class="kv"><b>Due</b>'+t.date+'</div>';
+  if(pr)h+='<div class="kv"><b>Project</b>'+esc(pr.title)+'</div>';
+  h+='<div class="seclabel">Subtasks</div>';
+  (t.subtasks||[]).forEach((s,i)=>h+='<div class="taskrow" style="padding:8px"><div class="chk'+(s.done?' on':'')+'" onclick="togSub(\''+id+'\','+i+')">✔</div><div class="t '+(s.done?'done':'')+'">'+esc(s.text)+'</div></div>');
+  h+=(t.subtasks&&t.subtasks.length)?'':'<div class="empty" style="padding:8px">None yet.</div>';
+  h+='<div class="btnrow"><button class="btn ghost" onclick="addSub(\''+id+'\')">+ Subtask</button><button class="btn ghost" onclick="addAccomplish(\''+id+'\')">📝 Log progress</button></div>';
+  if(t.log&&t.log.length){h+='<div class="seclabel">Progress log</div>';t.log.forEach(l=>h+='<div class="je"><div class="jt">'+l.ts+'</div>'+esc(l.text)+'</div>');}
+  h+='</div><button class="del" style="float:none;margin-top:8px" onclick="delItem(\'tasks\',\''+t.id+'\')">Delete task</button>';
+  $('content').innerHTML=h;window.scrollTo(0,0)}
 function togSub(tid,i){const t=db.tasks.find(x=>x.id===tid);const s=t.subtasks[i];s.done=!s.done;if(s.done)jadd('Subtask done: '+s.text+' ('+t.text+')');save()}
 function addSub(tid){const t=db.tasks.find(x=>x.id===tid);
- showModal('<h2>New subtask</h2><input id="fx" placeholder="Subtask description"><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="(db.tasks.find(x=>x.id===\''+tid+'\').subtasks.push({text:$(\'fx\').value.trim()||\'Subtask\',done:false}),save(),closeModal(),showTask(\''+tid+'\'))">Add</button></div>')}
+  showModal('<h2>New subtask</h2><input id="fx" placeholder="Subtask description"><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="(db.tasks.find(x=>x.id===\''+tid+'\').subtasks.push({text:$(\'fx\').value.trim()||\'Subtask\',done:false}),save(),closeModal(),showTask(\''+tid+'\'))">Add</button></div>')}
 function addAccomplish(tid){const t=db.tasks.find(x=>x.id===tid);
- showModal('<h2>Log progress</h2><label>What did we accomplish / where are we?</label><textarea id="fx" rows="3"></textarea><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="saveAcc(\''+tid+'\')">Log it</button></div>')}
+  showModal('<h2>Log progress</h2><label>What did we accomplish / where are we?</label><textarea id="fx" rows="3"></textarea><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="saveAcc(\''+tid+'\')">Log it</button></div>')}
 function saveAcc(tid){const v=$('fx').value.trim();if(!v)return closeModal();
- const t=db.tasks.find(x=>x.id===tid);const stamp=todayStr()+' '+nowT();
- (t.log=t.log||[]).push({ts:stamp,text:v});
- if(t.projectId){const pr=PR(t.projectId);(pr.log=pr.log||[]).push({ts:stamp,text:v+' ('+t.text+')'})}
- jadd(v);save();closeModal();showTask(tid)}
-function showJournal(){detail={kind:'journal'};
- let h='<button class="backbtn" onclick="back()">← Back</button><h2 style="margin-bottom:10px">📖 Journal</h2>';
- if(!db.journal.length)h+='<div class="empty">Nothing logged yet. Accomplishments land here automatically.</div>';
- db.journal.forEach(d=>{h+='<div class="seclabel">'+d.date+'</div>';d.entries.forEach(e=>h+='<div class="je"><div class="jt">'+e.ts+'</div>'+esc(e.text)+'</div>')});
- $('content').innerHTML=h;window.scrollTo(0,0)}
+  const t=db.tasks.find(x=>x.id===tid);const stamp=todayStr()+' '+nowT();
+  (t.log=t.log||[]).push({ts:stamp,text:v});
+  if(t.projectId){const pr=PR(t.projectId);(pr.log=pr.log||[]).push({ts:stamp,text:v+' ('+t.text+')'})}
+  jadd(v);save();closeModal();showTask(tid)}
 
-/* ===== EVENTS (renamed from MEETINGS) ===== */
-function rEvents(){
- const now=new Date().toISOString();
- let up=db.meetings.filter(m=>m.datetime>=now&&m.status!=='completed').sort((a,b)=>a.datetime.localeCompare(b.datetime));
- up=filterByScope(up);
- let past=db.meetings.filter(m=>!(m.datetime>=now&&m.status!=='completed')).sort((a,b)=>b.datetime.localeCompare(a.datetime));
- past=filterByScope(past);
- let h='';
- const grp=(l,lb)=>{if(!l.length)return;h+='<div class="seclabel">'+lb+'</div>';
-  l.forEach(m=>{const p=P(m.personId);const prep=(m.suggested||[]).filter(s=>!s.done).length;
-   h+='<div class="card" onclick=\'showMeeting("'+m.id+'")\'><span class="badge '+(lb==='Upcoming'?'up':'past')+'">'+lb.slice(0,-1)+'</span>'+
-   (prep?' <span class="badge warn">⚠ '+prep+' prep left</span>':'')+scopeBadge(m)+
-   '<h3 style="margin-top:6px">'+esc(m.title)+'</h3><div class="sub">'+fmtDT(m.datetime)+(p?' · '+esc(p.name):'')+(m.location?' · '+esc(m.location):'')+'</div></div>'})};
- grp(up,'Upcoming');grp(past,'Past');
- if(!up.length&&!past.length)h='<div class="empty">No events yet. Tap <b style="color:var(--accent)">+</b> to schedule one — include a location and I build the Maps link.</div>';
- $('content').innerHTML=h}
+/* ===== MEETINGS (Events) ===== */
+function rMeetings(){
+  const now=new Date().toISOString();
+  const up=db.meetings.filter(m=>m.datetime>=now&&m.status!=='completed'&&matchesScope(m)).sort((a,b)=>a.datetime.localeCompare(b.datetime));
+  const past=db.meetings.filter(m=>!(m.datetime>=now&&m.status!=='completed')&&matchesScope(m)).sort((a,b)=>b.datetime.localeCompare(a.datetime));
+  let h='';
+  const grp=(l,lb)=>{if(!l.length)return;h+='<div class="seclabel">'+lb+'</div>';
+   l.forEach(m=>{const p=P(m.personId);const prep=(m.suggested||[]).filter(s=>!s.done).length;
+    h+='<div class="card" onclick=\'showMeeting("'+m.id+'")\'><span class="badge '+(lb==='Upcoming'?'up':'past')+'">'+lb.slice(0,-1)+'</span>'+
+    (prep?' <span class="badge warn">⚠ '+prep+' prep left</span>':'')+
+    '<h3 style="margin-top:6px">'+esc(m.title)+'</h3><div class="sub">'+fmtDT(m.datetime)+(p?' · '+esc(p.name):'')+(m.location?' · '+esc(m.location):'')+'</div></div>'})};
+  grp(up,'Upcoming');grp(past,'Past');
+  if(!db.meetings.some(m=>matchesScope(m)))h='<div class="empty">No meetings yet. Tap <b style="color:var(--accent)">+</b> to schedule one — include a location and I build the Maps link.</div>';
+  $('content').innerHTML=h}
 function showMeeting(id){detail={kind:'meeting',id};const m=M(id);if(!m)return;const p=P(m.personId);
- const docs=db.items.filter(i=>i.meetingId===id);
- let h='<button class="backbtn" onclick="back()">← Back</button><div class="detail"><h2>'+esc(m.title)+'</h2><div class="meta">'+
- '<div class="kv"><b>When</b>'+fmtDT(m.datetime)+'</div>'+
- (p?'<div class="kv"><b>With</b><span style="color:var(--accent)" onclick=\'showPerson("'+p.id+'")\'>'+esc(p.name)+'</span></div>':'')+
- ((m.location)?'<div class="kv"><b>Where</b>'+esc(m.location)+'</div>':'')+
- '<div class="kv"><b>Status</b>'+esc(m.status||'—')+'</div></div>';
- if(m.location)h+='<a class="maplink" href="'+esc(m.mapsUrl||mapsLink(m.location))+'" target="_blank">📍 Open location in Maps</a>';
- if(m.agenda)h+='<div class="seclabel">Agenda</div><div class="card" style="cursor:default">'+esc(m.agenda)+'</div>';
- h+='<div class="seclabel">Prep / suggested tasks</div>';
- (m.suggested||[]).forEach((s,i)=>h+='<div class="taskrow" style="padding:8px"><div class="chk'+(s.done?' on':'')+'" onclick="togPrep(\''+id+'\','+i+')">✔</div><div class="t '+(s.done?'done':'')+'">'+esc(s.text)+'</div></div>');
- h+='<div class="btnrow"><button class="btn ghost" onclick="addPrep(\''+id+'\')">+ Prep item</button></div>';
- h+='<div class="seclabel">Linked documents ('+docs.length+')</div>';
- if(docs.length){docs.forEach(d=>h+='<div class="card" style="cursor:default"><h3>'+esc(d.name)+'</h3><div class="sub">'+d.type.toUpperCase()+(d.urlOrPath?' · <a style="color:var(--accent)" href="'+esc(d.urlOrPath)+'" target="_blank">open</a>':'')+'</div></div>');}
- else h+='<div class="empty" style="padding:8px">No files linked. Add them via Library → +.</div>';
- h+='</div><button class="del" style="float:none;margin-top:8px" onclick="delItem(\'meetings\',\''+m.id+'\')">Delete event</button>';
- $('content').innerHTML=h;window.scrollTo(0,0)}
+  const docs=db.items.filter(i=>i.meetingId===id&&matchesScope(i));
+  let h='<button class="backbtn" onclick="back()">← Back</button><div class="detail"><h2>'+esc(m.title)+'</h2><div class="meta">'+
+  '<div class="kv"><b>When</b>'+fmtDT(m.datetime)+'</div>'+
+  (p?'<div class="kv"><b>With</b><span style="color:var(--accent)" onclick=\'showPerson("'+p.id+'")\'>'+esc(p.name)+'</span></div>':'')+
+  ((m.location)?'<div class="kv"><b>Where</b>'+esc(m.location)+'</div>':'')+
+  '<div class="kv"><b>Status</b>'+esc(m.status||'—')+'</div></div>';
+  if(m.location)h+='<a class="maplink" href="'+esc(m.mapsUrl||mapsLink(m.location))+'" target="_blank">📍 Open location in Maps</a>';
+  if(m.agenda)h+='<div class="seclabel">Agenda</div><div class="card" style="cursor:default">'+esc(m.agenda)+'</div>';
+  h+='<div class="seclabel">Prep / suggested tasks</div>';
+  (m.suggested||[]).forEach((s,i)=>h+='<div class="taskrow" style="padding:8px"><div class="chk'+(s.done?' on':'')+'" onclick="togPrep(\''+id+'\','+i+')">✔</div><div class="t '+(s.done?'done':'')+'">'+esc(s.text)+'</div></div>');
+  h+='<div class="btnrow"><button class="btn ghost" onclick="addPrep(\''+id+'\')">+ Prep item</button></div>';
+  h+='<div class="seclabel">Documents ('+docs.length+')</div>';
+  (docs.length?docs:[]).forEach(d=>h+='<div class="card" style="cursor:default"><h3>'+esc(d.name)+'</h3><div class="sub">'+d.type.toUpperCase()+(d.urlOrPath?' · <a style="color:var(--accent)" href="'+esc(d.urlOrPath)+'" target="_blank">open</a>':'')+'</div></div>');
+  if(!docs.length)h+='<div class="empty" style="padding:8px">No files linked. Add them via Library → +.</div>';
+  h+='</div><button class="del" style="float:none;margin-top:8px" onclick="delItem(\'meetings\',\''+m.id+'\')">Delete meeting</button>';
+  $('content').innerHTML=h;window.scrollTo(0,0)}
 function togPrep(mid,i){const m=M(mid);m.suggested[i].done=!m.suggested[i].done;if(m.suggested[i].done)jadd('Prep done: '+m.suggested[i].text+' ('+m.title+')');save()}
-function addPrep(mid){showModal('<h2>New prep item</h2><input id="fx" placeholder="e.g. Send agenda to Alex"><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="(M(\''+mid+'\').suggested.push({text:$(\'fx\').value.trim()||\'Prep\',done:false}),save(),closeModal(),showMeeting(\''+mid+'\'))">Add</button></div>')}
+function addPrep(mid){showModal('<h2>New prep item</h2><input id="fx" placeholder="e.g. Send agenda to Alex"><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="(M(\''+mid+'\').suggested.push({text:$(\'fx\').value.trim()||\'Prep item\',done:false}),save(),closeModal(),showMeeting(\''+mid+'\'))">Add</button></div>')}
 
 /* ===== PEOPLE ===== */
-function rPeople(){
- let people=db.people.slice();
- people=filterByScope(people);
- let h='';
- if(!people.length)h='<div class="empty">No people yet. Tap <b style="color:var(--accent)">+</b>.</div>';
- people.forEach(p=>{const ms=db.meetings.filter(m=>m.personId===p.id).length;
-  h+='<div class="card" onclick=\'showPerson("'+p.id+'")\'><h3>'+esc(p.name)+(p.gcontact?' 🔁':'')+'</h3><div class="sub">'+esc(p.role||'—')+(ms?' · '+ms+' meeting'+(ms>1?'s':''):'')+'</div>'+(p.tags||[]).map(t=>'<span class="badge">'+esc(t)+'</span>').join('')+scopeBadge(p)+'</div>'});
- h+='<div class="sub" style="margin-top:6px">🔁 = saved in Google Contacts automatically — every contact you add lands there too.</div>';
- $('content').innerHTML=h}
+function rPeople(){let h='';
+  const people=db.people.filter(p=>matchesScope(p));
+  if(!people.length)h='<div class="empty">No people yet. Tap <b style="color:var(--accent)">+</b>.</div>';
+  people.forEach(p=>{const ms=db.meetings.filter(m=>m.personId===p.id&&matchesScope(m)).length;
+    h+='<div class="card" onclick=\'showPerson("'+p.id+'")\'><h3>'+esc(p.name)+(p.gcontact?' 🔁':'')+'</h3><div class="sub">'+esc(p.role||'—')+(ms?' · '+ms+' meeting'+(ms>1?'s':''):'')+'</div>'+(p.tags||[]).map(t=>'<span class="badge">'+esc(t)+'</span>').join('')+'</div>'});
+  h+='<div class="sub" style="margin-top:6px">🔁 = saved in Google Contacts automatically — every contact you add lands there too.</div>';
+  $('content').innerHTML=h}
 function showPerson(id){detail={kind:'person',id};const p=P(id);if(!p)return;
- const ms=db.meetings.filter(m=>m.personId===id).sort((a,b)=>b.datetime.localeCompare(a.datetime));
- const docs=db.items.filter(i=>i.personId===id);
- let h='<button class="backbtn" onclick="back()">← Back</button><div class="detail"><h2>'+esc(p.name)+'</h2>';
- (p.tags||[]).forEach(t=>h+='<span class="badge">'+esc(t)+'</span>');
- h+='<div class="meta">'+(p.role?'<div class="kv"><b>Role</b>'+esc(p.role)+'</div>':'')+
- (p.phone?'<div class="kv"><b>Phone</b>'+esc(p.phone)+'</div>':'')+
- (p.email?'<div class="kv"><b>Email</b>'+esc(p.email)+'</div>':'')+
- (p.notes?'<div class="kv"><b>Notes</b>'+esc(p.notes)+'</div>':'')+'</div>';
- h+='<div class="seclabel">Meetings ('+ms.length+')</div>';
- if(ms.length){ms.forEach(m=>h+='<div class="card" onclick=\'showMeeting("'+m.id+'")\'><h3>'+esc(m.title)+'</h3><div class="sub">'+fmtDT(m.datetime)+'</div></div>');}
- else h+='<div class="empty" style="padding:8px">No meetings linked.</div>';
- h+='<div class="seclabel">Linked documents ('+docs.length+')</div>';
- if(docs.length){docs.forEach(d=>h+='<div class="card" style="cursor:default"><h3>'+esc(d.name)+'</h3><div class="sub">'+d.type.toUpperCase()+(d.urlOrPath?' · <a style="color:var(--accent)" href="'+esc(d.urlOrPath)+'" target="_blank">open</a>':'')+'</div></div>');}
- else h+='<div class="empty" style="padding:8px">No documents linked.</div>';
- h+='</div><button class="del" style="float:none;margin-top:8px" onclick="delItem(\'people\',\''+p.id+'\')">Delete contact</button>';
- $('content').innerHTML=h;window.scrollTo(0,0)}
+  const ms=db.meetings.filter(m=>m.personId===id&&matchesScope(m)).sort((a,b)=>b.datetime.localeCompare(a.datetime));
+  const docs=db.items.filter(i=>i.personId===id&&matchesScope(i));
+  let h='<button class="backbtn" onclick="back()">← Back</button><div class="detail"><h2>'+esc(p.name)+'</h2>';
+  (p.tags||[]).forEach(t=>h+='<span class="badge">'+esc(t)+'</span>');
+  h+='<div class="meta">'+(p.role?'<div class="kv"><b>Role</b>'+esc(p.role)+'</div>':'')+
+  (p.phone?'<div class="kv"><b>Phone</b>'+esc(p.phone)+'</div>':'')+
+  (p.email?'<div class="kv"><b>Email</b>'+esc(p.email)+'</div>':'')+
+  (p.notes?'<div class="kv"><b>Notes</b>'+esc(p.notes)+'</div>':'')+'</div>';
+  h+='<div class="seclabel">Meetings ('+ms.length+')</div>';
+  (ms.length?ms:[]).forEach(m=>h+='<div class="card" onclick=\'showMeeting("'+m.id+'")\'><h3>'+esc(m.title)+'</h3><div class="sub">'+fmtDT(m.datetime)+'</div></div>');
+  if(!ms.length)h+='<div class="empty" style="padding:8px">No meetings linked.</div>';
+  h+='<div class="seclabel">Documents ('+docs.length+')</div>';
+  (docs.length?docs:[]).forEach(d=>h+='<div class="card" style="cursor:default"><h3>'+esc(d.name)+'</h3><div class="sub">'+d.type.toUpperCase()+'</div></div>');
+  if(!docs.length)h+='<div class="empty" style="padding:8px">No documents linked.</div>';
+  h+='</div><button class="del" style="float:none;margin-top:8px" onclick="delItem(\'people\',\''+p.id+'\')">Delete contact</button>';
+  $('content').innerHTML=h;window.scrollTo(0,0)}
 
-/* ===== LIBRARY with horizontal folder slider ===== */
+/* ===== LIBRARY ===== */
 let libFolder=null;
 function rLibrary(){
- let folders=db.folders.slice();
- folders=filterByScope(folders);
- let h='<div class="seclabel">Folders</div><div class="folder-slider">';
- folders.forEach(f=>{
-  const n=db.items.filter(i=>i.folderId===f.id).length;
-  h+='<div class="fold'+(libFolder===f.id?' on':'')+'" onclick="libFolder=\''+f.id+'\';render()"><div class="fi">'+(f.icon||'📁')+'</div><div class="fn">'+esc(f.name)+'</div><div class="sub">'+n+' files</div></div>'});
- h+='</div>';
- if(libFolder){
-  const f=F(libFolder);
-  h+='<div class="seclabel">📁 '+esc(f?f.name:'')+'</div>';
-  let its=db.items.filter(i=>i.folderId===libFolder);
-  its=filterByScope(its);
-  if(!its.length)h+='<div class="empty" style="padding:12px">Empty folder.</div>';
-  its.forEach(d=>h+=docCard(d));
- }
- else{
-  let its=db.items.slice().sort((a,b)=>(b.addedDate||'').localeCompare(a.addedDate||''));
-  its=filterByScope(its);
-  h+='<div class="seclabel">Recent files</div>';
-  if(!its.length)h+='<div class="empty" style="padding:12px">Library empty. Tap <b style="color:var(--accent)">+</b> to add files & links.</div>';
-  its.forEach(d=>h+=docCard(d));
- }
- $('content').innerHTML=h}
+  let h='<div class="folder-slider">';
+  const allItems=db.items.filter(i=>matchesScope(i));
+  h+='<div class="folder-card" onclick="libFolder=null;render()"><div class="fi">🗂️</div><div class="fn">All files</div><div class="count">'+allItems.length+'</div></div>';
+  const folders=db.folders.filter(f=>matchesScope(f));
+  folders.forEach(f=>{const n=db.items.filter(i=>i.folderId===f.id&&matchesScope(i)).length;
+    h+='<div class="folder-card" onclick="libFolder=\''+f.id+'\';render()"><div class="fi">'+(f.icon||'📁')+'</div><div class="fn">'+esc(f.name)+'</div><div class="count">'+n+'</div></div>'});
+  h+='</div>';
+  if(libFolder){const f=F(libFolder);
+    if(!f||!matchesScope(f)){libFolder=null;rLibrary();return}
+    h+='<div class="seclabel">📁 '+esc(f?f.name:'')+'</div>';
+    const its=db.items.filter(i=>i.folderId===libFolder&&matchesScope(i));
+    if(!its.length)h+='<div class="empty" style="padding:12px">Empty folder.</div>';
+    its.forEach(d=>h+=docCard(d));}
+  else{const its=db.items.filter(i=>matchesScope(i)).slice().sort((a,b)=>(b.addedDate||'').localeCompare(a.addedDate||''));
+    h+='<div class="seclabel">Recent files</div>';
+    if(!its.length)h+='<div class="empty" style="padding:12px">Library empty. Tap <b style="color:var(--accent)">+</b> to add files & links.</div>';
+    its.forEach(d=>h+=docCard(d));}
+  $('content').innerHTML=h}
 function openDoc(id){const d=db.items.find(x=>x.id===id);if(!d)return;
- if(d.urlOrPath){window.open(d.urlOrPath,'_blank')}
- else{showModal('<h2>'+esc(d.name)+'</h2><p style="color:var(--muted);font-size:13px;line-height:1.7">This item has no file attached yet. Ask your agent in chat: <b style="color:var(--text)">"attach '+esc(d.name)+'"</b> and it will upload the real file and link it here.</p><div class="btnrow"><button class="btn primary" onclick="closeModal()">OK</button></div>')}}
+  if(d.urlOrPath){window.open(d.urlOrPath,'_blank')}
+  else{showModal('<h2>'+esc(d.name)+'</h2><p style="color:var(--muted);font-size:13px;line-height:1.7">This item has no file attached yet. Ask your agent in chat: <b style="color:var(--text)">"attach '+esc(d.name)+'"</b> and it will upload the real file and link it here.</p><div class="btnrow"><button class="btn primary" onclick="closeModal()">OK</button></div>')}}
 function docCard(d){const f=F(d.folderId);
- return '<div class="card" onclick="openDoc(\''+d.id+'\')">'+
- '<h3>'+((d.urlOrPath)?'':'🔒 ')+({pdf:'📕',doc:'📘',sheet:'📗',note:'📝',link:'🔗'}[d.type]||'📄')+' '+esc(d.name)+'</h3><div class="sub">'+d.type.toUpperCase()+(f?' · '+esc(f.name):'')+(d.addedDate?' · '+d.addedDate:'')+((d.urlOrPath)?'':' · no file linked yet')+scopeBadge(d)+'</div></div>'}
+  return '<div class="doc-card" onclick="openDoc(\''+d.id+'\')">'+
+  '<h3>'+((d.urlOrPath)?'':'🔒 ')+({pdf:'📕',doc:'📘',sheet:'📗',note:'📝',link:'🔗'}[d.type]||'📄')+' '+esc(d.name)+'</h3><div class="sub">'+d.type.toUpperCase()+(f?' · '+esc(f.name):'')+(d.addedDate?' · '+d.addedDate:'')+((d.urlOrPath)?'':' · no file linked yet')+'</div></div>'}
 
 /* ===== forms ===== */
 function fabAdd(){
- ({today:fTask,tasks:fTask,events:fMeeting,people:fPerson,library:fDoc})[page]()
-}
-function opts(arr,val,label){return arr.map(o=>'<option value="'+o.id+'"'+(o.id===val?' selected':'')+'>'+esc(label(o))+'</option>').join('')}
-function fTask(){showModal('<h2>New task</h2><label>Task *</label><input id="f_text"><label>Due date</label><input id="f_date" type="date" value="'+todayStr()+'"><label>Priority</label><select id="f_pri"><option>normal</option><option value="high">high</option></select><label>Project</label><select id="f_pid"><option value="">none</option>'+opts(db.projects,null,x=>x.title)+'</select><label>Scope</label><select id="f_scope"><option value="">All</option><option value="personal">Personal</option><option value="professional">Professional</option></select><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="saveTask()">Save</button></div>')}
+  ({today:fTask,tasks:fTask,meetings:fMeeting,people:fPerson,library:fDoc})[page]()}
+function opts(arr,val,key,label){return arr.map(o=>'<option value="'+o.id+'"'+(o.id===val?' selected':'')+'>'+esc(label(o))+'</option>').join('')}
+function fTask(){showModal('<h2>New task</h2><label>Task *</label><input id="f_text"><label>Due date</label><input id="f_date" type="date" value="'+todayStr()+'"><label>Priority</label><select id="f_pri"><option>normal</option><option value="high">high</option></select><label>Project</label><select id="f_pid"><option value="">none</option>'+opts(db.projects.filter(p=>matchesScope(p)),null,x=>x.title)+'</select><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="saveTask()">Save</button></div>')}
 function saveTask(){const v=$('f_text').value.trim();if(!v)return alert('Task text required');
- db.tasks.push({id:uid(),text:v,done:false,date:$('f_date').value||'',priority:$('f_pri').value==='high'?'high':'normal',projectId:$('f_pid').value,subtasks:[],log:[],scope:$('f_scope').value});
- save();closeModal()}
+  db.tasks.push({id:uid(),text:v,done:false,date:$('f_date').value||'',priority:$('f_pri').value==='high'?'high':'normal',projectId:$('f_pid').value,subtasks:[],log:[],scope:currentScope==='all'?'both':currentScope});
+  save();closeModal()}
 function fMeeting(){
- showModal('<h2>New event</h2><label>Title *</label><input id="f_title"><label>Date & time</label><input id="f_dt" type="datetime-local"><label>With</label><select id="f_w"><option value="">— none —</option>'+opts(db.people,null,p=>p.name)+'</select><label>Location (address or place name)</label><input id="f_loc" placeholder="Café Central, downtown…"><label>Agenda</label><textarea id="f_ag" rows="2"></textarea><label>Scope</label><select id="f_scope"><option value="">All</option><option value="personal">Personal</option><option value="professional">Professional</option></select><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="saveMeeting()">Save</button></div><p style="color:var(--muted);font-size:12px;margin-top:10px">A Maps pin is generated from the location automatically, plus standard prep tasks.</p>')}
+  showModal('<h2>New meeting</h2><label>Title *</label><input id="f_title"><label>Date & time</label><input id="f_dt" type="datetime-local"><label>With</label><select id="f_w"><option value="">— none —</option>'+opts(db.people.filter(p=>matchesScope(p)),null,p=>p.name)+'</select><label>Location (address or place name)</label><input id="f_loc" placeholder="Café Central, downtown…"><label>Agenda</label><textarea id="f_ag" rows="2"></textarea><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="saveMeeting()">Save</button></div><p style="color:var(--muted);font-size:12px;margin-top:10px">A Maps pin is generated from the location automatically, plus standard prep tasks.</p>')}
 function saveMeeting(){
- const v=$('f_title').value.trim();if(!v)return alert('Title required');
- const loc=$('f_loc').value.trim();
- db.meetings.push({id:uid(),title:v,datetime:$('f_dt').value||new Date().toISOString().slice(0,16),personId:$('f_w').value,location:loc,mapsUrl:loc?mapsLink(loc):'',agenda:$('f_ag').value.trim(),status:'upcoming',
-  suggested:[{text:'Prepare agenda',done:false},{text:'Send confirmation',done:false},{text:'Review linked documents',done:false}],notes:'',scope:$('f_scope').value});
- save();closeModal()}
-function fPerson(){showModal('<h2>New contact</h2><label>Name *</label><input id="f_n"><label>Role / company</label><input id="f_r"><label>Phone</label><input id="f_p"><label>Email</label><input id="f_e"><label>Tags (comma sep.)</label><input id="f_t"><label>Notes</label><textarea id="f_no" rows="2"></textarea><label>Scope</label><select id="f_scope"><option value="">All</option><option value="personal">Personal</option><option value="professional">Professional</option></select><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="savePerson()">Save</button></div>')}
+  const v=$('f_title').value.trim();if(!v)return alert('Title required');
+  const loc=$('f_loc').value.trim();
+  db.meetings.push({id:uid(),title:v,datetime:$('f_dt').value||new Date().toISOString().slice(0,16),personId:$('f_w').value,location:loc,mapsUrl:loc?mapsLink(loc):'',agenda:$('f_ag').value.trim(),status:'upcoming',
+   suggested:[{text:'Prepare agenda',done:false},{text:'Send confirmation',done:false},{text:'Review linked documents',done:false}],notes:'',scope:currentScope==='all'?'both':currentScope});
+  save();closeModal()}
+function fPerson(){showModal('<h2>New contact</h2><label>Name *</label><input id="f_n"><label>Role / company</label><input id="f_r"><label>Phone</label><input id="f_p"><label>Email</label><input id="f_e"><label>Tags (comma sep.)</label><input id="f_t"><label>Notes</label><textarea id="f_no" rows="2"></textarea><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="savePerson()">Save</button></div>')}
 function savePerson(){const n=$('f_n').value.trim();if(!n)return alert('Name required');
- db.people.push({id:uid(),name:n,role:$('f_r').value.trim(),phone:$('f_p').value.trim(),email:$('f_e').value.trim(),notes:$('f_no').value.trim(),tags:$('f_t').value.split(',').map(s=>s.trim()).filter(Boolean),gcontact:'',scope:$('f_scope').value});
- save();closeModal()}
-function fDoc(){showModal('<h2>Add to Library</h2><label>Name *</label><input id="f_dn"><label>Type</label><select id="f_dy"><option value="pdf">PDF</option><option value="doc">Document</option><option value="sheet">Spreadsheet</option><option value="note">Note</option><option value="link">Link</option></select><label>Link or path</label><input id="f_du" placeholder="https://… or C:/…"><label>Folder</label><select id="f_df"><option value="">— none —</option>'+opts(db.folders,null,f=>f.name)+'</select><label>Linked person</label><select id="f_dp"><option value="">— none —</option>'+opts(db.people,null,p=>p.name)+'</select><label>Linked event</label><select id="f_dm"><option value="">— none —</option>'+opts(db.meetings,null,m=>m.title)+'</select><label>Scope</label><select id="f_scope"><option value="">All</option><option value="personal">Personal</option><option value="professional">Professional</option></select><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="saveDoc()">Save</button></div>')}
+  db.people.push({id:uid(),name:n,role:$('f_r').value.trim(),phone:$('f_p').value.trim(),email:$('f_e').value.trim(),notes:$('f_no').value.trim(),tags:$('f_t').value.split(',').map(s=>s.trim()).filter(Boolean),gcontact:'',scope:currentScope==='all'?'both':currentScope});
+  save();closeModal()}
+function fDoc(){showModal('<h2>Add to Library</h2><label>Name *</label><input id="f_dn"><label>Type</label><select id="f_dy"><option value="pdf">PDF</option><option value="doc">Document</option><option value="sheet">Spreadsheet</option><option value="note">Note</option><option value="link">Link</option></select><label>Link or path</label><input id="f_du" placeholder="https://… or C:/…"><label>Folder</label><select id="f_df"><option value="">— none —</option>'+opts(db.folders.filter(f=>matchesScope(f)),null,f=>f.name)+'</select><label>Linked person</label><select id="f_dp"><option value="">— none —</option>'+opts(db.people.filter(p=>matchesScope(p)),null,p=>p.name)+'</select><label>Linked meeting</label><select id="f_dm"><option value="">— none —</option>'+opts(db.meetings.filter(m=>matchesScope(m)),null,m=>m.title)+'</select><div class="btnrow"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="saveDoc()">Save</button></div>')}
 function saveDoc(){const n=$('f_dn').value.trim();if(!n)return alert('Name required');
- db.items.push({id:uid(),name:n,type:$('f_dy').value,urlOrPath:$('f_du').value.trim(),folderId:$('f_df').value,personId:$('f_dp').value,meetingId:$('f_dm').value,addedDate:todayStr(),scope:$('f_scope').value});
- save();closeModal()}
+  db.items.push({id:uid(),name:n,type:$('f_dy').value,urlOrPath:$('f_du').value.trim(),folderId:$('f_df').value,personId:$('f_dp').value,meetingId:$('f_dm').value,addedDate:todayStr(),scope:currentScope==='all'?'both':currentScope});
+  save();closeModal()}
 
 /* ===== misc ===== */
 function delItem(kind,id){
- if(!confirm('Delete this? Linked references are kept but unlinked.'))return;
- db[kind]=db[kind].filter(x=>x.id!==id);
- db.items.forEach(i=>{if(i.personId===id)i.personId='';if(i.meetingId===id)i.meetingId='';if(i.folderId===id)i.folderId=''});
- db.meetings.forEach(m=>{if(m.personId===id)m.personId=''});
- db.tasks.forEach(t=>{if(t.projectId===id)t.projectId=''});
- detail=null;save()}
+  if(!confirm('Delete this? Linked references are kept but unlinked.'))return;
+  db[kind]=db[kind].filter(x=>x.id!==id);
+  db.items.forEach(i=>{if(i.personId===id)i.personId='';if(i.meetingId===id)i.meetingId='';if(i.folderId===id)i.folderId=''});
+  db.meetings.forEach(m=>{if(m.personId===id)m.personId=''});
+  db.tasks.forEach(t=>{if(t.projectId===id)t.projectId=''});
+  detail=null;save()}
 function back(){if(detail&&detail.kind==='journal'){go('today')}else{detail=null;render()}}
 function globalSearch(q){q=q.trim().toLowerCase();if(!q)return render();if(detail)return;
- let hits=[];
- filterByScope(db.people).forEach(p=>{if((p.name+' '+(p.role||'')).toLowerCase().includes(q))hits.push(['👤 '+p.name,(p.role||''),`showPerson('${p.id}')`])});
- filterByScope(db.meetings).forEach(m=>{if((m.title+' '+(m.agenda||'')+' '+(m.location||'')).toLowerCase().includes(q))hits.push(['📅 '+m.title,fmtDT(m.datetime),`showMeeting('${m.id}')`])});
- filterByScope(db.tasks).forEach(t=>{if(t.text.toLowerCase().includes(q))hits.push([((t.done)?'☑ ':'⬜ ')+t.text,(t.date||''),`showTask('${t.id}')`])});
- filterByScope(db.projects).forEach(p=>{if(p.title.toLowerCase().includes(q))hits.push(['🚀 '+p.title,'project',`showProject('${p.id}')`])});
- filterByScope(db.items).forEach(i=>{if(i.name.toLowerCase().includes(q))hits.push(['📄 '+i.name,i.type.toUpperCase(),'openDoc(\''+i.id+'\')'])});
- db.journal.forEach(d=>{d.entries.forEach(e=>{if((e.text||'').toLowerCase().includes(q))hits.push(['📖 '+(e.text||'').slice(0,60),d.date,''])})});
- db.folders.forEach(f=>{if(f.name.toLowerCase().includes(q))hits.push(['📁 '+f.name,'folder','libFolder=\''+f.id+'\';render()'])});
- // Search journal entries
- db.journal.forEach(d=>{d.entries.forEach(e=>{if(e.text.toLowerCase().includes(q))hits.push(['📖 '+e.text,d.date+' '+e.ts,'showJournal()'])})});
- $('content').innerHTML=hits.length?'<div class="seclabel">'+hits.length+' results</div>'+hits.map(x=>'<div class="card" '+(x[2]?'onclick="'+x[2]+'"':'style="cursor:default"')+'><h3>'+esc(x[0])+'</h3><div class="sub">'+esc(x[1])+'</div></div>').join(''):'<div class="empty">No matches for "'+esc(q)+'".</div>'}
+  let hits=[];
+  db.people.filter(p=>matchesScope(p)).forEach(p=>{if((p.name+' '+(p.role||'')).toLowerCase().includes(q))hits.push(['👤 '+p.name,(p.role||''),`showPerson('${p.id}')`])});
+  db.meetings.filter(m=>matchesScope(m)).forEach(m=>{if((m.title+' '+(m.agenda||'')+' '+(m.location||'')).toLowerCase().includes(q))hits.push(['📅 '+m.title,fmtDT(m.datetime),`showMeeting('${m.id}')`])});
+  db.tasks.filter(t=>matchesScope(t)).forEach(t=>{if(t.text.toLowerCase().includes(q))hits.push([((t.done)?'☑ ':'⬜ ')+t.text,(t.date||''),`showTask('${t.id}')`])});
+  db.projects.filter(p=>matchesScope(p)).forEach(p=>{if(p.title.toLowerCase().includes(q))hits.push(['🚀 '+p.title,'project',`showProject('${p.id}')`])});
+  db.items.filter(i=>matchesScope(i)).forEach(i=>{if(i.name.toLowerCase().includes(q))hits.push(['📄 '+i.name,i.type.toUpperCase(),'openDoc(\''+i.id+'\')'])});
+  db.folders.filter(f=>matchesScope(f)).forEach(f=>{if(f.name.toLowerCase().includes(q))hits.push(['📁 '+f.name,'folder','libFolder=\''+f.id+'\';render()'])});
+  $('content').innerHTML=hits.length?'<div class="seclabel">'+hits.length+' results</div>'+hits.map(x=>'<div class="card" '+(x[2]?'onclick="'+x[2]+'"':'style="cursor:default"')+'><h3>'+esc(x[0])+'</h3><div class="sub">'+esc(x[1])+'</div></div>').join(''):'<div class="empty">No matches for “'+esc(q)+'”.</div>'}
 function openSettings(){
- showModal('<h2>Settings & Data</h2><label>Hub Link (connects the 💬 chat to your agent)</label><input id="s_api" placeholder="https://…trycloudflare.com" value="'+esc(cfg.apiUrl||'')+'">'+
- '<div class="btnrow"><button class="btn ghost" onclick="$(\'imp\').click()">Import backup</button><button class="btn primary" onclick="exportAll()">Export backup</button></div>'+
- '<input type="file" id="imp" accept=".json" style="display:none" onchange="importAll(this)">'+
- '<p style="color:var(--muted);font-size:12px;margin-top:12px;line-height:1.6">Data lives in this browser and syncs to your Google ecosystem automatically. If the chat says "not linked", get the fresh Hub Link from your latest Telegram message and paste it above.</p>'+
- '<div class="btnrow"><button class="btn green" onclick="(cfg.apiUrl=$(\'s_api\').value.trim(),saveCfg(),alert(\'Saved\'),closeModal())">Save</button></div>')}
+  showModal('<h2>Settings & Data</h2><label>Hub Link (connects the 💬 chat to your agent)</label><input id="s_api" placeholder="https://…trycloudflare.com" value="'+esc(cfg.apiUrl||'')+'">'+
+  '<div class="btnrow"><button class="btn ghost" onclick="$(\'imp\').click()">Import backup</button><button class="btn primary" onclick="exportAll()">Export backup</button></div>'+
+  '<input type="file" id="imp" accept=".json" style="display:none" onchange="importAll(this)">'+
+  '<p style="color:var(--muted);font-size:12px;margin-top:12px;line-height:1.6">Data lives in this browser and syncs to your Google ecosystem automatically. If the chat says “not linked”, get the fresh Hub Link from your latest Telegram message and paste it above.</p>'+
+  '<div class="btnrow"><button class="btn green" onclick="(cfg.apiUrl=$(\'s_api\').value.trim(),saveCfg(),alert(\'Saved\'),closeModal())">Save</button></div>')}
 function exportAll(){const blob=new Blob([JSON.stringify({data:db,cfg},null,2)],{type:'application/json'});
- const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='upa_hub_backup_'+todayStr()+'.json';a.click();jadd('Exported backup');save()}
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='upa_hub_backup_'+todayStr()+'.json';a.click();jadd('Exported backup');save()}
 function importAll(inp){const f=inp.files[0];if(!f)return;const r=new FileReader();
- r.onload=e=>{try{const d=JSON.parse(e.target.result);if(d.data&&d.data.people){db=d.data;if(d.cfg)cfg=d.cfg}else if(d.people)db=d;saveCfg();save();alert('Imported OK')}catch(x){alert('Invalid backup')}};r.readAsText(f)}
+  r.onload=e=>{try{const d=JSON.parse(e.target.result);if(d.data&&d.data.people){db=d.data;if(d.cfg)cfg=d.cfg}else if(d.people)db=d;saveCfg();save();alert('Imported OK')}catch(x){alert('Invalid backup')}};r.readAsText(f)}
+
+/* ===== action sheet ===== */
+function showAddTaskForm(){closeActionSheet();fTask()}
+function showAddEventForm(){closeActionSheet();fMeeting()}
+function showAddFileLinkForm(){closeActionSheet();fDoc()}
+function openActionSheet(){$('actionsheet').classList.add('open')}
+function closeActionSheet(){$('actionsheet').classList.remove('open')}
+function setScope(s){saveScope(s);}
 
 /* ===== router ===== */
-function render(){
- if($('gsearch').value.trim()&&!detail){return globalSearch($('gsearch').value)}
- ({today:rToday,tasks:rTasks,events:rEvents,people:rPeople,library:rLibrary}[page]||rToday)()
-}
-const APP_VER='v4.0';$('verbadge').textContent=APP_VER;
-setScope(currentScope);render();googleSync();
+function render(){if($('gsearch').value.trim()&&!detail){return globalSearch($('gsearch').value)}
+  ({today:rToday,tasks:rTasks,meetings:rMeetings,people:rPeople,library:rLibrary}[page])()}
+const APP_VER='v4.0';$('verbadge').textContent=APP_VER;render();googleSync();
 </script>
 </body>
 </html>
