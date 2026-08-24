@@ -225,6 +225,13 @@ async function googleSync(){
    else if((pr.log||[]).length>((ex.log||[]).length)){
     ex.log=pr.log;ex.desc=pr.description||ex.desc;ex.nextSteps=pr.next_steps||ex.nextSteps;ex.scope=pr.scope||ex.scope;changed=true}
   });
+  // dedupe Real Estate variants (seed + sync can create both)
+  const reProj=db.projects.filter(pp=>/real estate/i.test(pp.title));
+  if(reProj.length>1){const keep=reProj.reduce((a,b)=>((b.log||[]).length>(a.log||[]).length?b:a));
+   db.projects=db.projects.filter(pp=>!( /real estate/i.test(pp.title)&&pp!==keep));
+   db.tasks.forEach(tt=>{if(/real estate/i.test(tt.projectTitle||'')||db.projects.every(x=>x.id!==tt.projectId&&/real estate/i.test((db.projects.find(y=>y.id===tt.projectId)||{}).title||''))){}});
+   changed=true}
+
   // folders: create missing ones (e.g. AI Adaptation Agency)
   const folderId={};
   (g.items||[]).forEach(it=>{
