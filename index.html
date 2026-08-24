@@ -214,14 +214,38 @@ async function googleSync(){
      suggested:[],notes:'From Google Calendar',gcalLink:ev.link||''});
     changed=true}
   });
-  // projects: add agent-created projects
+  // projects: add new ones AND enrich existing with richer agent data
   (g.projects||[]).forEach(pr=>{
    if(!pr.title)return;
-   const exists=db.projects.some(x=>x.title===pr.title);
-   if(!exists){
-    db.projects.push({id:uid(),title:pr.title,status:pr.status||'active',
-     desc:pr.description||'',nextSteps:pr.next_steps||[],log:[{ts:new Date().toISOString().slice(0,16),text:'Project created by agent'}]});
+   const ex=db.projects.find(x=>x.title===pr.title);
+   if(!ex){
+    db.projects.push({id:uid(),title:pr.title,status:pr.status||'active',scope:pr.scope||'work',
+     desc:pr.description||'',nextSteps:pr.next_steps||[],log:pr.log&&pr.log.length?pr.log:[{ts:new Date().toISOString().slice(0,16),text:'Project created by agent'}]});
     changed=true}
+   else if((pr.log||[]).length>((ex.log||[]).length)){
+    ex.log=pr.log;ex.desc=pr.description||ex.desc;ex.nextSteps=pr.next_steps||ex.nextSteps;ex.scope=pr.scope||ex.scope;changed=true}
+  });
+  // folders: create missing ones (e.g. AI Adaptation Agency)
+  const folderId={};
+  (g.items||[]).forEach(it=>{
+   if(!it.folder)return;
+   let f=db.folders.find(x=>x.name===it.folder);
+   if(!f){f={id:uid(),name:it.folder,icon:'🤖',scope:it.scope||'work'};db.folders.push(f);changed=true}
+   folderId[it.folder]=f.id;
+  });
+  // items: add agent documents not present
+  (g.items||[]).forEach(it=>{
+   if(!it.name)return;
+   const exists=db.items.some(x=>x.name===it.name);
+   if(!exists){
+    db.items.push({id:uid(),name:it.name,type:it.type||'doc',urlOrPath:it.urlOrPath||'',folderId:folderId[it.folder]||'',personId:'',meetingId:'',addedDate:todayStr(),scope:it.scope||'work'});
+    changed=true}
+  });
+  // journal: merge agent entries by date+text
+  (g.journal||[]).forEach(dj=>{
+   let day=db.journal.find(x=>x.date===dj.date);
+   if(!day){day={date:dj.date,entries:[]};db.journal.unshift(day);changed=true}
+   (dj.entries||[]).forEach(e=>{if(!day.entries.some(x=>x.text===e.text)){day.entries.push(e);changed=true}});
   });
   // tasks: add agent/google tasks not present
   (g.tasks||[]).forEach(t=>{
