@@ -392,7 +392,7 @@ function rToday(){
  if(next.length){
   h+='<div class="seclabel">Objectives — upcoming schedule</div>';
   next.slice(0,4).forEach(m=>{const p=P(m.personId);
-   h+='<div class="taskrow" onclick=\'showMeeting("'+m.id)+'\'"><div class="chk" style="background:var(--accent);border-color:var(--accent);color:#fff">📅</div>'+
+   h+='<div class="taskrow" onclick=\'showMeeting("'+m.id+'")\'><div class="chk" style="background:var(--accent);border-color:var(--accent);color:#fff">📅</div>'+
       '<div class="t"><b>'+esc(m.title)+'</b><div class="sub">'+fmtDT(m.datetime)+(p?' · with '+esc(p.name):'')+(m.location?' · 📍'+esc(m.location):'')+'</div></div></div>'});
  }
  const jr=db.journal[0];
