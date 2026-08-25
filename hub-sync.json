@@ -22,6 +22,14 @@
    "done": false,
    "gtaskId": "Yl9XcXhaZGlqejJ5T0s2VQ",
    "source": "agent"
+  },
+  {
+   "text": "Get FREE Google AI Studio key (15 min): aistudio.google.com > sign in > Get API key > paste in Telegram",
+   "date": "2026-08-26",
+   "priority": "high",
+   "done": false,
+   "gtaskId": "T1B4dXg4WEdTWnFkMzZNUw",
+   "source": "agent"
   }
  ],
  "events": [
@@ -40,7 +48,7 @@
    "source": "google"
   }
  ],
- "updated": "2026-08-25T18:58:19",
+ "updated": "2026-08-25T19:05:37",
  "projects": [
   {
    "title": "AI Adaptation Agency",
