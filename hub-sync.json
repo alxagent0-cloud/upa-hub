@@ -14,6 +14,14 @@
    "done": true,
    "gtaskId": "TlF1UndlZHJrSXpzbm9lTg",
    "source": "agent"
+  },
+  {
+   "text": "Grab free NVIDIA AI key (15 min): go to build.nvidia.com > sign up > Get API Key > paste it in Telegram chat - Hermes wires the rest",
+   "date": "2026-08-26",
+   "priority": "normal",
+   "done": false,
+   "gtaskId": "Yl9XcXhaZGlqejJ5T0s2VQ",
+   "source": "agent"
   }
  ],
  "events": [
@@ -32,7 +40,7 @@
    "source": "google"
   }
  ],
- "updated": "2026-08-25T17:10:00",
+ "updated": "2026-08-25T18:58:19",
  "projects": [
   {
    "title": "AI Adaptation Agency",
