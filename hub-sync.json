@@ -86,6 +86,79 @@
    "done": false,
    "gtaskId": "NXpRUGVhS2w3VF90NUN4bg",
    "source": "agent"
+  },
+  {
+   "text": "🔑 Get FREE Google AI Studio key — aistudio.google.com > sign in > Get API key > paste here",
+   "date": "2026-08-26",
+   "priority": "high",
+   "source": "agent"
+  },
+  {
+   "text": "🔑 Get FREE NVIDIA API key — build.nvidia.com > sign up > Get API Key > paste here",
+   "date": "2026-08-26",
+   "priority": "normal",
+   "source": "agent"
+  },
+  {
+   "text": "🤗 Create FREE HuggingFace account + write token — huggingface.co > sign up > Settings > Access Tokens > paste here",
+   "date": "2026-08-26",
+   "priority": "high",
+   "source": "agent"
+  },
+  {
+   "text": "🔑 Get FREE Groq key — console.groq.com > sign up > API Keys",
+   "date": "2026-08-27",
+   "priority": "normal",
+   "source": "agent"
+  },
+  {
+   "text": "🔑 Get FREE Cerebras key — cloud.cerebras.ai > sign up > API Keys",
+   "date": "2026-08-27",
+   "priority": "normal",
+   "source": "agent"
+  },
+  {
+   "text": "🔑 Get FREE Mistral key — console.mistral.ai > sign up > API Keys",
+   "date": "2026-08-28",
+   "priority": "normal",
+   "source": "agent"
+  },
+  {
+   "text": "📞 Call Tasheel (Saudi bank) — follow up on refund",
+   "date": "2026-08-26",
+   "priority": "high",
+   "gtaskId": "U0dDRXdUbG9CelRFNmJsQg",
+   "source": "google"
+  },
+  {
+   "text": "AGENT: Deploy n8n to HuggingFace Space once Sam's token arrives → import workflows → live lead test",
+   "date": "",
+   "priority": "high",
+   "done": false
+  },
+  {
+   "text": "AGENT: Wire free API keys into Hermes + OmniRoute as they arrive",
+   "date": "",
+   "priority": "normal",
+   "done": false
+  },
+  {
+   "text": "AGENT: Evaluate CLI-Anything lightweight CLIs on PC (LibreOffice/Audacity)",
+   "date": "",
+   "priority": "low",
+   "done": false
+  },
+  {
+   "text": "AGENT: Build visual Mission Control tab on Hub (status lights + explain buttons)",
+   "date": "",
+   "priority": "normal",
+   "done": false
+  },
+  {
+   "text": "AGENT: Client-tenant architecture design (multi-login dashboard) — platform phase prep",
+   "date": "",
+   "priority": "low",
+   "done": false
   }
  ],
  "events": [
@@ -214,6 +287,20 @@
    "scope": "work",
    "urlOrPath": "https://drive.google.com/file/d/1BPi4fN0IxCt93WQx_jKhV-pbZ5loAJti/view",
    "folder": "AI Adaptation Agency"
+  },
+  {
+   "name": "Automation Playbook (8-page PDF)",
+   "type": "pdf",
+   "folder": "Platform & Automation",
+   "urlOrPath": "https://github.com/alxagent0-cloud/upa-n8n-foundation",
+   "scope": "work"
+  },
+  {
+   "name": "n8n Foundation repo (deploy kit + workflows)",
+   "type": "link",
+   "folder": "Platform & Automation",
+   "urlOrPath": "https://github.com/alxagent0-cloud/upa-n8n-foundation",
+   "scope": "work"
   }
  ],
  "journal": [

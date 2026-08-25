@@ -76,6 +76,7 @@ nav.tabs button.active{color:var(--apple-link-blue)}
 .nextmeet{background:linear-gradient(135deg,var(--apple-bg-elevated),#EAF2FC);border:none;border-radius:var(--apple-radius-card);padding:18px;margin-bottom:12px;cursor:pointer;box-shadow:var(--apple-shadow-card)}
 .empty{text-align:center;color:var(--apple-text-tertiary);padding:36px 18px;font-size:15px;line-height:1.6}
 .taskrow{display:flex;align-items:flex-start;gap:12px;background:var(--apple-bg-white);border:none;border-radius:var(--apple-radius-card-sm);padding:13px;margin-bottom:9px;box-shadow:var(--apple-shadow-card)}
+.daysep{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:rgba(88,166,255,.08);border:1px solid rgba(88,166,255,.25);border-radius:8px;padding:6px 12px;margin:14px 0 9px}
 .chk{width:22px;height:22px;min-width:22px;border:1.5px solid #C7C7CC;border-radius:50%;cursor:pointer;margin-top:1px;text-align:center;line-height:20px;font-size:12px;color:transparent;transition:all .2s ease}
 .chk.on{background:var(--green);border-color:var(--green);color:#fff}
 .taskrow .t{flex:1}.taskrow .t.done{text-decoration:line-through;color:var(--apple-text-tertiary)}
@@ -381,7 +382,19 @@ function rToday(){
  else h+='<div class="seclabel">Schedule</div><div class="empty" style="padding:18px">Nothing scheduled 🎉</div>';
  h+='<div class="seclabel">Due / overdue tasks</div>';
  if(!due.length)h+='<div class="empty" style="padding:14px">Inbox zero on tasks ✅</div>';
- due.slice(0,6).forEach(t=>h+=taskRow(t));
+ /* day-grouped on Home too, capped for clarity */
+ {const today=todayStr(),tom=new Date(Date.now()+864e5).toISOString().slice(0,10);
+  let lastDay=null;
+  const dl=d=>{if(!d)return '📅 No date';if(d<today)return '⚠️ Overdue — '+d;if(d===today)return '📍 TODAY — '+d;if(d===tom)return '➡️ Tomorrow — '+d;return '🗓️ '+d};
+  due.slice(0,10).forEach(t=>{const l=dl(t.date);if(l!==lastDay){h+='<div class="daysep">'+l+'</div>';lastDay=l}h+=taskRow(t)});
+  if(due.length>10)h+='<div class="sub" style="margin:6px 2px">+'+(due.length-10)+' more — see Tasks tab</div>';}
+ /* meetings & events shown as objectives to accomplish */
+ if(next.length){
+  h+='<div class="seclabel">Objectives — upcoming schedule</div>';
+  next.slice(0,4).forEach(m=>{const p=P(m.personId);
+   h+='<div class="taskrow" onclick=\'showMeeting("'+m.id)+'\'"><div class="chk" style="background:var(--accent);border-color:var(--accent);color:#fff">📅</div>'+
+      '<div class="t"><b>'+esc(m.title)+'</b><div class="sub">'+fmtDT(m.datetime)+(p?' · with '+esc(p.name):'')+(m.location?' · 📍'+esc(m.location):'')+'</div></div></div>'});
+ }
  const jr=db.journal[0];
  h+='<div class="seclabel">Journal — latest day</div>';
  if(jr){h+='<div class="card" style="cursor:default" onclick="showJournal()"><h3>'+jr.date+'</h3>'+jr.entries.slice(-4).map(e=>'<div class="sub">· '+esc(e.text)+'</div>').join('')+((jr.entries.length>4)?'<div class="sub" style="margin-top:4px">+'+(jr.entries.length-4)+' more — tap to see all</div>':'')+'</div>';}
@@ -414,7 +427,19 @@ function rTasks(){
  if(tfilt==='open')list=list.filter(t=>!t.done);
  if(tfilt==='done')list=list.filter(t=>t.done);
  if(!list.length)h+='<div class="empty">No tasks here. Tap <b style="color:var(--accent)">+</b> to add one.</div>';
- list.forEach(t=>h+=taskRow(t));
+ /* group by day with separators: OVERDUE | TODAY | TOMORROW | date */
+ const today=todayStr(),tom=new Date(Date.now()+864e5).toISOString().slice(0,10);
+ let lastDay=null;
+ const dayLabel=d=>{
+  if(!d)return '📅 No date / agent tasks';
+  if(d<today)return '⚠️ Overdue — before '+d;
+  if(d===today)return '📍 TODAY — '+d;
+  if(d===tom)return '➡️ Tomorrow — '+d;
+  return '🗓️ '+d;
+ };
+ list.forEach(t=>{const dl=(t.done&&t.date!==today)?'✅ Completed':dayLabel(t.date);
+  if(dl!==lastDay){h+='<div class="daysep">'+dl+'</div>';lastDay=dl}
+  h+=taskRow(t)});
  h+='<div class="sub" style="margin-top:10px">🔄 Everything here syncs to your Google ecosystem automatically — Tasks, Calendar, Contacts, Drive. Nothing to press.</div>';
  $('content').innerHTML=h;
 }
