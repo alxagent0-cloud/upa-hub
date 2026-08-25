@@ -70,6 +70,14 @@
    "done": false,
    "gtaskId": "b1ZiNEZiNGNxWFlMc1dXTw",
    "source": "agent"
+  },
+  {
+   "text": "AGENT TASK: Deploy n8n (repo upa-n8n-foundation ready): needs hosting decision - free HuggingFace Space vs ~/mo EU VPS - then docker compose up + import 2 workflows + wire HERMES_API",
+   "date": "",
+   "priority": "high",
+   "done": false,
+   "gtaskId": "ZUZOLUNCeFdtNWtSSy11eQ",
+   "source": "agent"
   }
  ],
  "events": [
@@ -88,7 +96,7 @@
    "source": "google"
   }
  ],
- "updated": "2026-08-25T20:27:40",
+ "updated": "2026-08-25T23:47:23",
  "projects": [
   {
    "title": "AI Adaptation Agency",
