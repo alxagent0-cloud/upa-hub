@@ -62,6 +62,14 @@
    "done": false,
    "gtaskId": "U3VVaHVLbmwwT19mQkZXMw",
    "source": "agent"
+  },
+  {
+   "text": "AGENT TASK - Evaluate CLI-Anything (HKUDS): test 1-2 lightweight CLIs (LibreOffice PDF, Audacity audio) on Sam's PC; heavy ones (Blender/OBS) likely skip due to 4GB RAM - document verdict in chat",
+   "date": "",
+   "priority": "normal",
+   "done": false,
+   "gtaskId": "b1ZiNEZiNGNxWFlMc1dXTw",
+   "source": "agent"
   }
  ],
  "events": [
@@ -80,7 +88,7 @@
    "source": "google"
   }
  ],
- "updated": "2026-08-25T19:06:08",
+ "updated": "2026-08-25T20:27:40",
  "projects": [
   {
    "title": "AI Adaptation Agency",
