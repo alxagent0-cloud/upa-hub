@@ -93,5 +93,536 @@
  "metrics": {
   "freeModels": 17,
   "gateway": "online"
+ },
+ "agent": {
+  "identity": {
+   "model": "ox-alpha (via stealth routing)",
+   "provider": "openrouter",
+   "framework": "Hermes Agent",
+   "voice": "edge TTS"
+  },
+  "coreTools": [
+   {
+    "name": "Terminal & files",
+    "desc": "Run commands, read/write/edit any file on this PC"
+   },
+   {
+    "name": "Web search + page reader",
+    "desc": "Research anything, extract full pages"
+   },
+   {
+    "name": "Real browser automation",
+    "desc": "Drive Chrome: navigate, click, screenshot, verify"
+   },
+   {
+    "name": "Code execution sandbox",
+    "desc": "Python scripts with logic, loops, data processing"
+   },
+   {
+    "name": "Persistent memory",
+    "desc": "Remembers you and every environment fact across sessions"
+   },
+   {
+    "name": "Scheduled jobs (cron)",
+    "desc": "Autonomous recurring tasks — briefs, monitors, feeds"
+   },
+   {
+    "name": "Subagent delegation",
+    "desc": "Spawn parallel worker agents for big jobs"
+   },
+   {
+    "name": "Voice messages",
+    "desc": "Speaks replies as Telegram voice notes in natural voice"
+   },
+   {
+    "name": "Vision",
+    "desc": "Reads screenshots, photos, documents visually"
+   },
+   {
+    "name": "Session history",
+    "desc": "Searches everything ever discussed"
+   }
+  ],
+  "skillsByCategory": {
+   "apple": [
+    {
+     "name": "apple-notes",
+     "desc": "Manage Apple Notes via memo CLI: create, search, edit."
+    },
+    {
+     "name": "apple-reminders",
+     "desc": "Apple Reminders via remindctl: add, list, complete."
+    },
+    {
+     "name": "findmy",
+     "desc": "Track Apple devices/AirTags via FindMy.app on macOS."
+    },
+    {
+     "name": "imessage",
+     "desc": "Send and receive iMessages/SMS via the imsg CLI on macOS."
+    }
+   ],
+   "autonomous-ai-agents": [
+    {
+     "name": "claude-code",
+     "desc": "Delegate coding to Claude Code CLI (features, PRs)."
+    },
+    {
+     "name": "codex",
+     "desc": "Delegate coding to OpenAI Codex CLI (features, PRs)."
+    },
+    {
+     "name": "coding-agent-setup",
+     "desc": "Use when installing/wiring coding-agent CLIs on Windows."
+    },
+    {
+     "name": "computer-use",
+     "desc": "Drive the desktop in the background without stealing focus."
+    },
+    {
+     "name": "hermes-agent",
+     "desc": "Use, configure, theme, extend, and orchestrate Hermes Agent."
+    },
+    {
+     "name": "merge-reconciler",
+     "desc": "Neutral third-party resolution of agent merge conflicts."
+    },
+    {
+     "name": "opencode",
+     "desc": "Delegate coding to OpenCode CLI (features, PR review)."
+    }
+   ],
+   "codebase-memory": [
+    {
+     "name": "codebase-memory",
+     "desc": "Use the codebase knowledge graph for structural code queries. Triggers on: explore the codebase, understand th"
+    }
+   ],
+   "creative": [
+    {
+     "name": "apple-design",
+     "desc": "Use for Apple-style web UI design and upgrades."
+    },
+    {
+     "name": "architecture-diagram",
+     "desc": "Dark-themed SVG architecture/cloud/infra diagrams as HTML."
+    },
+    {
+     "name": "ascii-art",
+     "desc": "ASCII art: pyfiglet, cowsay, boxes, image-to-ascii."
+    },
+    {
+     "name": "ascii-video",
+     "desc": "ASCII video: convert video/audio to colored ASCII MP4/GIF."
+    },
+    {
+     "name": "baoyu-infographic",
+     "desc": "Infographics: 21 layouts x 21 styles (信息图, 可视化)."
+    },
+    {
+     "name": "claude-design",
+     "desc": "Design one-off HTML artifacts (landing, deck, prototype)."
+    },
+    {
+     "name": "comfyui",
+     "desc": "Generate images, video, and audio via diffusion workflows."
+    },
+    {
+     "name": "design-md",
+     "desc": "Author/validate/export Google's DESIGN.md token spec files."
+    },
+    {
+     "name": "excalidraw",
+     "desc": "Hand-drawn Excalidraw JSON diagrams (arch, flow, seq)."
+    },
+    {
+     "name": "free-model-pool",
+     "desc": "Side task needing an LLM? Use a free model, never paid."
+    },
+    {
+     "name": "humanizer",
+     "desc": "Humanize text: strip AI-isms and add real voice."
+    },
+    {
+     "name": "manim-video",
+     "desc": "Manim CE animations: 3Blue1Brown math/algo videos."
+    },
+    {
+     "name": "open-design-library",
+     "desc": "Design task? Use the OpenDesign library in ~/Projects."
+    },
+    {
+     "name": "p5js",
+     "desc": "p5.js sketches: gen art, shaders, interactive, 3D."
+    },
+    {
+     "name": "popular-web-designs",
+     "desc": "54 real design systems (Stripe, Linear, Vercel) as HTML/CSS."
+    },
+    {
+     "name": "pretext",
+     "desc": "Build creative browser demos with DOM-free text layout."
+    },
+    {
+     "name": "sketch",
+     "desc": "Throwaway HTML mockups: 2-3 design variants to compare."
+    },
+    {
+     "name": "songwriting-and-ai-music",
+     "desc": "Songwriting craft and Suno AI music prompts."
+    },
+    {
+     "name": "touchdesigner-mcp",
+     "desc": "Control TouchDesigner via twozero MCP."
+    }
+   ],
+   "data-science": [
+    {
+     "name": "jupyter-live-kernel",
+     "desc": "Iterative Python via live Jupyter kernel (hamelnb)."
+    }
+   ],
+   "devops": [
+    {
+     "name": "sdlc-review",
+     "desc": "Review Kanban handoffs and route verified outcomes."
+    }
+   ],
+   "email": [
+    {
+     "name": "email-inbox-triage",
+     "desc": "Triage an inbox: prioritize threads, draft replies safely."
+    },
+    {
+     "name": "himalaya",
+     "desc": "Himalaya CLI: IMAP/SMTP email from terminal."
+    }
+   ],
+   "file-delivery-fix": [
+    {
+     "name": "file-delivery-fix",
+     "desc": "Fix for file delivery issues"
+    }
+   ],
+   "github": [
+    {
+     "name": "codebase-inspection",
+     "desc": "Inspect codebases w/ pygount: LOC, languages, ratios."
+    },
+    {
+     "name": "github-auth",
+     "desc": "GitHub auth setup: HTTPS tokens, SSH keys, gh CLI login."
+    },
+    {
+     "name": "github-code-review",
+     "desc": "Review PRs: diffs, inline comments via gh or REST."
+    },
+    {
+     "name": "github-issue-to-pr",
+     "desc": "Carry a GitHub issue to a verified PR with honest CI state."
+    },
+    {
+     "name": "github-issues",
+     "desc": "Create, triage, label, assign GitHub issues via gh or REST."
+    },
+    {
+     "name": "github-pr-workflow",
+     "desc": "GitHub PR lifecycle: branch, commit, open, CI, merge."
+    },
+    {
+     "name": "github-repo-management",
+     "desc": "Clone/create/fork repos; manage remotes, releases."
+    }
+   ],
+   "media": [
+    {
+     "name": "gif-search",
+     "desc": "Search/download GIFs from Tenor via curl + jq."
+    },
+    {
+     "name": "heartmula",
+     "desc": "HeartMuLa: Suno-like song generation from lyrics + tags."
+    },
+    {
+     "name": "songsee",
+     "desc": "Audio spectrograms/features (mel, chroma, MFCC) via CLI."
+    },
+    {
+     "name": "youtube-content",
+     "desc": "YouTube transcripts to summaries, threads, blogs."
+    }
+   ],
+   "mlops": [
+    {
+     "name": "evaluating-llms-harness",
+     "desc": "lm-eval-harness: benchmark LLMs (MMLU, GSM8K, etc.)."
+    },
+    {
+     "name": "weights-and-biases",
+     "desc": "W&B: log ML experiments, sweeps, model registry, dashboards."
+    },
+    {
+     "name": "huggingface-hub",
+     "desc": "HuggingFace hf CLI: search/download/upload models, datasets."
+    },
+    {
+     "name": "llama-cpp",
+     "desc": "llama.cpp local GGUF inference + HF Hub model discovery."
+    },
+    {
+     "name": "serving-llms-vllm",
+     "desc": "vLLM: high-throughput LLM serving, OpenAI API, quantization."
+    },
+    {
+     "name": "audiocraft",
+     "desc": "AudioCraft: MusicGen text-to-music, AudioGen text-to-sound."
+    },
+    {
+     "name": "segment-anything",
+     "desc": "SAM: zero-shot image segmentation via points, boxes, masks."
+    }
+   ],
+   "note-taking": [
+    {
+     "name": "obsidian",
+     "desc": "Read, search, create, and edit notes in the Obsidian vault."
+    }
+   ],
+   "productivity": [
+    {
+     "name": "airtable",
+     "desc": "Airtable REST API via curl. Records CRUD, filters, upserts."
+    },
+    {
+     "name": "box",
+     "desc": "Box manages cloud files, sharing, search, and metadata."
+    },
+    {
+     "name": "designed-pdf-reports",
+     "desc": "Need a beautiful PDF report/deck? Render designed HTML."
+    },
+    {
+     "name": "document-output-verification",
+     "desc": "Verify docs for clipped text before delivering to user."
+    },
+    {
+     "name": "document-to-action-items",
+     "desc": "Extract cited obligations, deadlines, tasks from documents."
+    },
+    {
+     "name": "docx",
+     "desc": "Create, read, edit, template, and review Word .docx files."
+    },
+    {
+     "name": "google-workspace",
+     "desc": "Gmail, Calendar, Drive, Docs, Sheets via gws CLI or Python."
+    },
+    {
+     "name": "maps",
+     "desc": "Geocode, POIs, routes, timezones via OpenStreetMap/OSRM."
+    },
+    {
+     "name": "meeting-action-items",
+     "desc": "Turn meeting notes into cited decisions, owners, tickets."
+    },
+    {
+     "name": "nano-pdf",
+     "desc": "Edit text in existing PDFs via natural-language prompts."
+    },
+    {
+     "name": "notion",
+     "desc": "Notion API + ntn CLI: pages, databases, markdown, Workers."
+    },
+    {
+     "name": "ocr-and-documents",
+     "desc": "Extract text from PDFs/scans (pymupdf, marker-pdf)."
+    },
+    {
+     "name": "pdf",
+     "desc": "Create, read, merge, fill, and secure PDF files."
+    },
+    {
+     "name": "petdex",
+     "desc": "Install and select animated petdex mascots for Hermes."
+    },
+    {
+     "name": "powerpoint",
+     "desc": "Create, read, edit .pptx decks with python-pptx."
+    },
+    {
+     "name": "product-price-monitor",
+     "desc": "Watch product, flight, or listing prices; alert on target."
+    },
+    {
+     "name": "session-librarian",
+     "desc": "Organize sessions by prompt: find, rename, archive, prune."
+    },
+    {
+     "name": "teams-meeting-pipeline",
+     "desc": "Teams meeting summaries, job replay, Graph subscriptions."
+    },
+    {
+     "name": "weekly-review-planning",
+     "desc": "Weekly reset: commitments, stalled work, next-week plan."
+    },
+    {
+     "name": "xlsx",
+     "desc": "Create, read, edit Excel .xlsx workbooks and CSVs."
+    }
+   ],
+   "research": [
+    {
+     "name": "arxiv",
+     "desc": "Search arXiv papers by keyword, author, category, or ID."
+    },
+    {
+     "name": "blocked-page-recovery",
+     "desc": "Recover blocked/paywalled/WAF'd pages via fallbacks."
+    },
+    {
+     "name": "blogwatcher",
+     "desc": "Monitor blogs and RSS/Atom feeds via blogwatcher-cli tool."
+    },
+    {
+     "name": "competitor-news-monitor",
+     "desc": "Watch named companies for material news; cited digests."
+    },
+    {
+     "name": "grounded-citations",
+     "desc": "Ground answers and documents in cited, verifiable sources."
+    },
+    {
+     "name": "llm-wiki",
+     "desc": "Karpathy's LLM Wiki: build/query interlinked markdown KB."
+    },
+    {
+     "name": "polymarket",
+     "desc": "Query Polymarket: markets, prices, orderbooks, history."
+    },
+    {
+     "name": "research-paper-writing",
+     "desc": "Write ML papers for NeurIPS/ICML/ICLR: design→submit."
+    }
+   ],
+   "smart-home": [
+    {
+     "name": "openhue",
+     "desc": "Control Philips Hue lights, scenes, rooms via OpenHue CLI."
+    }
+   ],
+   "social-media": [
+    {
+     "name": "xurl",
+     "desc": "X/Twitter via xurl CLI: raw post search, posting, DM, media."
+    }
+   ],
+   "software-development": [
+    {
+     "name": "ai-assistant-development",
+     "desc": "Build AI assistants with Hermes: core skills, MCP, contacts."
+    },
+    {
+     "name": "capability-setup",
+     "desc": "Use when installing/wiring new tools or access on Windows."
+    },
+    {
+     "name": "cli-anything",
+     "desc": "Use when the user wants Hermes Agent to build, refine, test, or validate a CLI-Anything harness for a GUI appl"
+    },
+    {
+     "name": "cli-anything-toolbox",
+     "desc": "Automate an app/website via CLI-Anything in ~/Projects."
+    },
+    {
+     "name": "dogfood",
+     "desc": "Exploratory QA of web apps: find bugs, evidence, reports."
+    },
+    {
+     "name": "free-ai-provider-stack",
+     "desc": "Sam shares a video/repo link or asks about AI models or keys"
+    },
+    {
+     "name": "hermes-agent-skill-authoring",
+     "desc": "Author in-repo SKILL.md files: frontmatter and structure."
+    },
+    {
+     "name": "hermes-troubleshooting",
+     "desc": "Debug Hermes crashes, gateway restarts, phantom sessions."
+    },
+    {
+     "name": "inspecting-hermes-desktop-dom",
+     "desc": "Read the live Hermes desktop DOM/CSS over CDP."
+    },
+    {
+     "name": "node-inspect-debugger",
+     "desc": "Debug Node.js via --inspect + Chrome DevTools Protocol CLI."
+    },
+    {
+     "name": "plan",
+     "desc": "Write a markdown plan to .hermes/plans/; no execution."
+    },
+    {
+     "name": "python-debugpy",
+     "desc": "Debug Python: pdb REPL + debugpy remote (DAP)."
+    },
+    {
+     "name": "requesting-code-review",
+     "desc": "Pre-commit review: security scan, quality gates, auto-fix."
+    },
+    {
+     "name": "simplify-code",
+     "desc": "Parallel 4-agent cleanup of recent code changes."
+    },
+    {
+     "name": "single-file-webapps",
+     "desc": "Build, test, deploy single-file web apps end to end."
+    },
+    {
+     "name": "spike",
+     "desc": "Throwaway experiments to validate an idea before build."
+    },
+    {
+     "name": "systematic-debugging",
+     "desc": "4-phase root cause debugging: understand bugs before fixing."
+    },
+    {
+     "name": "test-driven-development",
+     "desc": "TDD: enforce RED-GREEN-REFACTOR, tests before code."
+    },
+    {
+     "name": "upa-hub",
+     "desc": "Use when building, testing, or deploying the UPA Hub app."
+    },
+    {
+     "name": "upa-hub-dev",
+     "desc": "Use when building, syncing, or deploying the UPA Hub app."
+    },
+    {
+     "name": "upa-hub-integration",
+     "desc": "Pushing tasks/status to the UPA Hub or reading its feeds."
+    },
+    {
+     "name": "windows-toolchain-setup",
+     "desc": "Install OpenCode, GitHub, and doc engines on Windows hosts."
+    },
+    {
+     "name": "windows-workstation-setup",
+     "desc": "Set up Windows tools & desktop integration for the user."
+    }
+   ],
+   "test-simple-skill": [
+    {
+     "name": "test-simple-skill",
+     "desc": "A simple test skill"
+    }
+   ],
+   "yuanbao": [
+    {
+     "name": "yuanbao",
+     "desc": "Yuanbao (元宝) groups: @mention users, query info/members."
+    }
+   ]
+  },
+  "skillCount": 110
  }
 }
