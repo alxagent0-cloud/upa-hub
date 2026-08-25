@@ -1,0 +1,97 @@
+{
+ "updated": "2026-08-25T23:16:33+02:00",
+ "systems": [
+  {
+   "id": "toolbox",
+   "label": "AI Toolbox",
+   "items": [
+    {
+     "name": "OpenDesign library",
+     "status": "installed"
+    },
+    {
+     "name": "CLI-Anything repo",
+     "status": "installed"
+    },
+    {
+     "name": "OmniRoute (pending install)",
+     "status": "planned"
+    }
+   ]
+  }
+ ],
+ "tasks": {
+  "open": [
+   {
+    "text": "Call Tasheel (Saudi bank) — follow up on refund",
+    "due": "2026-08-24",
+    "priority": "normal",
+    "source": "google"
+   },
+   {
+    "text": "Grab free NVIDIA AI key (15 min): go to build.nvidia.com > sign up > Get API Key > paste it in Telegram chat - Hermes wires the rest",
+    "due": "2026-08-26",
+    "priority": "normal",
+    "source": "agent"
+   },
+   {
+    "text": "Get FREE Google AI Studio key (15 min): aistudio.google.com > sign in > Get API key > paste in Telegram",
+    "due": "2026-08-26",
+    "priority": "high",
+    "source": "agent"
+   },
+   {
+    "text": "Get FREE Groq key (10 min, fastest models): console.groq.com > sign up > API Keys > paste in Telegram",
+    "due": "2026-08-27",
+    "priority": "normal",
+    "source": "agent"
+   },
+   {
+    "text": "Get FREE Cerebras key (10 min, biggest daily volume): cloud.cerebras.ai > sign up > API Keys > paste in Telegram",
+    "due": "2026-08-27",
+    "priority": "normal",
+    "source": "agent"
+   },
+   {
+    "text": "Get FREE Mistral key (10 min, biggest monthly cap ~1B tokens): console.mistral.ai > sign up > API Keys > paste in Telegram",
+    "due": "2026-08-28",
+    "priority": "normal",
+    "source": "agent"
+   },
+   {
+    "text": "AGENT TASK: Install OmniRoute (npm i -g omniroute), plug in all Sam's free keys, set task combos (chat/coding/fast/volume), wire endpoint into Hermes, stress-test failover",
+    "due": "2026-08-29",
+    "priority": "high",
+    "source": "agent"
+   },
+   {
+    "text": "AGENT TASK - Evaluate CLI-Anything (HKUDS): test 1-2 lightweight CLIs (LibreOffice PDF, Audacity audio) on Sam's PC; heavy ones (Blender/OBS) likely skip due to 4GB RAM - document verdict in chat",
+    "due": "",
+    "priority": "normal",
+    "source": "agent"
+   }
+  ],
+  "doneToday": [
+   {
+    "text": "Set up dedicated 'UPA Installs' chat: Sam shares YouTube video / open-source repo -> Hermes checks it out & installs the skill/feature into UPA",
+    "due": "2026-08-26",
+    "priority": "high",
+    "source": "agent"
+   }
+  ]
+ },
+ "events": [
+  {
+   "title": "Meeting — Sami Kaddoum",
+   "start": ""
+  },
+  {
+   "title": "Call Tasheel (Saudi bank) — follow up on pending refund",
+   "start": ""
+  }
+ ],
+ "metrics": {
+  "freeModels": 17,
+  "gateway": "online"
+ }
+}
