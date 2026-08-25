@@ -78,6 +78,14 @@
    "done": false,
    "gtaskId": "ZUZOLUNCeFdtNWtSSy11eQ",
    "source": "agent"
+  },
+  {
+   "text": "Sam: create FREE HuggingFace account (10 min): huggingface.co > sign up > Settings > Access Tokens > new token (write) > paste token in Telegram - needed to deploy n8n factory",
+   "date": "2026-08-26",
+   "priority": "high",
+   "done": false,
+   "gtaskId": "NXpRUGVhS2w3VF90NUN4bg",
+   "source": "agent"
   }
  ],
  "events": [
@@ -96,7 +104,7 @@
    "source": "google"
   }
  ],
- "updated": "2026-08-25T23:47:23",
+ "updated": "2026-08-25T23:58:23",
  "projects": [
   {
    "title": "AI Adaptation Agency",
