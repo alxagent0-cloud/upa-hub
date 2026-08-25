@@ -54,6 +54,14 @@
    "done": false,
    "gtaskId": "WGVzc29IV01vVGZPelg2ZA",
    "source": "agent"
+  },
+  {
+   "text": "AGENT TASK: Install OmniRoute (npm i -g omniroute), plug in all Sam's free keys, set task combos (chat/coding/fast/volume), wire endpoint into Hermes, stress-test failover",
+   "date": "2026-08-29",
+   "priority": "high",
+   "done": false,
+   "gtaskId": "U3VVaHVLbmwwT19mQkZXMw",
+   "source": "agent"
   }
  ],
  "events": [
@@ -72,7 +80,7 @@
    "source": "google"
   }
  ],
- "updated": "2026-08-25T19:06:00",
+ "updated": "2026-08-25T19:06:08",
  "projects": [
   {
    "title": "AI Adaptation Agency",
