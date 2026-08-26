@@ -1,325 +1,111 @@
 {
  "tasks": [
   {
-   "text": "Call Tasheel (Saudi bank) — follow up on refund",
-   "date": "2026-08-24",
+   "text": "Sam: create FREE HuggingFace account (10 min): huggingface.co > sign up > Settings > Access Tokens > new token (write) > paste token in Telegram - needed to deploy n8n factory",
+   "date": "2026-08-26",
    "done": false,
-   "gtaskId": "U0dDRXdUbG9CelRFNmJsQg",
+   "gtaskId": "NXpRUGVhS2w3VF90NUN4bg",
+   "source": "google"
+  },
+  {
+   "text": "AGENT TASK: Deploy n8n (repo upa-n8n-foundation ready): needs hosting decision - free HuggingFace Space vs ~/mo EU VPS - then docker compose up + import 2 workflows + wire HERMES_API",
+   "date": "",
+   "done": false,
+   "gtaskId": "ZUZOLUNCeFdtNWtSSy11eQ",
+   "source": "google"
+  },
+  {
+   "text": "AGENT TASK - Evaluate CLI-Anything (HKUDS): test 1-2 lightweight CLIs (LibreOffice PDF, Audacity audio) on Sam's PC; heavy ones (Blender/OBS) likely skip due to 4GB RAM - document verdict in chat",
+   "date": "",
+   "done": false,
+   "gtaskId": "b1ZiNEZiNGNxWFlMc1dXTw",
+   "source": "google"
+  },
+  {
+   "text": "AGENT TASK: Install OmniRoute (npm i -g omniroute), plug in all Sam's free keys, set task combos (chat/coding/fast/volume), wire endpoint into Hermes, stress-test failover",
+   "date": "2026-08-29",
+   "done": false,
+   "gtaskId": "U3VVaHVLbmwwT19mQkZXMw",
+   "source": "google"
+  },
+  {
+   "text": "Get FREE Mistral key (10 min, biggest monthly cap ~1B tokens): console.mistral.ai > sign up > API Keys > paste in Telegram",
+   "date": "2026-08-28",
+   "done": false,
+   "gtaskId": "WGVzc29IV01vVGZPelg2ZA",
+   "source": "google"
+  },
+  {
+   "text": "Get FREE Cerebras key (10 min, biggest daily volume): cloud.cerebras.ai > sign up > API Keys > paste in Telegram",
+   "date": "2026-08-27",
+   "done": false,
+   "gtaskId": "MDVycG5VTHhzbFNBSzBsZA",
+   "source": "google"
+  },
+  {
+   "text": "Get FREE Groq key (10 min, fastest models): console.groq.com > sign up > API Keys > paste in Telegram",
+   "date": "2026-08-27",
+   "done": false,
+   "gtaskId": "ZlkxT2lJMGZIaXFva0tuVw",
+   "source": "google"
+  },
+  {
+   "text": "Get FREE Google AI Studio key (15 min): aistudio.google.com > sign in > Get API key > paste in Telegram",
+   "date": "2026-08-26",
+   "done": false,
+   "gtaskId": "T1B4dXg4WEdTWnFkMzZNUw",
+   "source": "google"
+  },
+  {
+   "text": "Grab free NVIDIA AI key (15 min): go to build.nvidia.com > sign up > Get API Key > paste it in Telegram chat - Hermes wires the rest",
+   "date": "2026-08-26",
+   "done": false,
+   "gtaskId": "Yl9XcXhaZGlqejJ5T0s2VQ",
    "source": "google"
   },
   {
    "text": "Set up dedicated 'UPA Installs' chat: Sam shares YouTube video / open-source repo -> Hermes checks it out & installs the skill/feature into UPA",
    "date": "2026-08-26",
-   "priority": "high",
-   "done": true,
+   "done": false,
    "gtaskId": "TlF1UndlZHJrSXpzbm9lTg",
-   "source": "agent"
+   "source": "google"
   },
   {
-   "text": "Grab free NVIDIA AI key (15 min): go to build.nvidia.com > sign up > Get API Key > paste it in Telegram chat - Hermes wires the rest",
-   "date": "2026-08-26",
-   "priority": "normal",
-   "done": false,
-   "gtaskId": "Yl9XcXhaZGlqejJ5T0s2VQ",
-   "source": "agent"
-  },
-  {
-   "text": "Get FREE Google AI Studio key (15 min): aistudio.google.com > sign in > Get API key > paste in Telegram",
-   "date": "2026-08-26",
-   "priority": "high",
-   "done": false,
-   "gtaskId": "T1B4dXg4WEdTWnFkMzZNUw",
-   "source": "agent"
-  },
-  {
-   "text": "Get FREE Groq key (10 min, fastest models): console.groq.com > sign up > API Keys > paste in Telegram",
+   "text": "AI Agency: Pick agency name + check domain availability",
    "date": "2026-08-27",
-   "priority": "normal",
    "done": false,
-   "gtaskId": "ZlkxT2lJMGZIaXFva0tuVw",
-   "source": "agent"
+   "gtaskId": "OHRvSVkwY01UdUZfSy02bg",
+   "source": "google"
   },
   {
-   "text": "Get FREE Cerebras key (10 min, biggest daily volume): cloud.cerebras.ai > sign up > API Keys > paste in Telegram",
+   "text": "AI Agency: Validate service packages & pricing",
    "date": "2026-08-27",
-   "priority": "normal",
    "done": false,
-   "gtaskId": "MDVycG5VTHhzbFNBSzBsZA",
-   "source": "agent"
+   "gtaskId": "MU1WdDZVdFpwd0RoWEtNWg",
+   "source": "google"
   },
   {
-   "text": "Get FREE Mistral key (10 min, biggest monthly cap ~1B tokens): console.mistral.ai > sign up > API Keys > paste in Telegram",
-   "date": "2026-08-28",
-   "priority": "normal",
-   "done": false,
-   "gtaskId": "WGVzc29IV01vVGZPelg2ZA",
-   "source": "agent"
-  },
-  {
-   "text": "AGENT TASK: Install OmniRoute (npm i -g omniroute), plug in all Sam's free keys, set task combos (chat/coding/fast/volume), wire endpoint into Hermes, stress-test failover",
-   "date": "2026-08-29",
-   "priority": "high",
-   "done": false,
-   "gtaskId": "U3VVaHVLbmwwT19mQkZXMw",
-   "source": "agent"
-  },
-  {
-   "text": "AGENT TASK - Evaluate CLI-Anything (HKUDS): test 1-2 lightweight CLIs (LibreOffice PDF, Audacity audio) on Sam's PC; heavy ones (Blender/OBS) likely skip due to 4GB RAM - document verdict in chat",
-   "date": "",
-   "priority": "normal",
-   "done": false,
-   "gtaskId": "b1ZiNEZiNGNxWFlMc1dXTw",
-   "source": "agent"
-  },
-  {
-   "text": "AGENT TASK: Deploy n8n (repo upa-n8n-foundation ready): needs hosting decision - free HuggingFace Space vs ~/mo EU VPS - then docker compose up + import 2 workflows + wire HERMES_API",
-   "date": "",
-   "priority": "high",
-   "done": false,
-   "gtaskId": "ZUZOLUNCeFdtNWtSSy11eQ",
-   "source": "agent"
-  },
-  {
-   "text": "Sam: create FREE HuggingFace account (10 min): huggingface.co > sign up > Settings > Access Tokens > new token (write) > paste token in Telegram - needed to deploy n8n factory",
+   "text": "AI Agency: Choose legal structure (micro-entrepreneur vs SASU)",
    "date": "2026-08-26",
-   "priority": "high",
    "done": false,
-   "gtaskId": "NXpRUGVhS2w3VF90NUN4bg",
-   "source": "agent"
+   "gtaskId": "UHdyQ201Q1pVZUN0QnBabA",
+   "source": "google"
   },
   {
-   "text": "🔑 Get FREE Google AI Studio key — aistudio.google.com > sign in > Get API key > paste here",
-   "date": "2026-08-26",
-   "priority": "high",
-   "source": "agent"
+   "text": "AI Agency: Review market research brief (sent by agent)",
+   "date": "2026-08-25",
+   "done": false,
+   "gtaskId": "dFZpRDZ3U3R6bUUwcy1reQ",
+   "source": "google"
   },
   {
-   "text": "🔑 Get FREE NVIDIA API key — build.nvidia.com > sign up > Get API Key > paste here",
-   "date": "2026-08-26",
-   "priority": "normal",
-   "source": "agent"
-  },
-  {
-   "text": "🤗 Create FREE HuggingFace account + write token — huggingface.co > sign up > Settings > Access Tokens > paste here",
-   "date": "2026-08-26",
-   "priority": "high",
-   "source": "agent"
-  },
-  {
-   "text": "🔑 Get FREE Groq key — console.groq.com > sign up > API Keys",
-   "date": "2026-08-27",
-   "priority": "normal",
-   "source": "agent"
-  },
-  {
-   "text": "🔑 Get FREE Cerebras key — cloud.cerebras.ai > sign up > API Keys",
-   "date": "2026-08-27",
-   "priority": "normal",
-   "source": "agent"
-  },
-  {
-   "text": "🔑 Get FREE Mistral key — console.mistral.ai > sign up > API Keys",
-   "date": "2026-08-28",
-   "priority": "normal",
-   "source": "agent"
-  },
-  {
-   "text": "📞 Call Tasheel (Saudi bank) — follow up on refund",
-   "date": "2026-08-26",
-   "priority": "high",
+   "text": "Call Tasheel (Saudi bank) — follow up on refund",
+   "date": "2026-08-24",
+   "done": false,
    "gtaskId": "U0dDRXdUbG9CelRFNmJsQg",
    "source": "google"
-  },
-  {
-   "text": "AGENT: Deploy n8n to HuggingFace Space once Sam's token arrives → import workflows → live lead test",
-   "date": "",
-   "priority": "high",
-   "done": false
-  },
-  {
-   "text": "AGENT: Wire free API keys into Hermes + OmniRoute as they arrive",
-   "date": "",
-   "priority": "normal",
-   "done": false
-  },
-  {
-   "text": "AGENT: Evaluate CLI-Anything lightweight CLIs on PC (LibreOffice/Audacity)",
-   "date": "",
-   "priority": "low",
-   "done": false
-  },
-  {
-   "text": "AGENT: Build visual Mission Control tab on Hub (status lights + explain buttons)",
-   "date": "",
-   "priority": "normal",
-   "done": false
-  },
-  {
-   "text": "AGENT: Client-tenant architecture design (multi-login dashboard) — platform phase prep",
-   "date": "",
-   "priority": "low",
-   "done": false
   }
  ],
- "events": [
-  {
-   "title": "Meeting — Sami Kaddoum",
-   "datetime": "2026-08-24T07:00:00Z",
-   "location": "11 Rue Neyron, 42000 Saint-Étienne, France",
-   "link": "https://www.google.com/calendar/event?eid=dW5ncW9pbWhtZmF2c2Q0NGVxdjJnNXFzOGcgYWx4LmFnZW50LjBAbQ",
-   "source": "google"
-  },
-  {
-   "title": "Call Tasheel (Saudi bank) — follow up on pending refund",
-   "datetime": "2026-08-24T09:00:00Z",
-   "location": "",
-   "link": "https://www.google.com/calendar/event?eid=Mm9wbGRwdTZ2cHJzc3VyMGQzdHRoYTQ0ZmcgYWx4LmFnZW50LjBAbQ",
-   "source": "google"
-  }
- ],
- "updated": "2026-08-25T23:58:23",
- "projects": [
-  {
-   "title": "AI Adaptation Agency",
-   "status": "active",
-   "scope": "work",
-   "description": "Agency helping businesses adapt to AI. Products: UPA + ImmobilIA. Based in Saint-Étienne. Market research complete; website copy written.",
-   "next_steps": [
-    "Decide legal path (micro → SASU)",
-    "Pick agency name direction",
-    "Confirm target segment priority",
-    "List 10 warm-intro businesses",
-    "Build portfolio demos 1-3",
-    "Website build with finalized copy"
-   ],
-   "log": [
-    {
-     "ts": "2026-08-24 00:10",
-     "text": "Market research completed: 47% SME AI adoption vs 11% deployed"
-    },
-    {
-     "ts": "2026-08-24 00:12",
-     "text": "4 fixed-price packages defined (1,490-25,000 EUR)"
-    },
-    {
-     "ts": "2026-08-24 00:14",
-     "text": "Legal path chosen: micro-entrepreneur now, SASU at 60-70K"
-    },
-    {
-     "ts": "2026-08-24 00:16",
-     "text": "20 AI use cases catalogued for portfolio"
-    },
-    {
-     "ts": "2026-08-24 00:18",
-     "text": "Complete French website copy drafted"
-    },
-    {
-     "ts": "2026-08-24 00:20",
-     "text": "LinkedIn playbook + first 3 posts drafted"
-    }
-   ]
-  },
-  {
-   "title": "UPA Toolkit",
-   "status": "active",
-   "scope": "work",
-   "description": "Universal Personal Assistant on Hermes Agent.",
-   "next_steps": [
-    "Stabilize chat connection",
-    "File attachments from Drive in chat",
-    "Daily Morning Brief automation"
-   ],
-   "log": [
-    {
-     "ts": "2026-08-23 09:30",
-     "text": "Google ecosystem connected: Calendar, Gmail, Contacts, Drive"
-    },
-    {
-     "ts": "2026-08-23 11:20",
-     "text": "Hub v3 shipped: real in-app chat"
-    },
-    {
-     "ts": "2026-08-23 16:00",
-     "text": "Library fixed: files open real Drive links"
-    },
-    {
-     "ts": "2026-08-23 22:00",
-     "text": "Apple design system applied"
-    }
-   ]
-  },
-  {
-   "title": "Real Estate Automation Tool (ImmobilIA)",
-   "status": "planned",
-   "scope": "work",
-   "description": "AI product for real estate agencies: listings, lead pipeline, tenant comms, market reports.",
-   "next_steps": [
-    "Define first workflow",
-    "Interview 2 agencies",
-    "Prototype listing generator"
-   ],
-   "log": [
-    {
-     "ts": "2026-08-23 18:00",
-     "text": "Project scoped; awaiting UPA Toolkit 90% milestone"
-    }
-   ]
-  }
- ],
- "items": [
-  {
-   "name": "AI Agency — Morning Brief & Master Plan",
-   "type": "pdf",
-   "scope": "work",
-   "urlOrPath": "https://drive.google.com/file/d/1lvY24EoizD5KtpPsu1c-8NEvnIGO1vVg/view",
-   "folder": "AI Adaptation Agency"
-  },
-  {
-   "name": "AI Agency — Full Research Dossier",
-   "type": "doc",
-   "scope": "work",
-   "urlOrPath": "https://docs.google.com/document/d/1mxLH1q3edUizQdafgWtyzXvGNnJRVH_27SfXZ2eA0tM/edit",
-   "folder": "AI Adaptation Agency"
-  },
-  {
-   "name": "AI Agency — Website Copy FR",
-   "type": "note",
-   "scope": "work",
-   "urlOrPath": "https://drive.google.com/file/d/1BPi4fN0IxCt93WQx_jKhV-pbZ5loAJti/view",
-   "folder": "AI Adaptation Agency"
-  },
-  {
-   "name": "Automation Playbook (8-page PDF)",
-   "type": "pdf",
-   "folder": "Platform & Automation",
-   "urlOrPath": "https://github.com/alxagent0-cloud/upa-n8n-foundation",
-   "scope": "work"
-  },
-  {
-   "name": "n8n Foundation repo (deploy kit + workflows)",
-   "type": "link",
-   "folder": "Platform & Automation",
-   "urlOrPath": "https://github.com/alxagent0-cloud/upa-n8n-foundation",
-   "scope": "work"
-  }
- ],
- "journal": [
-  {
-   "date": "2026-08-24",
-   "entries": [
-    {
-     "ts": "00:10",
-     "text": "AI Adaptation Agency created — full research dossier delivered"
-    },
-    {
-     "ts": "00:12",
-     "text": "Morning Brief PDF + Google Doc sent to client email"
-    },
-    {
-     "ts": "00:20",
-     "text": "OpenCode cloud build of Hub v4 via GitHub Actions"
-    }
-   ]
-  }
- ]
+ "events": [],
+ "updated": "2026-08-26T08:33:46"
 }
