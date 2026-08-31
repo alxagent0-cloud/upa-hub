@@ -1,0 +1,8 @@
+{
+  "ver": "v4.2-permanent",
+  "apiUrl": "http://localhost:8123/v1/chat/completions",
+  "telegram": "https://t.me/Agentalx_bot",
+  "hub": "https://alxagent0-cloud.github.io/upa-hub",
+  "live": true,
+  "updated": "2026-08-31T00:00:00Z"
+}

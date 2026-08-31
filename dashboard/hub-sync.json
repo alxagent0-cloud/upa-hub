@@ -1,0 +1,59 @@
+{
+  "projects": [
+    {
+      "title": "UPA Toolkit",
+      "status": "active",
+      "scope": "work",
+      "description": "Universal Personal Assistant running on Hermes Agent.",
+      "next_steps": [
+        "Stabilize chat connection",
+        "File attachments from Drive in chat",
+        "Daily Morning Brief automation",
+        "Voice message transcription"
+      ],
+      "log": [
+        {
+          "ts": "2026-08-31 09:00",
+          "text": "Hub connection rebuilt permanently \u2014 hub-link.json + watchdog + deploy + cron live."
+        }
+      ]
+    },
+    {
+      "title": "AI Adaptation Agency",
+      "status": "active",
+      "scope": "work",
+      "description": "Agency helping businesses adapt to AI."
+    }
+  ],
+  "events": [],
+  "items": [
+    {
+      "name": "Hub Link Config",
+      "folder": "UPA Project",
+      "type": "json"
+    }
+  ],
+  "journal": [
+    {
+      "date": "2026-08-31",
+      "entries": [
+        {
+          "ts": "09:00",
+          "text": "Permanent fix: chat connects to Hermes agent via hub-link.json + self-heal watchdog."
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "text": "Chat link verified permanent",
+      "done": true,
+      "date": "2026-08-31",
+      "priority": "high",
+      "projectId": "pr1",
+      "scope": "professional",
+      "source": "agent"
+    }
+  ],
+  "synced": "2026-08-31T09:00:00Z"
+}
