@@ -266,6 +266,62 @@
   ],
   "items": [
     {
+      "name": "Interim Work — Strategy & Options",
+      "type": "note",
+      "folderId": "f4",
+      "scope": "work",
+      "urlOrPath": "https://drive.google.com/file/d/1mgn8CY_kc62xtngsmdrHqSIsfaD4LCrm/view?usp=drivesdk"
+    },
+    {
+      "name": "Interim Work — Target Roles & Sectors",
+      "type": "note",
+      "folderId": "f4",
+      "scope": "work",
+      "urlOrPath": "https://drive.google.com/file/d/1Zv_pWjB7HrTnb6PiPkPPLIHWBPuDD31e/view?usp=drivesdk"
+    },
+    {
+      "name": "France Travail — Registration Checklist",
+      "type": "note",
+      "folderId": "f4",
+      "scope": "work",
+      "urlOrPath": "https://drive.google.com/file/d/1k4yqLpZDMv286B2-RXwJU6jjEEGxn7ma/view?usp=drivesdk"
+    },
+    {
+      "name": "CV — French Market Version",
+      "type": "note",
+      "folderId": "f4",
+      "scope": "work",
+      "urlOrPath": "https://drive.google.com/file/d/1XZ2McQOcp_T8FfeJXuO3nl2gowc7WrvP/view?usp=drivesdk"
+    },
+    {
+      "name": "Interim Work — Applications Tracker",
+      "type": "sheet",
+      "folderId": "f4",
+      "scope": "work",
+      "urlOrPath": "https://docs.google.com/spreadsheets/d/1I5bp4eeI8VXnayd_HrE2ytE_Z34m9GPDvLdYb7cZsRY/edit"
+    },
+    {
+      "name": "French Lessons — Weekly Plan",
+      "type": "note",
+      "folderId": "f5",
+      "scope": "personal",
+      "urlOrPath": "https://drive.google.com/file/d/1xKUxeojfcMIOz1u015muqRspqSulBTbh/view?usp=drivesdk"
+    },
+    {
+      "name": "French Lessons — Vocabulary Tracker",
+      "type": "sheet",
+      "folderId": "f5",
+      "scope": "personal",
+      "urlOrPath": "https://docs.google.com/spreadsheets/d/1XQW5VeLVQ_O_Hi5YorDfkrtabnn1fKC1iRAlwU_1Xkg/edit"
+    },
+    {
+      "name": "Real Estate Tool — MVP Scope",
+      "type": "note",
+      "folderId": "f6",
+      "scope": "work",
+      "urlOrPath": "https://drive.google.com/file/d/1VKY37V_aMJHh4-fnl1HQuS2hMwd10RDc/view?usp=drivesdk"
+    },
+    {
       "name": "UPA Authentication Blueprint",
       "type": "pdf",
       "folderId": "f2",
@@ -285,13 +341,6 @@
       "folderId": "f2",
       "scope": "work",
       "urlOrPath": "https://drive.google.com/file/d/1xzoZQPD0WbKxSUf4vE5tIXs7lknPgvNm/view"
-    },
-    {
-      "name": "Hub Link Config",
-      "type": "json",
-      "folderId": "f2",
-      "scope": "work",
-      "urlOrPath": ""
     },
     {
       "name": "AI Agency — Master Plan & Research",
@@ -320,61 +369,16 @@
       "folderId": "f3",
       "scope": "work",
       "urlOrPath": "https://drive.google.com/file/d/1BPi4fN0IxCt93WQx_jKhV-pbZ5loAJti/view"
-    },
-    {
-      "name": "Interim Work — Strategy & Options",
-      "type": "note",
-      "folderId": "f4",
-      "scope": "work",
-      "urlOrPath": ""
-    },
-    {
-      "name": "Interim Work — Target Roles & Sectors",
-      "type": "note",
-      "folderId": "f4",
-      "scope": "work",
-      "urlOrPath": ""
-    },
-    {
-      "name": "France Travail — Registration Checklist",
-      "type": "note",
-      "folderId": "f4",
-      "scope": "work",
-      "urlOrPath": ""
-    },
-    {
-      "name": "CV — French Market Version",
-      "type": "note",
-      "folderId": "f4",
-      "scope": "work",
-      "urlOrPath": ""
-    },
-    {
-      "name": "French Lessons — Weekly Plan",
-      "type": "note",
-      "folderId": "f5",
-      "scope": "personal",
-      "urlOrPath": ""
-    },
-    {
-      "name": "French Lessons — Vocabulary Tracker",
-      "type": "sheet",
-      "folderId": "f5",
-      "scope": "personal",
-      "urlOrPath": ""
-    },
-    {
-      "name": "Real Estate Tool — MVP Scope",
-      "type": "note",
-      "folderId": "f6",
-      "scope": "work",
-      "urlOrPath": ""
     }
   ],
   "journal": [
     {
       "date": "2026-11-13",
       "entries": [
+        {
+          "ts": "19:45",
+          "text": "Hub documents created and uploaded to Drive with live links: Interim strategy, target roles, France Travail checklist, French CV, French lessons plan, Real Estate MVP scope. Two live trackers: French vocabulary sheet + Interim applications sheet."
+        },
         {
           "ts": "19:15",
           "text": "Added per-project icons and restored the calendar blocks to the Events view."
@@ -890,14 +894,8 @@
       "gtaskId": ""
     }
   ],
-  "synced": "2026-11-13T19:15:00Z",
+  "synced": "2026-11-13T19:45:00Z",
   "folders": [
-    {
-      "id": "f1",
-      "name": "Personal",
-      "icon": "👤",
-      "scope": "personal"
-    },
     {
       "id": "f2",
       "name": "UPA Project",

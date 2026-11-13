@@ -77,6 +77,10 @@ nav.tabs button.active{color:var(--apple-link-blue)}
 .empty{text-align:center;color:var(--apple-text-tertiary);padding:36px 18px;font-size:15px;line-height:1.6}
 .taskrow{display:flex;align-items:flex-start;gap:12px;background:var(--apple-bg-white);border:none;border-radius:var(--apple-radius-card-sm);padding:13px;margin-bottom:9px;box-shadow:var(--apple-shadow-card)}
 .daysep{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:rgba(88,166,255,.08);border:1px solid rgba(88,166,255,.25);border-radius:8px;padding:6px 12px;margin:14px 0 9px}
+.scopebar{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:-.01em;margin:18px 0 4px;padding:8px 12px;border-radius:10px}
+.scopebar.p{color:#ff9ecd;background:rgba(255,120,180,.10);border:1px solid rgba(255,120,180,.28)}
+.scopebar.w{color:#7fc8ff;background:rgba(90,170,255,.10);border:1px solid rgba(90,170,255,.28)}
+.scopebar .cnt{margin-left:auto;font-size:11px;font-weight:700;opacity:.85;background:rgba(255,255,255,.10);border-radius:20px;padding:2px 9px}
 .chk{width:22px;height:22px;min-width:22px;border:1.5px solid #C7C7CC;border-radius:50%;cursor:pointer;margin-top:1px;text-align:center;line-height:20px;font-size:12px;color:transparent;transition:all .2s ease}
 .chk.on{background:var(--green);border-color:var(--green);color:#fff}
 .taskrow .t{flex:1}.taskrow .t.done{text-decoration:line-through;color:var(--apple-text-tertiary)}
@@ -401,12 +405,22 @@ function rToday(){
  else h+='<div class="seclabel">Schedule</div><div class="empty" style="padding:18px">Nothing scheduled 🎉</div>';
  h+='<div class="seclabel">Due / overdue tasks</div>';
  if(!due.length)h+='<div class="empty" style="padding:14px">Inbox zero on tasks ✅</div>';
- /* day-grouped on Home too, capped for clarity */
+ /* day-grouped on Home too, and split by scope so personal vs work is obvious */
  {const today=todayStr(),tom=new Date(Date.now()+864e5).toISOString().slice(0,10);
-  let lastDay=null;
   const dl=d=>{if(!d)return '📅 No date';if(d<today)return '⚠️ Overdue — '+d;if(d===today)return '📍 TODAY — '+d;if(d===tom)return '➡️ Tomorrow — '+d;return '🗓️ '+d};
-  due.slice(0,10).forEach(t=>{const l=dl(t.date);if(l!==lastDay){h+='<div class="daysep">'+l+'</div>';lastDay=l}h+=taskRow(t)});
-  if(due.length>10)h+='<div class="sub" style="margin:6px 2px">+'+(due.length-10)+' more — see Tasks tab</div>';}
+  const isPers=x=>(x.scope||'')==='personal';
+  const groups=[['Personal','👤',due.filter(isPers)],['Work','💼',due.filter(x=>!isPers(x))]];
+  const cap=Math.ceil(Math.min(due.length,10)/2);
+  let shown=0;
+  groups.forEach(([label,icon,rows])=>{
+   if(!rows.length)return;
+   h+='<div class="scopebar '+(label==='Personal'?'p':'w')+'">'+icon+' '+label+' <span class="cnt">'+rows.length+'</span></div>';
+   let lastDay=null;
+   const take=Math.max(1,Math.min(rows.length,cap-(shown>0?0:0)));
+   rows.slice(0,take).forEach(t=>{const l=dl(t.date);if(l!==lastDay){h+='<div class="daysep">'+l+'</div>';lastDay=l}h+=taskRow(t);shown++});
+   if(rows.length>take)h+='<div class="sub" style="margin:6px 2px">+'+(rows.length-take)+' more in '+label+' — see Tasks tab</div>';
+  });
+  if(due.length>shown&&shown===0)h+='<div class="sub" style="margin:6px 2px">'+due.length+' due — see Tasks tab</div>';}
  /* meetings & events shown as objectives to accomplish */
  if(next.length){
   h+='<div class="seclabel">Objectives — upcoming schedule</div>';
