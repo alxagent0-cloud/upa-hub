@@ -230,7 +230,7 @@ async function googleSync(){
    const ex=db.projects.find(x=>x.title===pr.title)||(pr.id&&db.projects.find(x=>x.id===pr.id));
    if(!ex){
     // honour the agent-supplied id so hub-sync tasks (which reference it) link up
-    db.projects.push({id:pr.id||uid(),title:pr.title,status:pr.status||'active',scope:pr.scope||'work',
+    db.projects.push({id:pr.id||uid(),title:pr.title,status:pr.status||'active',scope:pr.scope||'work',icon:pr.icon||'🚀',
      desc:pr.description||'',nextSteps:pr.next_steps||[],log:pr.log&&pr.log.length?pr.log:[{ts:new Date().toISOString().slice(0,16),text:'Project created by agent'}]});
     changed=true}
    else if((pr.log||[]).length>((ex.log||[]).length)){
@@ -430,7 +430,7 @@ function rTasks(){
  let h='<div class="seclabel">Projects</div><div class="foldergrid">';
  if(!db.projects.length)h+='<div class="empty" style="padding:10px">No projects yet</div>';
  db.projects.forEach(p=>{const effScope=p.scope||(db.tasks.find(t=>t.projectId===p.id)||{}).scope||'work';if(!matchesScope({scope:effScope}))return;const pc=progOf(p.id);
-  h+='<div class="fold" onclick=\'showProject("'+p.id+'")\'><div class="fi">🚀</div><div class="fn">'+esc(p.title)+'</div>'+(pc!=null?'<div class="prog"><i style="width:'+pc+'%"></i></div><div class="sub">'+pc+'%</div>':'')+'</div>';});
+  h+='<div class="fold" onclick=\'showProject("'+p.id+'")\'><div class="fi">'+(p.icon||'🚀')+'</div><div class="fn">'+esc(p.title)+'</div>'+(pc!=null?'<div class="prog"><i style="width:'+pc+'%"></i></div><div class="sub">'+pc+'% · '+db.tasks.filter(t=>t.projectId===p.id).length+' tasks</div>':'')+'</div>';});
  h+='</div>';
  const chips=['all','today','open','done'];
  h+='<div class="filters">'+chips.map(c=>'<span class="chip'+(tfilt===c?' on':'')+'" onclick="tfilt=\''+c+'\';render()">'+c.toUpperCase()+'</span>').join('')+'</div><div class="seclabel">Tasks</div>';
@@ -457,7 +457,7 @@ function rTasks(){
 }
 function showProject(id){detail={kind:'project',id};const p=PR(id);if(!p)return;
  const ts=db.tasks.filter(t=>t.projectId===id),pc=progOf(id);
- let h='<button class="backbtn" onclick="back()">← Back</button><div class="detail"><h2>🚀 '+esc(p.title)+'</h2>';
+ let h='<button class="backbtn" onclick="back()">← Back</button><div class="detail"><h2>'+(p.icon||'🚀')+' '+esc(p.title)+'</h2>';
  if(pc!=null)h+='<div class="prog" style="margin:8px 0"><i style="width:'+pc+'%"></i></div><div class="sub">'+pc+'% complete · '+ts.filter(t=>t.done).length+'/'+ts.length+' tasks done</div>';
  h+='<div class="seclabel">Tasks in this project</div>';
  (ts.length?ts:t=>''&&[]).length; ts.forEach(t=>h+=taskRow(t)); if(!ts.length)h+='<div class="empty" style="padding:10px">No tasks yet.</div>';

@@ -17,7 +17,8 @@
           "ts": "2026-11-13 19:00",
           "text": "Project structured with the 2-week forward plan."
         }
-      ]
+      ],
+      "icon": "🚀"
     },
     {
       "id": "pr2",
@@ -36,7 +37,8 @@
           "ts": "2026-11-13 19:00",
           "text": "Project structured with the 2-week forward plan."
         }
-      ]
+      ],
+      "icon": "🤖"
     },
     {
       "id": "pr3",
@@ -54,7 +56,8 @@
           "ts": "2026-11-13 19:00",
           "text": "Project structured with the 2-week forward plan."
         }
-      ]
+      ],
+      "icon": "🏠"
     },
     {
       "id": "pr4",
@@ -72,7 +75,8 @@
           "ts": "2026-11-13 19:00",
           "text": "Project structured with the 2-week forward plan."
         }
-      ]
+      ],
+      "icon": "💼"
     },
     {
       "id": "pr5",
@@ -89,7 +93,8 @@
           "ts": "2026-11-13 19:00",
           "text": "Project structured with the 2-week forward plan."
         }
-      ]
+      ],
+      "icon": "🚗"
     },
     {
       "id": "pe1",
@@ -107,7 +112,8 @@
           "ts": "2026-11-13 19:00",
           "text": "Project structured with the 2-week forward plan."
         }
-      ]
+      ],
+      "icon": "🇫🇷"
     },
     {
       "id": "pe2",
@@ -125,7 +131,8 @@
           "ts": "2026-11-13 19:00",
           "text": "Project structured with the 2-week forward plan."
         }
-      ]
+      ],
+      "icon": "📋"
     },
     {
       "id": "pe3",
@@ -143,7 +150,8 @@
           "ts": "2026-11-13 19:00",
           "text": "Project structured with the 2-week forward plan."
         }
-      ]
+      ],
+      "icon": "💼"
     },
     {
       "id": "pe4",
@@ -161,7 +169,8 @@
           "ts": "2026-11-13 19:00",
           "text": "Project structured with the 2-week forward plan."
         }
-      ]
+      ],
+      "icon": "❤️"
     },
     {
       "id": "pe5",
@@ -179,10 +188,82 @@
           "ts": "2026-11-13 19:00",
           "text": "Project structured with the 2-week forward plan."
         }
-      ]
+      ],
+      "icon": "💰"
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "title": "Deep work: Stitch mockups for UPA Hub",
+      "datetime": "2026-11-14T10:00",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=bGpvajQxdDk4cWp1MnBxcGMwc2U5cXZjOGMgYWx4LmFnZW50LjBAbQ",
+      "scope": "work"
+    },
+    {
+      "title": "Job applications block (France Travail)",
+      "datetime": "2026-11-18T09:30",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=NWtlYTdldWk2cXJpdGlkZXAxMmU3Yzhqa2sgYWx4LmFnZW50LjBAbQ",
+      "scope": "personal"
+    },
+    {
+      "title": "AI Agency: naming + domain decision",
+      "datetime": "2026-11-17T14:00",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=cXZnZTNsamNjNjgzYjBhbmhpNTgxM3VrYWMgYWx4LmFnZW50LjBAbQ",
+      "scope": "work"
+    },
+    {
+      "title": "AI Agency: build offer site",
+      "datetime": "2026-11-21T10:00",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=dm00YTI0N2Uza2lyNmdsajFrb3I2ZWFqYmMgYWx4LmFnZW50LjBAbQ",
+      "scope": "work"
+    },
+    {
+      "title": "Outreach block: 3 prospects",
+      "datetime": "2026-11-23T10:00",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=aHNjN2Z2dWhnazk3ODBobWd2OTFpNHVyMjAgYWx4LmFnZW50LjBAbQ",
+      "scope": "work"
+    },
+    {
+      "title": "Weekly review: plan vs done",
+      "datetime": "2026-11-20T17:00",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=a2YxbGFodm9vdGU2aDgzNG4xdTBlZmxpdW8gYWx4LmFnZW50LjBAbQ",
+      "scope": "work"
+    },
+    {
+      "title": "Weekly review: plan vs done",
+      "datetime": "2026-11-27T17:00",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=OGlxODJwYzgyNDFlcHFjZmc2bWRqMnIwNWcgYWx4LmFnZW50LjBAbQ",
+      "scope": "work"
+    },
+    {
+      "title": "Transport sector applications",
+      "datetime": "2026-11-20T14:00",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=dDQwbWJ2amJyMWVrcW1oa3FhcWtwaXBkZHMgYWx4LmFnZW50LjBAbQ",
+      "scope": "personal"
+    },
+    {
+      "title": "Money admin: budget + cut one cost",
+      "datetime": "2026-11-22T11:00",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=ajR2aHJvNjVwbzk3NW5vdjRicTBzMzZtbDggYWx4LmFnZW50LjBAbQ",
+      "scope": "personal"
+    },
+    {
+      "title": "Real Estate Tool: MVP scoping session",
+      "datetime": "2026-11-22T15:00",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=YTQ4a2pocDVrZDkzaWp0NjQ4amRoOWdjdDAgYWx4LmFnZW50LjBAbQ",
+      "scope": "work"
+    }
+  ],
   "items": [
     {
       "name": "UPA Authentication Blueprint",
@@ -294,6 +375,10 @@
     {
       "date": "2026-11-13",
       "entries": [
+        {
+          "ts": "19:15",
+          "text": "Added per-project icons and restored the calendar blocks to the Events view."
+        },
         {
           "ts": "19:00",
           "text": "Hub fully restructured: 9 projects (5 work / 4 personal), every task linked to its project, folders + files populated for Personal, Interim Work and French Language."
@@ -805,7 +890,7 @@
       "gtaskId": ""
     }
   ],
-  "synced": "2026-11-13T19:00:00Z",
+  "synced": "2026-11-13T19:15:00Z",
   "folders": [
     {
       "id": "f1",
