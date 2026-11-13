@@ -227,9 +227,10 @@ async function googleSync(){
   // projects: add new ones AND enrich existing with richer agent data
   (g.projects||[]).forEach(pr=>{
    if(!pr.title)return;
-   const ex=db.projects.find(x=>x.title===pr.title);
+   const ex=db.projects.find(x=>x.title===pr.title)||(pr.id&&db.projects.find(x=>x.id===pr.id));
    if(!ex){
-    db.projects.push({id:uid(),title:pr.title,status:pr.status||'active',scope:pr.scope||'work',
+    // honour the agent-supplied id so hub-sync tasks (which reference it) link up
+    db.projects.push({id:pr.id||uid(),title:pr.title,status:pr.status||'active',scope:pr.scope||'work',
      desc:pr.description||'',nextSteps:pr.next_steps||[],log:pr.log&&pr.log.length?pr.log:[{ts:new Date().toISOString().slice(0,16),text:'Project created by agent'}]});
     changed=true}
    else if((pr.log||[]).length>((ex.log||[]).length)){
@@ -242,20 +243,28 @@ async function googleSync(){
    db.tasks.forEach(tt=>{if(/real estate/i.test(tt.projectTitle||'')||db.projects.every(x=>x.id!==tt.projectId&&/real estate/i.test((db.projects.find(y=>y.id===tt.projectId)||{}).title||''))){}});
    changed=true}
 
-  // folders: create missing ones (e.g. AI Adaptation Agency)
+  // folders: create missing ones; accept agent-supplied {id,name,folder} or {folderId}
   const folderId={};
+  const wantFolders=[];
   (g.items||[]).forEach(it=>{
-   if(!it.folder)return;
-   let f=db.folders.find(x=>x.name===it.folder);
-   if(!f){f={id:uid(),name:it.folder,icon:'🤖',scope:it.scope||'work'};db.folders.push(f);changed=true}
-   folderId[it.folder]=f.id;
+   const fname=it.folder||it.folderName;
+   if(fname) wantFolders.push({name:fname,scope:it.scope||'work'});
+  });
+  (g.folders||[]).forEach(f=>{if(f&&f.name) wantFolders.push({name:f.name,scope:f.scope||'work',icon:f.icon,id:f.id})});
+  wantFolders.forEach(w=>{
+   if(!w.name)return;
+   let f=db.folders.find(x=>x.name===w.name)||(w.id&&db.folders.find(x=>x.id===w.id));
+   if(!f){f={id:w.id||uid(),name:w.name,icon:w.icon||'🤖',scope:w.scope};db.folders.push(f);changed=true}
+   folderId[w.name]=f.id;
+   if(w.id) folderId[w.id]=f.id;
   });
   // items: add agent documents not present
   (g.items||[]).forEach(it=>{
    if(!it.name)return;
    const exists=db.items.some(x=>x.name===it.name);
    if(!exists){
-    db.items.push({id:uid(),name:it.name,type:it.type||'doc',urlOrPath:it.urlOrPath||'',folderId:folderId[it.folder]||'',personId:'',meetingId:'',addedDate:todayStr(),scope:it.scope||'work'});
+    const fid=it.folderId||folderId[it.folder]||folderId[it.folderName]||'';
+    db.items.push({id:uid(),name:it.name,type:it.type||'doc',urlOrPath:it.urlOrPath||'',folderId:fid,personId:'',meetingId:'',addedDate:todayStr(),scope:it.scope||'work'});
     changed=true}
   });
   // journal: merge agent entries by date+text
@@ -269,7 +278,7 @@ async function googleSync(){
    if(!t.text)return;
    const exists=db.tasks.some(x=>x.text===t.text||(t.gtaskId&&x.gtaskId===t.gtaskId));
    if(!exists){
-    db.tasks.push({id:uid(),text:t.text,done:!!t.done,date:t.date||'',priority:t.priority||'normal',projectId:'',
+    db.tasks.push({id:uid(),text:t.text,done:!!t.done,date:t.date||'',priority:t.priority||'normal',projectId:t.projectId||'',
      subtasks:[],log:[],gtaskId:t.gtaskId||'',source:t.source||'google',scope:t.scope||'work'});
     changed=true}
   });

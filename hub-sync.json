@@ -1,154 +1,293 @@
 {
   "projects": [
     {
+      "id": "pr1",
       "title": "UPA Toolkit",
       "status": "active",
       "scope": "work",
-      "description": "Universal Personal Assistant running on Hermes Agent.",
+      "description": "Universal Personal Assistant running on Hermes Agent — the hub, Google sync and automation.",
       "next_steps": [
         "Stitch API key -> UI mockups",
         "Gemini API key -> free agent engine",
         "Automate the Google->hub sync",
-        "NotebookLM project management"
+        "Bring the hub chat tunnel back online"
       ],
       "log": [
         {
-          "ts": "2026-11-13 18:40",
-          "text": "Forward 2-week plan loaded: 21 tasks + 10 calendar blocks. Google Tasks and Calendar updated on alx.agent.0@gmail.com."
-        },
-        {
-          "ts": "2026-11-13 18:15",
-          "text": "Google reconnected on alx.agent.0@gmail.com — Gmail, Calendar, Drive, Contacts, Sheets, Docs, Tasks live. Watchdog re-enabled."
-        },
-        {
-          "ts": "2026-08-31 09:00",
-          "text": "Hub connection rebuilt permanently — hub-link.json + watchdog + deploy + cron live."
+          "ts": "2026-11-13 19:00",
+          "text": "Project structured with the 2-week forward plan."
         }
       ]
     },
     {
+      "id": "pr2",
       "title": "AI Adaptation Agency",
       "status": "active",
       "scope": "work",
-      "description": "Agency helping businesses adapt to AI. Name + domain still to be locked.",
+      "description": "Agency helping local businesses adopt AI. Name and domain still to lock.",
       "next_steps": [
         "Finalise name and buy domain",
         "Build the one-page offer site",
         "Write the proposal template",
         "Approach 10 local businesses"
-      ]
-    },
-    {
-      "title": "Real Estate Automation Tool",
-      "status": "active",
-      "scope": "work",
-      "description": "Automation for property listings (Le Bon Coin etc.). Priority 2 focus.",
-      "next_steps": [
-        "Scope the MVP: pick ONE workflow",
-        "Define the listing-capture flow"
       ],
       "log": [
         {
-          "ts": "2026-11-13 18:40",
-          "text": "Project added with the 2-week forward plan."
+          "ts": "2026-11-13 19:00",
+          "text": "Project structured with the 2-week forward plan."
         }
       ]
     },
     {
+      "id": "pr3",
+      "title": "Real Estate Automation (ImmobilIA)",
+      "status": "planned",
+      "scope": "work",
+      "description": "Automation for property listings — Le Bon Coin and similar. Priority 2 focus after UPA.",
+      "next_steps": [
+        "Scope the MVP: pick ONE workflow",
+        "Define the listing-capture flow",
+        "Decide on stack (API vs browser automation)"
+      ],
+      "log": [
+        {
+          "ts": "2026-11-13 19:00",
+          "text": "Project structured with the 2-week forward plan."
+        }
+      ]
+    },
+    {
+      "id": "pr4",
       "title": "Interim Work / Income",
       "status": "active",
       "scope": "work",
-      "description": "Finding paid work near Saint-Etienne while UPA and the agency ramp up.",
+      "description": "Paid work near Saint-Etienne while UPA and the agency ramp up. Family income priority.",
       "next_steps": [
         "France Travail registration",
-        "Apply consistently",
-        "Transport sector leads"
+        "Apply consistently (5/week)",
+        "Transport & driving sector leads"
       ],
       "log": [
         {
-          "ts": "2026-11-13 18:40",
-          "text": "Project added with the 2-week forward plan."
+          "ts": "2026-11-13 19:00",
+          "text": "Project structured with the 2-week forward plan."
+        }
+      ]
+    },
+    {
+      "id": "pr5",
+      "title": "RoadSide Motors (Client)",
+      "status": "active",
+      "scope": "work",
+      "description": "Client website for Wissam Rachkidi — automotive management, transport & services (Karlsruhe/Bretten).",
+      "next_steps": [
+        "Follow up with Wissam on site status",
+        "Confirm remaining assets"
+      ],
+      "log": [
+        {
+          "ts": "2026-11-13 19:00",
+          "text": "Project structured with the 2-week forward plan."
+        }
+      ]
+    },
+    {
+      "id": "pe1",
+      "title": "French Language",
+      "status": "active",
+      "scope": "personal",
+      "description": "French lessons and language progression — required for work and daily life in France.",
+      "next_steps": [
+        "Set a weekly lesson/call slot",
+        "Track vocabulary + practice daily",
+        "Follow up with the San Titian lessons organisation"
+      ],
+      "log": [
+        {
+          "ts": "2026-11-13 19:00",
+          "text": "Project structured with the 2-week forward plan."
+        }
+      ]
+    },
+    {
+      "id": "pe2",
+      "title": "Admin & Legal (France)",
+      "status": "active",
+      "scope": "personal",
+      "description": "French paperwork: driving licence exchange, health cover, bank account.",
+      "next_steps": [
+        "Verify CPAM health cover",
+        "Exchange Lebanese licence for French",
+        "Open/verify French bank account"
+      ],
+      "log": [
+        {
+          "ts": "2026-11-13 19:00",
+          "text": "Project structured with the 2-week forward plan."
+        }
+      ]
+    },
+    {
+      "id": "pe3",
+      "title": "Job Search (Personal)",
+      "status": "active",
+      "scope": "personal",
+      "description": "Personal-side job hunting near Saint-Etienne.",
+      "next_steps": [
+        "Gather documents (ID, CV, proofs)",
+        "Apply to 5 roles per week",
+        "Log every application"
+      ],
+      "log": [
+        {
+          "ts": "2026-11-13 19:00",
+          "text": "Project structured with the 2-week forward plan."
+        }
+      ]
+    },
+    {
+      "id": "pe4",
+      "title": "Family & Wellbeing",
+      "status": "active",
+      "scope": "personal",
+      "description": "Family time, health appointments and personal admin that keeps everything else working.",
+      "next_steps": [
+        "Plan the next family visit",
+        "Book dentist/doctor",
+        "Protect weekly family time"
+      ],
+      "log": [
+        {
+          "ts": "2026-11-13 19:00",
+          "text": "Project structured with the 2-week forward plan."
+        }
+      ]
+    },
+    {
+      "id": "pe5",
+      "title": "Money & Budget",
+      "status": "active",
+      "scope": "personal",
+      "description": "Household budget discipline while income is rebuilt.",
+      "next_steps": [
+        "Review monthly budget",
+        "Cut one recurring cost",
+        "Follow up the Tasheel refund"
+      ],
+      "log": [
+        {
+          "ts": "2026-11-13 19:00",
+          "text": "Project structured with the 2-week forward plan."
         }
       ]
     }
   ],
-  "events": [
-    {
-      "title": "Deep work: Stitch mockups for UPA Hub",
-      "datetime": "2026-11-14T10:00",
-      "location": "",
-      "link": "https://www.google.com/calendar/event?eid=bGpvajQxdDk4cWp1MnBxcGMwc2U5cXZjOGMgYWx4LmFnZW50LjBAbQ",
-      "scope": "work"
-    },
-    {
-      "title": "Job applications block (France Travail)",
-      "datetime": "2026-11-18T09:30",
-      "location": "",
-      "link": "https://www.google.com/calendar/event?eid=NWtlYTdldWk2cXJpdGlkZXAxMmU3Yzhqa2sgYWx4LmFnZW50LjBAbQ",
-      "scope": "personal"
-    },
-    {
-      "title": "AI Agency: naming + domain decision",
-      "datetime": "2026-11-17T14:00",
-      "location": "",
-      "link": "https://www.google.com/calendar/event?eid=cXZnZTNsamNjNjgzYjBhbmhpNTgxM3VrYWMgYWx4LmFnZW50LjBAbQ",
-      "scope": "work"
-    },
-    {
-      "title": "AI Agency: build offer site",
-      "datetime": "2026-11-21T10:00",
-      "location": "",
-      "link": "https://www.google.com/calendar/event?eid=dm00YTI0N2Uza2lyNmdsajFrb3I2ZWFqYmMgYWx4LmFnZW50LjBAbQ",
-      "scope": "work"
-    },
-    {
-      "title": "Outreach block: 3 prospects",
-      "datetime": "2026-11-23T10:00",
-      "location": "",
-      "link": "https://www.google.com/calendar/event?eid=aHNjN2Z2dWhnazk3ODBobWd2OTFpNHVyMjAgYWx4LmFnZW50LjBAbQ",
-      "scope": "work"
-    },
-    {
-      "title": "Weekly review: plan vs done",
-      "datetime": "2026-11-20T17:00",
-      "location": "",
-      "link": "https://www.google.com/calendar/event?eid=a2YxbGFodm9vdGU2aDgzNG4xdTBlZmxpdW8gYWx4LmFnZW50LjBAbQ",
-      "scope": "work"
-    },
-    {
-      "title": "Weekly review: plan vs done",
-      "datetime": "2026-11-27T17:00",
-      "location": "",
-      "link": "https://www.google.com/calendar/event?eid=OGlxODJwYzgyNDFlcHFjZmc2bWRqMnIwNWcgYWx4LmFnZW50LjBAbQ",
-      "scope": "work"
-    },
-    {
-      "title": "Transport sector applications",
-      "datetime": "2026-11-20T14:00",
-      "location": "",
-      "link": "https://www.google.com/calendar/event?eid=dDQwbWJ2amJyMWVrcW1oa3FhcWtwaXBkZHMgYWx4LmFnZW50LjBAbQ",
-      "scope": "personal"
-    },
-    {
-      "title": "Money admin: budget + cut one cost",
-      "datetime": "2026-11-22T11:00",
-      "location": "",
-      "link": "https://www.google.com/calendar/event?eid=ajR2aHJvNjVwbzk3NW5vdjRicTBzMzZtbDggYWx4LmFnZW50LjBAbQ",
-      "scope": "personal"
-    },
-    {
-      "title": "Real Estate Tool: MVP scoping session",
-      "datetime": "2026-11-22T15:00",
-      "location": "",
-      "link": "https://www.google.com/calendar/event?eid=YTQ4a2pocDVrZDkzaWp0NjQ4amRoOWdjdDAgYWx4LmFnZW50LjBAbQ",
-      "scope": "work"
-    }
-  ],
+  "events": [],
   "items": [
     {
+      "name": "UPA Authentication Blueprint",
+      "type": "pdf",
+      "folderId": "f2",
+      "scope": "work",
+      "urlOrPath": "https://drive.google.com/file/d/1HlJrK5hbSrtGBELwFLVRt-sy2yPtL9PY/view"
+    },
+    {
+      "name": "GitHub Guide",
+      "type": "pdf",
+      "folderId": "f2",
+      "scope": "work",
+      "urlOrPath": "https://drive.google.com/file/d/1Kg2cvgmCK4Ysx2NRCvbDlyIh_4f__xn0/view"
+    },
+    {
+      "name": "UPA Daily Report 2026-08-23",
+      "type": "pdf",
+      "folderId": "f2",
+      "scope": "work",
+      "urlOrPath": "https://drive.google.com/file/d/1xzoZQPD0WbKxSUf4vE5tIXs7lknPgvNm/view"
+    },
+    {
       "name": "Hub Link Config",
-      "folder": "UPA Project",
-      "type": "json"
+      "type": "json",
+      "folderId": "f2",
+      "scope": "work",
+      "urlOrPath": ""
+    },
+    {
+      "name": "AI Agency — Master Plan & Research",
+      "type": "doc",
+      "folderId": "f3",
+      "scope": "work",
+      "urlOrPath": "https://docs.google.com/document/d/1mxLH1q3edUizQdafgWtyzXvGNnJRVH_27SfXZ2eA0tM/edit"
+    },
+    {
+      "name": "AI Agency — Morning Brief & Master Plan",
+      "type": "pdf",
+      "folderId": "f3",
+      "scope": "work",
+      "urlOrPath": "https://drive.google.com/file/d/1lvY24EoizD5KtpPsu1c-8NEvnIGO1vVg/view"
+    },
+    {
+      "name": "AI Agency — Full Research Dossier",
+      "type": "doc",
+      "folderId": "f3",
+      "scope": "work",
+      "urlOrPath": "https://drive.google.com/file/d/15edcCfvDrI5L9xOfUYUgq2_5hf77rDs8/view"
+    },
+    {
+      "name": "AI Agency — Website Copy FR",
+      "type": "doc",
+      "folderId": "f3",
+      "scope": "work",
+      "urlOrPath": "https://drive.google.com/file/d/1BPi4fN0IxCt93WQx_jKhV-pbZ5loAJti/view"
+    },
+    {
+      "name": "Interim Work — Strategy & Options",
+      "type": "note",
+      "folderId": "f4",
+      "scope": "work",
+      "urlOrPath": ""
+    },
+    {
+      "name": "Interim Work — Target Roles & Sectors",
+      "type": "note",
+      "folderId": "f4",
+      "scope": "work",
+      "urlOrPath": ""
+    },
+    {
+      "name": "France Travail — Registration Checklist",
+      "type": "note",
+      "folderId": "f4",
+      "scope": "work",
+      "urlOrPath": ""
+    },
+    {
+      "name": "CV — French Market Version",
+      "type": "note",
+      "folderId": "f4",
+      "scope": "work",
+      "urlOrPath": ""
+    },
+    {
+      "name": "French Lessons — Weekly Plan",
+      "type": "note",
+      "folderId": "f5",
+      "scope": "personal",
+      "urlOrPath": ""
+    },
+    {
+      "name": "French Lessons — Vocabulary Tracker",
+      "type": "sheet",
+      "folderId": "f5",
+      "scope": "personal",
+      "urlOrPath": ""
+    },
+    {
+      "name": "Real Estate Tool — MVP Scope",
+      "type": "note",
+      "folderId": "f6",
+      "scope": "work",
+      "urlOrPath": ""
     }
   ],
   "journal": [
@@ -156,12 +295,24 @@
       "date": "2026-11-13",
       "entries": [
         {
+          "ts": "19:00",
+          "text": "Hub fully restructured: 9 projects (5 work / 4 personal), every task linked to its project, folders + files populated for Personal, Interim Work and French Language."
+        },
+        {
           "ts": "18:40",
-          "text": "2-week forward plan pushed to Google Tasks, Google Calendar and the hub (21 new tasks, 10 calendar blocks)."
+          "text": "2-week forward plan pushed to Google Tasks, Google Calendar and the hub."
+        },
+        {
+          "ts": "18:25",
+          "text": "Live hub fixed — root hub-sync.json rewritten, hub-link.json healed to v4.2-permanent."
         },
         {
           "ts": "18:15",
-          "text": "Google ecosystem reconnected on alx.agent.0@gmail.com. Hub refreshed from Google Tasks. Watchdog resumed."
+          "text": "Google ecosystem reconnected on alx.agent.0@gmail.com. 18 Google Tasks recovered."
+        },
+        {
+          "ts": "17:00",
+          "text": "Personal/Work scope filters repaired in index.html."
         }
       ]
     },
@@ -177,219 +328,13 @@
   ],
   "tasks": [
     {
-      "text": "Chat link verified permanent",
-      "done": true,
-      "date": "2026-08-31",
-      "priority": "high",
-      "projectId": "pr1",
-      "scope": "professional",
-      "source": "agent"
-    },
-    {
-      "text": "Apply to jobs on France-Traville",
-      "done": false,
-      "date": "",
-      "source": "google",
-      "scope": "personal"
-    },
-    {
-      "text": "Look for jobs on France-Traville",
-      "done": false,
-      "date": "",
-      "source": "google",
-      "scope": "personal"
-    },
-    {
-      "text": "Change driver license online (Lebanese to French)",
-      "done": false,
-      "date": "",
-      "source": "google",
-      "scope": "personal"
-    },
-    {
-      "text": "Sam: create FREE HuggingFace account (10 min): huggingface.co > sign up > Settings > Access Tokens > new token (write) > paste token in Telegram - needed to deploy n8n factory",
-      "done": false,
-      "date": "2026-08-26",
-      "source": "google",
-      "scope": "work"
-    },
-    {
-      "text": "AGENT TASK: Deploy n8n (repo upa-n8n-foundation ready): needs hosting decision - free HuggingFace Space vs ~/mo EU VPS - then docker compose up + import 2 workflows + wire HERMES_API",
-      "done": false,
-      "date": "",
-      "source": "google",
-      "scope": "work"
-    },
-    {
-      "text": "AGENT TASK - Evaluate CLI-Anything (HKUDS): test 1-2 lightweight CLIs (LibreOffice PDF, Audacity audio) on Sam's PC; heavy ones (Blender/OBS) likely skip due to 4GB RAM - document verdict in chat",
-      "done": false,
-      "date": "",
-      "source": "google",
-      "scope": "work"
-    },
-    {
-      "text": "AGENT TASK: Install OmniRoute (npm i -g omniroute), plug in all Sam's free keys, set task combos (chat/coding/fast/volume), wire endpoint into Hermes, stress-test failover",
-      "done": false,
-      "date": "2026-08-29",
-      "source": "google",
-      "scope": "work"
-    },
-    {
-      "text": "Get FREE Mistral key (10 min, biggest monthly cap ~1B tokens): console.mistral.ai > sign up > API Keys > paste in Telegram",
-      "done": false,
-      "date": "2026-08-28",
-      "source": "google",
-      "scope": "work"
-    },
-    {
-      "text": "Get FREE Cerebras key (10 min, biggest daily volume): cloud.cerebras.ai > sign up > API Keys > paste in Telegram",
-      "done": false,
-      "date": "2026-08-27",
-      "source": "google",
-      "scope": "work"
-    },
-    {
-      "text": "Get FREE Groq key (10 min, fastest models): console.groq.com > sign up > API Keys > paste in Telegram",
-      "done": false,
-      "date": "2026-08-27",
-      "source": "google",
-      "scope": "work"
-    },
-    {
-      "text": "Get FREE Google AI Studio key (15 min): aistudio.google.com > sign in > Get API key > paste in Telegram",
-      "done": false,
-      "date": "2026-08-26",
-      "source": "google",
-      "scope": "work"
-    },
-    {
-      "text": "Grab free NVIDIA AI key (15 min): go to build.nvidia.com > sign up > Get API Key > paste it in Telegram chat - Hermes wires the rest",
-      "done": false,
-      "date": "2026-08-26",
-      "source": "google",
-      "scope": "work"
-    },
-    {
-      "text": "Set up dedicated 'UPA Installs' chat: Sam shares YouTube video / open-source repo -> Hermes checks it out & installs the skill/feature into UPA",
-      "done": false,
-      "date": "2026-08-26",
-      "source": "google",
-      "scope": "work"
-    },
-    {
-      "text": "AI Agency: Pick agency name + check domain availability",
-      "done": false,
-      "date": "2026-08-27",
-      "source": "google",
-      "scope": "work"
-    },
-    {
-      "text": "AI Agency: Validate service packages & pricing",
-      "done": false,
-      "date": "2026-08-27",
-      "source": "google",
-      "scope": "work"
-    },
-    {
-      "text": "AI Agency: Choose legal structure (micro-entrepreneur vs SASU)",
-      "done": false,
-      "date": "2026-08-26",
-      "source": "google",
-      "scope": "work"
-    },
-    {
-      "text": "AI Agency: Review market research brief (sent by agent)",
-      "done": false,
-      "date": "2026-08-25",
-      "source": "google",
-      "scope": "work"
-    },
-    {
-      "text": "Call Tasheel (Saudi bank) — follow up on refund",
-      "done": false,
-      "date": "2026-08-24",
-      "source": "google",
-      "scope": "personal"
-    },
-    {
-      "text": "Renew/verify French health insurance (CPAM) coverage",
-      "done": false,
-      "date": "2026-11-15",
-      "source": "agent",
-      "scope": "personal",
-      "gtaskId": "X2J2UmZJZWJkYTFGRTAxVg"
-    },
-    {
-      "text": "Open a French bank account or verify existing one",
-      "done": false,
-      "date": "2026-11-16",
-      "source": "agent",
-      "scope": "personal",
-      "gtaskId": "c09SWlExVURKdWY2QTgxcg"
-    },
-    {
-      "text": "Gather documents for France Travail registration (ID, CV, proofs)",
-      "done": false,
-      "date": "2026-11-15",
-      "source": "agent",
-      "scope": "personal",
-      "gtaskId": "OXV5eXJYVU92ZTNEZ3V0SQ"
-    },
-    {
-      "text": "Apply to 5 jobs on France Travail",
-      "done": false,
-      "date": "2026-11-18",
-      "source": "agent",
-      "scope": "personal",
-      "gtaskId": "d2VQRllnNVNEbmNVdXh0Ug"
-    },
-    {
-      "text": "Apply to 3 jobs in the driving/transport sector",
-      "done": false,
-      "date": "2026-11-20",
-      "source": "agent",
-      "scope": "personal",
-      "gtaskId": "R1VBb3B5UUtvMGYxUmNrYQ"
-    },
-    {
-      "text": "Follow up on Tasheel refund if no reply",
-      "done": false,
-      "date": "2026-11-17",
-      "source": "agent",
-      "scope": "personal",
-      "gtaskId": "ZkVlT3VjbXg0OXJfeHdibg"
-    },
-    {
-      "text": "Book a dentist/doctor appointment",
-      "done": false,
-      "date": "2026-11-23",
-      "source": "agent",
-      "scope": "personal",
-      "gtaskId": "OEt3amRhMExhYWFUVW5pcg"
-    },
-    {
-      "text": "Review monthly budget and cut one recurring cost",
-      "done": false,
-      "date": "2026-11-22",
-      "source": "agent",
-      "scope": "personal",
-      "gtaskId": "UjRQTkNhU3pCMk5TWERnLQ"
-    },
-    {
-      "text": "Family: plan the next visit / call schedule",
-      "done": false,
-      "date": "2026-11-19",
-      "source": "agent",
-      "scope": "personal",
-      "gtaskId": "dWVnVmw0NVpQdWJ6LXhCSw"
-    },
-    {
-      "text": "Stitch API key -> UI mockups for UPA Hub v5",
+      "text": "Stitch API key -> UI mockups for UPA Hub",
       "done": false,
       "date": "2026-11-14",
       "source": "agent",
       "scope": "work",
-      "gtaskId": "TDlVNlhfYnVxcTJsaXdvWA"
+      "projectId": "pr1",
+      "gtaskId": ""
     },
     {
       "text": "Get Gemini API key (free tier) for the agent engine",
@@ -397,71 +342,17 @@
       "date": "2026-11-14",
       "source": "agent",
       "scope": "work",
-      "gtaskId": "SWx5V3pkeERaUy1BQTdUag"
+      "projectId": "pr1",
+      "gtaskId": ""
     },
     {
-      "text": "Decide: keep hub on GitHub Pages or move to custom domain",
-      "done": false,
-      "date": "2026-11-19",
-      "source": "agent",
-      "scope": "work",
-      "gtaskId": "U1htTzNDMThUWEZQSWdlZA"
-    },
-    {
-      "text": "AI Agency: finalise name and buy domain",
-      "done": false,
-      "date": "2026-11-17",
-      "source": "agent",
-      "scope": "work",
-      "gtaskId": "QkVHXzZ6ejdqUGpadUtuNA"
-    },
-    {
-      "text": "AI Agency: build the one-page offer site",
-      "done": false,
-      "date": "2026-11-21",
-      "source": "agent",
-      "scope": "work",
-      "gtaskId": "aXphQjZ1UW1XX1VEU3djQQ"
-    },
-    {
-      "text": "AI Agency: write the proposal/offer template",
-      "done": false,
-      "date": "2026-11-18",
-      "source": "agent",
-      "scope": "work",
-      "gtaskId": "aHhyWVhfYnZuUklXQ2Izeg"
-    },
-    {
-      "text": "AI Agency: identify 10 local businesses to approach",
-      "done": false,
-      "date": "2026-11-20",
-      "source": "agent",
-      "scope": "work",
-      "gtaskId": "Rm02aldDRy1HQlgxRDJvaQ"
-    },
-    {
-      "text": "AI Agency: send first 3 outreach messages",
-      "done": false,
-      "date": "2026-11-23",
-      "source": "agent",
-      "scope": "work",
-      "gtaskId": "aDZVTThtTG9BTkNZOTJuWA"
-    },
-    {
-      "text": "Real Estate Automation Tool: scope the MVP",
-      "done": false,
-      "date": "2026-11-22",
-      "source": "agent",
-      "scope": "work",
-      "gtaskId": "VmJQcVY2Z0JOajRoWTdTOQ"
-    },
-    {
-      "text": "Automate Google->hub sync (no manual runs)",
+      "text": "Automate Google -> hub sync (no manual runs)",
       "done": false,
       "date": "2026-11-16",
       "source": "agent",
       "scope": "work",
-      "gtaskId": "Z2pmY0dncWd0cTd5QTd6QQ"
+      "projectId": "pr1",
+      "gtaskId": ""
     },
     {
       "text": "Rotate/secure all API keys into one secrets store",
@@ -469,7 +360,215 @@
       "date": "2026-11-19",
       "source": "agent",
       "scope": "work",
-      "gtaskId": "VnpKV21zSlZtdXAzTEtYVA"
+      "projectId": "pr1",
+      "gtaskId": ""
+    },
+    {
+      "text": "Bring the hub chat tunnel back online",
+      "done": false,
+      "date": "2026-11-17",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr1",
+      "gtaskId": ""
+    },
+    {
+      "text": "Decide: keep hub on GitHub Pages or move to custom domain",
+      "done": false,
+      "date": "2026-11-19",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr1",
+      "gtaskId": ""
+    },
+    {
+      "text": "Chat link verified permanent",
+      "done": true,
+      "date": "2026-08-30",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr1",
+      "gtaskId": ""
+    },
+    {
+      "text": "Recover 18 Google Tasks into the hub",
+      "done": true,
+      "date": "2026-11-12",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr1",
+      "gtaskId": ""
+    },
+    {
+      "text": "Reconnect Google Workspace on alx.agent.0",
+      "done": true,
+      "date": "2026-11-12",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr1",
+      "gtaskId": ""
+    },
+    {
+      "text": "Fix hub scope filters (Personal/Work)",
+      "done": true,
+      "date": "2026-11-12",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr1",
+      "gtaskId": ""
+    },
+    {
+      "text": "AI Agency: finalise name and buy domain",
+      "done": false,
+      "date": "2026-11-17",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr2",
+      "gtaskId": ""
+    },
+    {
+      "text": "AI Agency: write the proposal/offer template",
+      "done": false,
+      "date": "2026-11-18",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr2",
+      "gtaskId": ""
+    },
+    {
+      "text": "AI Agency: build the one-page offer site",
+      "done": false,
+      "date": "2026-11-21",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr2",
+      "gtaskId": ""
+    },
+    {
+      "text": "AI Agency: identify 10 local businesses to approach",
+      "done": false,
+      "date": "2026-11-20",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr2",
+      "gtaskId": ""
+    },
+    {
+      "text": "AI Agency: send first 3 outreach messages",
+      "done": false,
+      "date": "2026-11-23",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr2",
+      "gtaskId": ""
+    },
+    {
+      "text": "AI Agency: review market research brief",
+      "done": false,
+      "date": "2026-11-15",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr2",
+      "gtaskId": ""
+    },
+    {
+      "text": "AI Agency: choose legal structure (micro vs SASU)",
+      "done": false,
+      "date": "2026-11-19",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr2",
+      "gtaskId": ""
+    },
+    {
+      "text": "AI Agency: validate service packages & pricing",
+      "done": false,
+      "date": "2026-11-18",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr2",
+      "gtaskId": ""
+    },
+    {
+      "text": "Real Estate Tool: scope the MVP (pick ONE workflow)",
+      "done": false,
+      "date": "2026-11-22",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr3",
+      "gtaskId": ""
+    },
+    {
+      "text": "Real Estate Tool: define the listing-capture flow",
+      "done": false,
+      "date": "2026-11-25",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr3",
+      "gtaskId": ""
+    },
+    {
+      "text": "Real Estate Tool: choose stack (API vs browser automation)",
+      "done": false,
+      "date": "2026-11-26",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr3",
+      "gtaskId": ""
+    },
+    {
+      "text": "France Travail: register / verify account",
+      "done": false,
+      "date": "2026-11-15",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr4",
+      "gtaskId": ""
+    },
+    {
+      "text": "Apply to 5 jobs on France Travail",
+      "done": false,
+      "date": "2026-11-18",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr4",
+      "gtaskId": ""
+    },
+    {
+      "text": "Apply to 3 jobs in the driving/transport sector",
+      "done": false,
+      "date": "2026-11-20",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr4",
+      "gtaskId": ""
+    },
+    {
+      "text": "Log every application in the hub",
+      "done": false,
+      "date": "2026-11-18",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr4",
+      "gtaskId": ""
+    },
+    {
+      "text": "Look for jobs on France-Traville",
+      "done": false,
+      "date": "2026-11-16",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr4",
+      "gtaskId": ""
+    },
+    {
+      "text": "Apply to jobs on France-Traville",
+      "done": false,
+      "date": "2026-11-17",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr4",
+      "gtaskId": ""
     },
     {
       "text": "RoadSide Motors: follow up with Wissam on site status",
@@ -477,8 +576,272 @@
       "date": "2026-11-18",
       "source": "agent",
       "scope": "work",
-      "gtaskId": "NHFFVmUzOVNENlo5NDgwNA"
+      "projectId": "pr5",
+      "gtaskId": ""
+    },
+    {
+      "text": "RoadSide Motors: confirm remaining assets",
+      "done": false,
+      "date": "2026-11-22",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr5",
+      "gtaskId": ""
+    },
+    {
+      "text": "French lessons: set a weekly lesson slot (San Titian)",
+      "done": false,
+      "date": "2026-11-15",
+      "source": "agent",
+      "scope": "personal",
+      "projectId": "pe1",
+      "gtaskId": ""
+    },
+    {
+      "text": "French lessons: follow up with the lessons organisation",
+      "done": false,
+      "date": "2026-11-17",
+      "source": "agent",
+      "scope": "personal",
+      "projectId": "pe1",
+      "gtaskId": ""
+    },
+    {
+      "text": "French practice: 15 min daily",
+      "done": false,
+      "date": "2026-11-14",
+      "source": "agent",
+      "scope": "personal",
+      "projectId": "pe1",
+      "gtaskId": ""
+    },
+    {
+      "text": "French lessons: build a vocabulary tracker",
+      "done": false,
+      "date": "2026-11-19",
+      "source": "agent",
+      "scope": "personal",
+      "projectId": "pe1",
+      "gtaskId": ""
+    },
+    {
+      "text": "Verify French health insurance (CPAM) coverage",
+      "done": false,
+      "date": "2026-11-15",
+      "source": "agent",
+      "scope": "personal",
+      "projectId": "pe2",
+      "gtaskId": ""
+    },
+    {
+      "text": "Exchange Lebanese driving licence for a French one",
+      "done": false,
+      "date": "2026-11-21",
+      "source": "agent",
+      "scope": "personal",
+      "projectId": "pe2",
+      "gtaskId": ""
+    },
+    {
+      "text": "Open or verify a French bank account",
+      "done": false,
+      "date": "2026-11-16",
+      "source": "agent",
+      "scope": "personal",
+      "projectId": "pe2",
+      "gtaskId": ""
+    },
+    {
+      "text": "Gather documents for admin (ID, CV, proofs)",
+      "done": false,
+      "date": "2026-11-15",
+      "source": "agent",
+      "scope": "personal",
+      "projectId": "pe2",
+      "gtaskId": ""
+    },
+    {
+      "text": "Update CV for the French market",
+      "done": false,
+      "date": "2026-11-16",
+      "source": "agent",
+      "scope": "personal",
+      "projectId": "pe3",
+      "gtaskId": ""
+    },
+    {
+      "text": "Follow up on applications already sent",
+      "done": false,
+      "date": "2026-11-20",
+      "source": "agent",
+      "scope": "personal",
+      "projectId": "pe3",
+      "gtaskId": ""
+    },
+    {
+      "text": "Book a dentist/doctor appointment",
+      "done": false,
+      "date": "2026-11-23",
+      "source": "agent",
+      "scope": "personal",
+      "projectId": "pe4",
+      "gtaskId": ""
+    },
+    {
+      "text": "Family: plan the next visit / call schedule",
+      "done": false,
+      "date": "2026-11-19",
+      "source": "agent",
+      "scope": "personal",
+      "projectId": "pe4",
+      "gtaskId": ""
+    },
+    {
+      "text": "Review monthly budget and cut one recurring cost",
+      "done": false,
+      "date": "2026-11-22",
+      "source": "agent",
+      "scope": "personal",
+      "projectId": "pe5",
+      "gtaskId": ""
+    },
+    {
+      "text": "Follow up Tasheel (Saudi bank) refund",
+      "done": false,
+      "date": "2026-11-17",
+      "source": "agent",
+      "scope": "personal",
+      "projectId": "pe5",
+      "gtaskId": ""
+    },
+    {
+      "text": "Call Tasheel (Saudi bank) — follow up on refund",
+      "done": false,
+      "date": "2026-08-25",
+      "source": "agent",
+      "scope": "personal",
+      "projectId": "pe5",
+      "gtaskId": ""
+    },
+    {
+      "text": "Create free HuggingFace account",
+      "done": false,
+      "date": "2026-11-16",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr1",
+      "gtaskId": ""
+    },
+    {
+      "text": "Get free Groq key",
+      "done": false,
+      "date": "2026-11-17",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr1",
+      "gtaskId": ""
+    },
+    {
+      "text": "Get free Mistral key",
+      "done": false,
+      "date": "2026-11-17",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr1",
+      "gtaskId": ""
+    },
+    {
+      "text": "Get free Cerebras key",
+      "done": false,
+      "date": "2026-11-17",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr1",
+      "gtaskId": ""
+    },
+    {
+      "text": "Grab free NVIDIA AI key",
+      "done": false,
+      "date": "2026-11-17",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr1",
+      "gtaskId": ""
+    },
+    {
+      "text": "Set up dedicated 'UPA Installs' chat",
+      "done": false,
+      "date": "2026-11-18",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr1",
+      "gtaskId": ""
+    },
+    {
+      "text": "AGENT TASK: Deploy n8n",
+      "done": false,
+      "date": "2026-11-20",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr1",
+      "gtaskId": ""
+    },
+    {
+      "text": "AGENT TASK: Evaluate CLI-Anything (HKUDS)",
+      "done": false,
+      "date": "2026-11-21",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr1",
+      "gtaskId": ""
+    },
+    {
+      "text": "AGENT TASK: Install OmniRoute and plug in free keys",
+      "done": false,
+      "date": "2026-11-21",
+      "source": "agent",
+      "scope": "work",
+      "projectId": "pr1",
+      "gtaskId": ""
     }
   ],
-  "synced": "2026-11-13T18:40:00Z"
+  "synced": "2026-11-13T19:00:00Z",
+  "folders": [
+    {
+      "id": "f1",
+      "name": "Personal",
+      "icon": "👤",
+      "scope": "personal"
+    },
+    {
+      "id": "f2",
+      "name": "UPA Project",
+      "icon": "🚀",
+      "scope": "work"
+    },
+    {
+      "id": "f3",
+      "name": "AI Adaptation Agency",
+      "icon": "🤖",
+      "scope": "work"
+    },
+    {
+      "id": "f4",
+      "name": "Interim Work",
+      "icon": "💼",
+      "scope": "work"
+    },
+    {
+      "id": "f5",
+      "name": "French Language",
+      "icon": "🇫🇷",
+      "scope": "personal"
+    },
+    {
+      "id": "f6",
+      "name": "Real Estate Tool",
+      "icon": "🏠",
+      "scope": "work"
+    }
+  ]
 }
