@@ -159,7 +159,10 @@ function setScope(s){SCOPE=s;localStorage.setItem('upa_scope',s);
  const map={all:'all',personal:'personal',work:'professional'};
  Object.keys(map).forEach(k=>{$('scope_'+map[k]).classList.toggle('on',(k==='all'&&!s)||(k===s))});
  render()}
-function matchesScope(x){if(!SCOPE)return true;const s=x.scope||'';return s===SCOPE}
+function matchesScope(x){if(!SCOPE||SCOPE==='all')return true;const s=x.scope||'';
+ // 'work' and legacy 'professional' are the same bucket; unscoped rows count as work
+ if(SCOPE==='professional'||SCOPE==='work')return s==='work'||s==='professional'||s==='';
+ return s===SCOPE}
 function scBadge(x){if(SCOPE)return '';const s=x.scope||'';
  if(s==='personal')return ' <span class="scbadge p">P</span>';
  if(s==='work'||s==='professional')return ' <span class="scbadge w">W</span>';return ''}
@@ -266,8 +269,8 @@ async function googleSync(){
    if(!t.text)return;
    const exists=db.tasks.some(x=>x.text===t.text||(t.gtaskId&&x.gtaskId===t.gtaskId));
    if(!exists){
-    db.tasks.push({id:uid(),text:t.text,done:!!t.done,date:t.date||'',priority:'normal',projectId:'',
-     subtasks:[],log:[],gtaskId:t.gtaskId||'',source:t.source||'google'});
+    db.tasks.push({id:uid(),text:t.text,done:!!t.done,date:t.date||'',priority:t.priority||'normal',projectId:'',
+     subtasks:[],log:[],gtaskId:t.gtaskId||'',source:t.source||'google',scope:t.scope||'work'});
     changed=true}
   });
   if(changed){localStorage.setItem(KEY,JSON.stringify(db));jadd('Synced from Google ecosystem');render()}
