@@ -6,15 +6,19 @@
       "scope": "work",
       "description": "Universal Personal Assistant running on Hermes Agent.",
       "next_steps": [
-        "Stabilize chat connection",
-        "File attachments from Drive in chat",
+        "Stitch API key (UI mockups)",
+        "Gemini API key (free engine in hub)",
         "Daily Morning Brief automation",
-        "Voice message transcription"
+        "NotebookLM project management (browser-driven)"
       ],
       "log": [
         {
+          "ts": "2026-11-13 18:15",
+          "text": "Google reconnected on alx.agent.0@gmail.com — Gmail, Calendar, Drive, Contacts, Sheets, Docs, Tasks live. Watchdog re-enabled."
+        },
+        {
           "ts": "2026-08-31 09:00",
-          "text": "Hub connection rebuilt permanently \u2014 hub-link.json + watchdog + deploy + cron live."
+          "text": "Hub connection rebuilt permanently — hub-link.json + watchdog + deploy + cron live."
         }
       ]
     },
@@ -35,6 +39,15 @@
   ],
   "journal": [
     {
+      "date": "2026-11-13",
+      "entries": [
+        {
+          "ts": "18:15",
+          "text": "Google ecosystem reconnected on alx.agent.0@gmail.com. Hub refreshed from Google Tasks. Watchdog resumed."
+        }
+      ]
+    },
+    {
       "date": "2026-08-31",
       "entries": [
         {
@@ -53,7 +66,133 @@
       "projectId": "pr1",
       "scope": "professional",
       "source": "agent"
+    },
+    {
+      "text": "Apply to jobs on France-Traville",
+      "done": false,
+      "date": "",
+      "source": "google",
+      "scope": "personal"
+    },
+    {
+      "text": "Look for jobs on France-Traville",
+      "done": false,
+      "date": "",
+      "source": "google",
+      "scope": "personal"
+    },
+    {
+      "text": "Change driver license online (Lebanese to French)",
+      "done": false,
+      "date": "",
+      "source": "google",
+      "scope": "personal"
+    },
+    {
+      "text": "Sam: create FREE HuggingFace account (10 min): huggingface.co > sign up > Settings > Access Tokens > new token (write) > paste token in Telegram - needed to deploy n8n factory",
+      "done": false,
+      "date": "2026-08-26",
+      "source": "google",
+      "scope": "work"
+    },
+    {
+      "text": "AGENT TASK: Deploy n8n (repo upa-n8n-foundation ready): needs hosting decision - free HuggingFace Space vs ~/mo EU VPS - then docker compose up + import 2 workflows + wire HERMES_API",
+      "done": false,
+      "date": "",
+      "source": "google",
+      "scope": "work"
+    },
+    {
+      "text": "AGENT TASK - Evaluate CLI-Anything (HKUDS): test 1-2 lightweight CLIs (LibreOffice PDF, Audacity audio) on Sam's PC; heavy ones (Blender/OBS) likely skip due to 4GB RAM - document verdict in chat",
+      "done": false,
+      "date": "",
+      "source": "google",
+      "scope": "work"
+    },
+    {
+      "text": "AGENT TASK: Install OmniRoute (npm i -g omniroute), plug in all Sam's free keys, set task combos (chat/coding/fast/volume), wire endpoint into Hermes, stress-test failover",
+      "done": false,
+      "date": "2026-08-29",
+      "source": "google",
+      "scope": "work"
+    },
+    {
+      "text": "Get FREE Mistral key (10 min, biggest monthly cap ~1B tokens): console.mistral.ai > sign up > API Keys > paste in Telegram",
+      "done": false,
+      "date": "2026-08-28",
+      "source": "google",
+      "scope": "work"
+    },
+    {
+      "text": "Get FREE Cerebras key (10 min, biggest daily volume): cloud.cerebras.ai > sign up > API Keys > paste in Telegram",
+      "done": false,
+      "date": "2026-08-27",
+      "source": "google",
+      "scope": "work"
+    },
+    {
+      "text": "Get FREE Groq key (10 min, fastest models): console.groq.com > sign up > API Keys > paste in Telegram",
+      "done": false,
+      "date": "2026-08-27",
+      "source": "google",
+      "scope": "work"
+    },
+    {
+      "text": "Get FREE Google AI Studio key (15 min): aistudio.google.com > sign in > Get API key > paste in Telegram",
+      "done": false,
+      "date": "2026-08-26",
+      "source": "google",
+      "scope": "work"
+    },
+    {
+      "text": "Grab free NVIDIA AI key (15 min): go to build.nvidia.com > sign up > Get API Key > paste it in Telegram chat - Hermes wires the rest",
+      "done": false,
+      "date": "2026-08-26",
+      "source": "google",
+      "scope": "work"
+    },
+    {
+      "text": "Set up dedicated 'UPA Installs' chat: Sam shares YouTube video / open-source repo -> Hermes checks it out & installs the skill/feature into UPA",
+      "done": false,
+      "date": "2026-08-26",
+      "source": "google",
+      "scope": "work"
+    },
+    {
+      "text": "AI Agency: Pick agency name + check domain availability",
+      "done": false,
+      "date": "2026-08-27",
+      "source": "google",
+      "scope": "work"
+    },
+    {
+      "text": "AI Agency: Validate service packages & pricing",
+      "done": false,
+      "date": "2026-08-27",
+      "source": "google",
+      "scope": "work"
+    },
+    {
+      "text": "AI Agency: Choose legal structure (micro-entrepreneur vs SASU)",
+      "done": false,
+      "date": "2026-08-26",
+      "source": "google",
+      "scope": "work"
+    },
+    {
+      "text": "AI Agency: Review market research brief (sent by agent)",
+      "done": false,
+      "date": "2026-08-25",
+      "source": "google",
+      "scope": "work"
+    },
+    {
+      "text": "Call Tasheel (Saudi bank) — follow up on refund",
+      "done": false,
+      "date": "2026-08-24",
+      "source": "google",
+      "scope": "personal"
     }
   ],
-  "synced": "2026-08-31T09:00:00Z"
+  "synced": "2026-11-13T18:20:00Z"
 }
