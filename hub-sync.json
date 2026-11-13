@@ -6,12 +6,16 @@
       "scope": "work",
       "description": "Universal Personal Assistant running on Hermes Agent.",
       "next_steps": [
-        "Stitch API key (UI mockups)",
-        "Gemini API key (free engine in hub)",
-        "Daily Morning Brief automation",
-        "NotebookLM project management (browser-driven)"
+        "Stitch API key -> UI mockups",
+        "Gemini API key -> free agent engine",
+        "Automate the Google->hub sync",
+        "NotebookLM project management"
       ],
       "log": [
+        {
+          "ts": "2026-11-13 18:40",
+          "text": "Forward 2-week plan loaded: 21 tasks + 10 calendar blocks. Google Tasks and Calendar updated on alx.agent.0@gmail.com."
+        },
         {
           "ts": "2026-11-13 18:15",
           "text": "Google reconnected on alx.agent.0@gmail.com — Gmail, Calendar, Drive, Contacts, Sheets, Docs, Tasks live. Watchdog re-enabled."
@@ -26,10 +30,120 @@
       "title": "AI Adaptation Agency",
       "status": "active",
       "scope": "work",
-      "description": "Agency helping businesses adapt to AI."
+      "description": "Agency helping businesses adapt to AI. Name + domain still to be locked.",
+      "next_steps": [
+        "Finalise name and buy domain",
+        "Build the one-page offer site",
+        "Write the proposal template",
+        "Approach 10 local businesses"
+      ]
+    },
+    {
+      "title": "Real Estate Automation Tool",
+      "status": "active",
+      "scope": "work",
+      "description": "Automation for property listings (Le Bon Coin etc.). Priority 2 focus.",
+      "next_steps": [
+        "Scope the MVP: pick ONE workflow",
+        "Define the listing-capture flow"
+      ],
+      "log": [
+        {
+          "ts": "2026-11-13 18:40",
+          "text": "Project added with the 2-week forward plan."
+        }
+      ]
+    },
+    {
+      "title": "Interim Work / Income",
+      "status": "active",
+      "scope": "work",
+      "description": "Finding paid work near Saint-Etienne while UPA and the agency ramp up.",
+      "next_steps": [
+        "France Travail registration",
+        "Apply consistently",
+        "Transport sector leads"
+      ],
+      "log": [
+        {
+          "ts": "2026-11-13 18:40",
+          "text": "Project added with the 2-week forward plan."
+        }
+      ]
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "title": "Deep work: Stitch mockups for UPA Hub",
+      "datetime": "2026-11-14T10:00",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=bGpvajQxdDk4cWp1MnBxcGMwc2U5cXZjOGMgYWx4LmFnZW50LjBAbQ",
+      "scope": "work"
+    },
+    {
+      "title": "Job applications block (France Travail)",
+      "datetime": "2026-11-18T09:30",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=NWtlYTdldWk2cXJpdGlkZXAxMmU3Yzhqa2sgYWx4LmFnZW50LjBAbQ",
+      "scope": "personal"
+    },
+    {
+      "title": "AI Agency: naming + domain decision",
+      "datetime": "2026-11-17T14:00",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=cXZnZTNsamNjNjgzYjBhbmhpNTgxM3VrYWMgYWx4LmFnZW50LjBAbQ",
+      "scope": "work"
+    },
+    {
+      "title": "AI Agency: build offer site",
+      "datetime": "2026-11-21T10:00",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=dm00YTI0N2Uza2lyNmdsajFrb3I2ZWFqYmMgYWx4LmFnZW50LjBAbQ",
+      "scope": "work"
+    },
+    {
+      "title": "Outreach block: 3 prospects",
+      "datetime": "2026-11-23T10:00",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=aHNjN2Z2dWhnazk3ODBobWd2OTFpNHVyMjAgYWx4LmFnZW50LjBAbQ",
+      "scope": "work"
+    },
+    {
+      "title": "Weekly review: plan vs done",
+      "datetime": "2026-11-20T17:00",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=a2YxbGFodm9vdGU2aDgzNG4xdTBlZmxpdW8gYWx4LmFnZW50LjBAbQ",
+      "scope": "work"
+    },
+    {
+      "title": "Weekly review: plan vs done",
+      "datetime": "2026-11-27T17:00",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=OGlxODJwYzgyNDFlcHFjZmc2bWRqMnIwNWcgYWx4LmFnZW50LjBAbQ",
+      "scope": "work"
+    },
+    {
+      "title": "Transport sector applications",
+      "datetime": "2026-11-20T14:00",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=dDQwbWJ2amJyMWVrcW1oa3FhcWtwaXBkZHMgYWx4LmFnZW50LjBAbQ",
+      "scope": "personal"
+    },
+    {
+      "title": "Money admin: budget + cut one cost",
+      "datetime": "2026-11-22T11:00",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=ajR2aHJvNjVwbzk3NW5vdjRicTBzMzZtbDggYWx4LmFnZW50LjBAbQ",
+      "scope": "personal"
+    },
+    {
+      "title": "Real Estate Tool: MVP scoping session",
+      "datetime": "2026-11-22T15:00",
+      "location": "",
+      "link": "https://www.google.com/calendar/event?eid=YTQ4a2pocDVrZDkzaWp0NjQ4amRoOWdjdDAgYWx4LmFnZW50LjBAbQ",
+      "scope": "work"
+    }
+  ],
   "items": [
     {
       "name": "Hub Link Config",
@@ -41,6 +155,10 @@
     {
       "date": "2026-11-13",
       "entries": [
+        {
+          "ts": "18:40",
+          "text": "2-week forward plan pushed to Google Tasks, Google Calendar and the hub (21 new tasks, 10 calendar blocks)."
+        },
         {
           "ts": "18:15",
           "text": "Google ecosystem reconnected on alx.agent.0@gmail.com. Hub refreshed from Google Tasks. Watchdog resumed."
@@ -192,7 +310,175 @@
       "date": "2026-08-24",
       "source": "google",
       "scope": "personal"
+    },
+    {
+      "text": "Renew/verify French health insurance (CPAM) coverage",
+      "done": false,
+      "date": "2026-11-15",
+      "source": "agent",
+      "scope": "personal",
+      "gtaskId": "X2J2UmZJZWJkYTFGRTAxVg"
+    },
+    {
+      "text": "Open a French bank account or verify existing one",
+      "done": false,
+      "date": "2026-11-16",
+      "source": "agent",
+      "scope": "personal",
+      "gtaskId": "c09SWlExVURKdWY2QTgxcg"
+    },
+    {
+      "text": "Gather documents for France Travail registration (ID, CV, proofs)",
+      "done": false,
+      "date": "2026-11-15",
+      "source": "agent",
+      "scope": "personal",
+      "gtaskId": "OXV5eXJYVU92ZTNEZ3V0SQ"
+    },
+    {
+      "text": "Apply to 5 jobs on France Travail",
+      "done": false,
+      "date": "2026-11-18",
+      "source": "agent",
+      "scope": "personal",
+      "gtaskId": "d2VQRllnNVNEbmNVdXh0Ug"
+    },
+    {
+      "text": "Apply to 3 jobs in the driving/transport sector",
+      "done": false,
+      "date": "2026-11-20",
+      "source": "agent",
+      "scope": "personal",
+      "gtaskId": "R1VBb3B5UUtvMGYxUmNrYQ"
+    },
+    {
+      "text": "Follow up on Tasheel refund if no reply",
+      "done": false,
+      "date": "2026-11-17",
+      "source": "agent",
+      "scope": "personal",
+      "gtaskId": "ZkVlT3VjbXg0OXJfeHdibg"
+    },
+    {
+      "text": "Book a dentist/doctor appointment",
+      "done": false,
+      "date": "2026-11-23",
+      "source": "agent",
+      "scope": "personal",
+      "gtaskId": "OEt3amRhMExhYWFUVW5pcg"
+    },
+    {
+      "text": "Review monthly budget and cut one recurring cost",
+      "done": false,
+      "date": "2026-11-22",
+      "source": "agent",
+      "scope": "personal",
+      "gtaskId": "UjRQTkNhU3pCMk5TWERnLQ"
+    },
+    {
+      "text": "Family: plan the next visit / call schedule",
+      "done": false,
+      "date": "2026-11-19",
+      "source": "agent",
+      "scope": "personal",
+      "gtaskId": "dWVnVmw0NVpQdWJ6LXhCSw"
+    },
+    {
+      "text": "Stitch API key -> UI mockups for UPA Hub v5",
+      "done": false,
+      "date": "2026-11-14",
+      "source": "agent",
+      "scope": "work",
+      "gtaskId": "TDlVNlhfYnVxcTJsaXdvWA"
+    },
+    {
+      "text": "Get Gemini API key (free tier) for the agent engine",
+      "done": false,
+      "date": "2026-11-14",
+      "source": "agent",
+      "scope": "work",
+      "gtaskId": "SWx5V3pkeERaUy1BQTdUag"
+    },
+    {
+      "text": "Decide: keep hub on GitHub Pages or move to custom domain",
+      "done": false,
+      "date": "2026-11-19",
+      "source": "agent",
+      "scope": "work",
+      "gtaskId": "U1htTzNDMThUWEZQSWdlZA"
+    },
+    {
+      "text": "AI Agency: finalise name and buy domain",
+      "done": false,
+      "date": "2026-11-17",
+      "source": "agent",
+      "scope": "work",
+      "gtaskId": "QkVHXzZ6ejdqUGpadUtuNA"
+    },
+    {
+      "text": "AI Agency: build the one-page offer site",
+      "done": false,
+      "date": "2026-11-21",
+      "source": "agent",
+      "scope": "work",
+      "gtaskId": "aXphQjZ1UW1XX1VEU3djQQ"
+    },
+    {
+      "text": "AI Agency: write the proposal/offer template",
+      "done": false,
+      "date": "2026-11-18",
+      "source": "agent",
+      "scope": "work",
+      "gtaskId": "aHhyWVhfYnZuUklXQ2Izeg"
+    },
+    {
+      "text": "AI Agency: identify 10 local businesses to approach",
+      "done": false,
+      "date": "2026-11-20",
+      "source": "agent",
+      "scope": "work",
+      "gtaskId": "Rm02aldDRy1HQlgxRDJvaQ"
+    },
+    {
+      "text": "AI Agency: send first 3 outreach messages",
+      "done": false,
+      "date": "2026-11-23",
+      "source": "agent",
+      "scope": "work",
+      "gtaskId": "aDZVTThtTG9BTkNZOTJuWA"
+    },
+    {
+      "text": "Real Estate Automation Tool: scope the MVP",
+      "done": false,
+      "date": "2026-11-22",
+      "source": "agent",
+      "scope": "work",
+      "gtaskId": "VmJQcVY2Z0JOajRoWTdTOQ"
+    },
+    {
+      "text": "Automate Google->hub sync (no manual runs)",
+      "done": false,
+      "date": "2026-11-16",
+      "source": "agent",
+      "scope": "work",
+      "gtaskId": "Z2pmY0dncWd0cTd5QTd6QQ"
+    },
+    {
+      "text": "Rotate/secure all API keys into one secrets store",
+      "done": false,
+      "date": "2026-11-19",
+      "source": "agent",
+      "scope": "work",
+      "gtaskId": "VnpKV21zSlZtdXAzTEtYVA"
+    },
+    {
+      "text": "RoadSide Motors: follow up with Wissam on site status",
+      "done": false,
+      "date": "2026-11-18",
+      "source": "agent",
+      "scope": "work",
+      "gtaskId": "NHFFVmUzOVNENlo5NDgwNA"
     }
   ],
-  "synced": "2026-11-13T18:25:00Z"
+  "synced": "2026-11-13T18:40:00Z"
 }
