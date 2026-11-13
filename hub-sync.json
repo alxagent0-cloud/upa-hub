@@ -267,31 +267,31 @@
   "items": [
     {
       "name": "Interim Work — Strategy & Options",
-      "type": "note",
+      "type": "doc",
       "folderId": "f4",
       "scope": "work",
-      "urlOrPath": "https://drive.google.com/file/d/1mgn8CY_kc62xtngsmdrHqSIsfaD4LCrm/view?usp=drivesdk"
+      "urlOrPath": "https://docs.google.com/document/d/11NUm1d55wxL82_c4eA7JsGk-0JX3Wf-JNTx02qYJYU4/edit?usp=drivesdk"
     },
     {
       "name": "Interim Work — Target Roles & Sectors",
-      "type": "note",
+      "type": "doc",
       "folderId": "f4",
       "scope": "work",
-      "urlOrPath": "https://drive.google.com/file/d/1Zv_pWjB7HrTnb6PiPkPPLIHWBPuDD31e/view?usp=drivesdk"
+      "urlOrPath": "https://docs.google.com/document/d/15o0HdiIpyNT6Qw3KEeX4c5MCketCsfcAdkoLxQk2MzY/edit?usp=drivesdk"
     },
     {
       "name": "France Travail — Registration Checklist",
-      "type": "note",
+      "type": "doc",
       "folderId": "f4",
       "scope": "work",
-      "urlOrPath": "https://drive.google.com/file/d/1k4yqLpZDMv286B2-RXwJU6jjEEGxn7ma/view?usp=drivesdk"
+      "urlOrPath": "https://docs.google.com/document/d/1SPaI126ThqSemwN5K10zZx2YjCTAvhjcLVMm6ka3hLw/edit?usp=drivesdk"
     },
     {
       "name": "CV — French Market Version",
-      "type": "note",
+      "type": "doc",
       "folderId": "f4",
       "scope": "work",
-      "urlOrPath": "https://drive.google.com/file/d/1XZ2McQOcp_T8FfeJXuO3nl2gowc7WrvP/view?usp=drivesdk"
+      "urlOrPath": "https://docs.google.com/document/d/17itr0AAjzkEpcSSGghpgFs1mxLAlEFxzfqGm1uCmjg4/edit?usp=drivesdk"
     },
     {
       "name": "Interim Work — Applications Tracker",
@@ -302,10 +302,10 @@
     },
     {
       "name": "French Lessons — Weekly Plan",
-      "type": "note",
+      "type": "doc",
       "folderId": "f5",
       "scope": "personal",
-      "urlOrPath": "https://drive.google.com/file/d/1xKUxeojfcMIOz1u015muqRspqSulBTbh/view?usp=drivesdk"
+      "urlOrPath": "https://docs.google.com/document/d/183ixwEiabgfHo_phMzLKra-FJzhjdn7sXbh6YxEGPy4/edit?usp=drivesdk"
     },
     {
       "name": "French Lessons — Vocabulary Tracker",
@@ -316,10 +316,17 @@
     },
     {
       "name": "Real Estate Tool — MVP Scope",
-      "type": "note",
+      "type": "doc",
       "folderId": "f6",
       "scope": "work",
-      "urlOrPath": "https://drive.google.com/file/d/1VKY37V_aMJHh4-fnl1HQuS2hMwd10RDc/view?usp=drivesdk"
+      "urlOrPath": "https://docs.google.com/document/d/17PQ_q1JZ-9l0zv5d8_TqsaT_52Dxs_p1Nq_2V7ufe4M/edit?usp=drivesdk"
+    },
+    {
+      "name": "RoadSide Motors — Live Website",
+      "type": "link",
+      "folderId": "f7",
+      "scope": "work",
+      "urlOrPath": "https://alxagent0-cloud.github.io/roadside-motors/"
     },
     {
       "name": "UPA Authentication Blueprint",
@@ -375,6 +382,10 @@
     {
       "date": "2026-11-13",
       "entries": [
+        {
+          "ts": "20:20",
+          "text": "Interim, French and Real Estate documents converted to Google Docs so they preview in-browser. RoadSide Motors live website added. Today page now shows Open/Due today/Done counters plus a 14-day view split Personal/Work."
+        },
         {
           "ts": "19:45",
           "text": "Hub documents created and uploaded to Drive with live links: Interim strategy, target roles, France Travail checklist, French CV, French lessons plan, Real Estate MVP scope. Two live trackers: French vocabulary sheet + Interim applications sheet."
@@ -894,7 +905,7 @@
       "gtaskId": ""
     }
   ],
-  "synced": "2026-11-13T19:45:00Z",
+  "synced": "2026-11-13T20:20:00Z",
   "folders": [
     {
       "id": "f2",
@@ -912,6 +923,12 @@
       "id": "f4",
       "name": "Interim Work",
       "icon": "💼",
+      "scope": "work"
+    },
+    {
+      "id": "f7",
+      "name": "RoadSide Motors",
+      "icon": "🚗",
       "scope": "work"
     },
     {

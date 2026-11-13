@@ -392,14 +392,17 @@ function mapsLink(loc){return 'https://www.google.com/maps/search/?api=1&query='
 /* ===== TODAY ===== */
 function rToday(){
  const now=new Date().toISOString();
+ const openTotal=db.tasks.filter(t=>!t.done&&matchesScope(t)).length;
+ const doneTotal=db.tasks.filter(t=>t.done&&matchesScope(t)).length;
+ const dueToday=db.tasks.filter(t=>!t.done&&t.date&&t.date<=todayStr()&&matchesScope(t)).length;
  const due=db.tasks.filter(t=>!t.done&&t.date&&t.date<=todayStr()&&matchesScope(t));
  const next=db.meetings.filter(m=>m.datetime>=now&&m.status!=='completed'&&matchesScope(m)).sort((a,b)=>a.datetime.localeCompare(b.datetime));
  const todaysM=db.meetings.filter(m=>m.datetime.slice(0,10)===todayStr()&&matchesScope(m));
  const doneToday=db.tasks.filter(t=>t.done&&t.date===todayStr()&&matchesScope(t)).length;
  let h='<div class="statgrid">'+
- '<div class="stat"><div class="n">'+due.length+'</div><div class="l">Tasks due</div></div>'+
- '<div class="stat"><div class="n">'+todaysM.length+'</div><div class="l">Events</div></div>'+
- '<div class="stat"><div class="n">'+doneToday+'</div><div class="l">Done today</div></div></div>';
+ '<div class="stat"><div class="n">'+openTotal+'</div><div class="l">Open tasks</div></div>'+
+ '<div class="stat"><div class="n">'+dueToday+'</div><div class="l">Due today</div></div>'+
+ '<div class="stat"><div class="n">'+doneTotal+'</div><div class="l">Done</div></div></div>';
  if(next.length){const m=next[0],p=P(m.personId);
   h+='<div class="seclabel">Schedule</div><div class="nextmeet" onclick=\'showMeeting("'+m.id+'")\'><h3>'+esc(m.title)+'</h3><div class="sub">'+fmtDT(m.datetime)+(p?' · with '+esc(p.name):'')+'</div>'+(m.mapsUrl?'<a class="maplink" href="'+esc(m.mapsUrl)+'" target="_blank" onclick="event.stopPropagation()">📍 Open in Maps</a>':'')+'</div>';}
  else h+='<div class="seclabel">Schedule</div><div class="empty" style="padding:18px">Nothing scheduled 🎉</div>';
@@ -421,6 +424,19 @@ function rToday(){
    if(rows.length>take)h+='<div class="sub" style="margin:6px 2px">+'+(rows.length-take)+' more in '+label+' — see Tasks tab</div>';
   });
   if(due.length>shown&&shown===0)h+='<div class="sub" style="margin:6px 2px">'+due.length+' due — see Tasks tab</div>';}
+ /* upcoming: the next 14 days, so the forward plan is visible on the home page */
+ {const today=todayStr(),lim=new Date(Date.now()+14*864e5).toISOString().slice(0,10);
+  const up=db.tasks.filter(t=>!t.done&&t.date&&t.date>today&&t.date<=lim&&matchesScope(t)).sort((a,b)=>a.date.localeCompare(b.date));
+  if(up.length){
+   h+='<div class="seclabel">Coming up — next 14 days</div>';
+   const isPers=x=>(x.scope||'')==='personal';
+   [['Personal','👤',up.filter(isPers)],['Work','💼',up.filter(x=>!isPers(x))]].forEach(([label,icon,rows])=>{
+    if(!rows.length)return;
+    h+='<div class="scopebar '+(label==='Personal'?'p':'w')+'">'+icon+' '+label+' <span class="cnt">'+rows.length+'</span></div>';
+    rows.slice(0,5).forEach(t=>h+=taskRow(t));
+    if(rows.length>5)h+='<div class="sub" style="margin:6px 2px">+'+(rows.length-5)+' more in '+label+' — see Tasks tab</div>';
+   });
+  }}
  /* meetings & events shown as objectives to accomplish */
  if(next.length){
   h+='<div class="seclabel">Objectives — upcoming schedule</div>';
