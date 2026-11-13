@@ -233,8 +233,15 @@ async function googleSync(){
     db.projects.push({id:pr.id||uid(),title:pr.title,status:pr.status||'active',scope:pr.scope||'work',icon:pr.icon||'🚀',
      desc:pr.description||'',nextSteps:pr.next_steps||[],log:pr.log&&pr.log.length?pr.log:[{ts:new Date().toISOString().slice(0,16),text:'Project created by agent'}]});
     changed=true}
-   else if((pr.log||[]).length>((ex.log||[]).length)){
-    ex.log=pr.log;ex.desc=pr.description||ex.desc;ex.nextSteps=pr.next_steps||ex.nextSteps;ex.scope=pr.scope||ex.scope;changed=true}
+   else {
+    // enrich in place — always carry icon/scope so seeded projects get the real values
+    if(pr.icon&&pr.icon!==ex.icon){ex.icon=pr.icon;changed=true}
+    if(pr.scope&&pr.scope!==ex.scope){ex.scope=pr.scope;changed=true}
+    if((pr.log||[]).length>((ex.log||[]).length)){
+     ex.log=pr.log;ex.desc=pr.description||ex.desc;ex.nextSteps=pr.next_steps||ex.nextSteps;changed=true}
+    else if(pr.next_steps&&pr.next_steps.length&&!(ex.nextSteps||[]).length){
+     ex.nextSteps=pr.next_steps;changed=true}
+   }
   });
   // dedupe Real Estate variants (seed + sync can create both)
   const reProj=db.projects.filter(pp=>/real estate/i.test(pp.title));
